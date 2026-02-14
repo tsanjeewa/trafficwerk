@@ -1,0 +1,69 @@
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+const HeroSection = () => {
+  return (
+    <section className="relative flex min-h-[90vh] items-center overflow-hidden pt-20">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
+      <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
+      <div className="absolute left-1/4 bottom-0 h-[300px] w-[300px] rounded-full bg-accent/5 blur-[100px]" />
+
+      <div className="container relative mx-auto px-6">
+        <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+              SEO-Agentur für nachhaltiges Wachstum
+            </span>
+          </motion.div>
+
+          <motion.h1
+            className="mt-8 font-display text-5xl font-bold leading-tight tracking-tight md:text-7xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
+            Wir bringen Ihr
+            <br />
+            Business auf{" "}
+            <span className="text-gradient">Seite 1</span>
+          </motion.h1>
+
+          <motion.p
+            className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            TrafficWerk ist Ihre Agentur für datengetriebene Suchmaschinenoptimierung. Mehr Sichtbarkeit, mehr Traffic, mehr Umsatz – messbar und nachhaltig.
+          </motion.p>
+
+          <motion.div
+            className="mt-10 flex flex-wrap gap-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+          >
+            <Button size="lg" className="rounded-full text-base" asChild>
+              <Link to="/kontakt">
+                Kostenlose Beratung
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
+              <a href="#services">Unsere Leistungen</a>
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
