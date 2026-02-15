@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/trafficwerk-logo.png";
 
 const services = [
   { name: "Technische SEO", path: "/services/technische-seo" },
@@ -24,8 +25,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
-        <Link to="/" className="font-display text-2xl font-bold tracking-tight">
-          Traffic<span className="text-primary">Werk</span>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="TrafficWerk" className="h-10" />
         </Link>
 
         {/* Desktop Nav */}
