@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -15,9 +15,15 @@ const Footer = () => {
               Ihre SEO-Agentur für nachhaltiges Wachstum. Wir bringen Ihr Unternehmen auf Seite 1 bei Google.
             </p>
             <div className="mt-6 flex gap-4">
-              {["LinkedIn", "Twitter", "Instagram"].map((s) => (
-                <a key={s} href="#" className="text-xs font-medium text-muted-foreground transition-colors hover:text-primary">{s}</a>
-              ))}
+              <a href="#" aria-label="LinkedIn" className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a href="#" aria-label="Twitter" className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a href="#" aria-label="Instagram" className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
+                <Instagram className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
