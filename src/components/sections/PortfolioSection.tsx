@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import imgLustaufeis from "@/assets/portfolio-lustaufeis.webp";
+import imgEismaschine from "@/assets/portfolio-eismaschine.webp";
+import imgEiscafe from "@/assets/portfolio-eiscafe.webp";
 
 const cases = [
   {
@@ -7,21 +10,21 @@ const cases = [
     url: "https://lustaufeis24.de",
     desc: "E-Commerce SEO für einen der führenden Online-Shops für Eismaschinen und Eiszubehör.",
     result: "+520% Traffic",
-    image: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=600&h=400&fit=crop",
+    image: imgLustaufeis,
   },
   {
     name: "eismaschine.de",
     url: "https://eismaschine.de",
     desc: "Content-Strategie und technische SEO für die führende Informationsplattform rund um Eismaschinen.",
     result: "+380% Sichtbarkeit",
-    image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=400&fit=crop",
+    image: imgEismaschine,
   },
   {
     name: "eiscafe-florenz-leipzig.de",
     url: "https://eiscafe-florenz-leipzig.de",
     desc: "Lokale SEO-Optimierung für ein traditionsreiches Eiscafé in Leipzig mit Google Maps Integration.",
     result: "+290% lokale Anfragen",
-    image: "https://images.unsplash.com/photo-1516559828984-fb3b99548b21?w=600&h=400&fit=crop",
+    image: imgEiscafe,
   },
 ];
 
