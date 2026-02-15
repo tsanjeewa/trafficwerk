@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
+import imgThushara from "@/assets/team-thushara.webp";
+import imgThomas from "@/assets/team-thomas.webp";
+import imgEyana from "@/assets/team-eyana.webp";
+import imgAnna from "@/assets/team-anna.webp";
 
 const team = [
-  { name: "Thomas Kinne", role: "Geschäftsführer & SEO-Stratege", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" },
-  { name: "Laura M.", role: "Head of Content", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face" },
-  { name: "Max W.", role: "Technical SEO Lead", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" },
-  { name: "Julia S.", role: "SEA & Analytics", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face" },
+  { name: "Thushara", role: "Lead SEO Expert & Gründer", image: imgThushara },
+  { name: "Eden", role: "Inhaber & Geschäftsführer", image: imgThomas },
+  { name: "Eyana", role: "Content Specialist", image: imgEyana },
+  { name: "John", role: "Technical SEO Analyst", image: imgAnna },
 ];
 
 const TeamSection = () => {
