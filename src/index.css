@@ -76,4 +76,14 @@
   .section-alt {
     background-color: hsl(var(--section-alt));
   }
+
+  .nav-link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-[2px] w-full origin-bottom-right scale-x-0 transition-transform duration-300;
+    background-color: hsl(217 91% 50%);
+  }
+
+  .nav-link-underline:hover::after {
+    @apply origin-bottom-left scale-x-100;
+  }
 }
