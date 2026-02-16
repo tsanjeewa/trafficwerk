@@ -18,10 +18,13 @@ const WhyUsSection = () => {
           <div>
             <span className="text-xs font-medium uppercase tracking-widest text-primary">Vorteile</span>
             <h2 className="mt-4 font-display text-3xl font-bold md:text-4xl">
-              Warum TrafficWerk?
+              Unsere Expertise
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Wir setzen auf Qualität, Transparenz und messbare Ergebnisse. Jedes Projekt wird individuell betreut.
+            <p className="mt-4 text-lg text-muted-foreground">
+              Ganzheitliche Lösungen für Ihr digitales Wachstum.
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Wir kombinieren Kreativität mit Technologie, um messbare Ergebnisse für Ihr Unternehmen zu erzielen – von SEO bis hin zur kompletten Web-Entwicklung.
             </p>
           </div>
           <div className="space-y-4">
