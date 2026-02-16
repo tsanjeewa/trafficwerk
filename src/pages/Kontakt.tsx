@@ -7,7 +7,8 @@ import { MapPin, Mail, Phone, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORMSPREE_ID";
+const WEB3FORMS_URL = "https://api.web3forms.com/submit";
+const WEB3FORMS_KEY = "972a2eeb-c625-4b2a-9991-b60bf2d7912d";
 
 const Kontakt = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", service: "", message: "" });
@@ -26,15 +27,17 @@ const Kontakt = () => {
     }
 
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch(WEB3FORMS_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           service: formData.service,
           message: formData.message,
+          subject: "Neue Kontaktanfrage über TrafficWerk",
         }),
       });
 
@@ -68,10 +71,7 @@ const Kontakt = () => {
                 <div className="flex flex-col items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 p-12 text-center">
                   <CheckCircle2 className="h-12 w-12 text-blue-600" />
                   <p className="mt-4 text-lg font-semibold text-blue-600">
-                    Vielen Dank! Ihre Nachricht wurde erfolgreich versendet.
-                  </p>
-                  <p className="mt-2 text-sm text-slate-500">
-                    Wir melden uns in Kürze bei Ihnen.
+                    Vielen Dank! Ihre Nachricht wurde erfolgreich versendet. Wir setzen uns so schnell wie möglich mit Ihnen in Verbindung.
                   </p>
                   <Button
                     className="mt-6 rounded-full"

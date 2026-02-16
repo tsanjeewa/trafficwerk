@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CheckCircle2 } from "lucide-react";
 
-const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORMSPREE_ID";
+const WEB3FORMS_URL = "https://api.web3forms.com/submit";
+const WEB3FORMS_KEY = "972a2eeb-c625-4b2a-9991-b60bf2d7912d";
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
@@ -22,10 +23,10 @@ const NewsletterSection = () => {
     }
 
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch(WEB3FORMS_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email, _subject: "Neue Newsletter-Anmeldung" }),
+        body: JSON.stringify({ access_key: WEB3FORMS_KEY, email, subject: "Neue Newsletter-Anmeldung" }),
       });
 
       if (res.ok) {
