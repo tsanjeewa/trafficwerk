@@ -71,7 +71,7 @@ const Kontakt = () => {
                     </div>
                     <div className="flex items-center gap-3 text-sm text-muted-foreground">
                       <Phone className="h-4 w-4 shrink-0 text-primary" />
-                      <span>+49 (0) 8139 999 000</span>
+                      <a href="tel:+4915782208713" className="transition-colors hover:text-primary">+49 1578 2208713</a>
                     </div>
                   </div>
                 </div>
