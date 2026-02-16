@@ -1,39 +1,75 @@
+import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Was ist SEO?", a: "SEO (Search Engine Optimization) bezeichnet die Optimierung von Websites, um in den organischen Suchergebnissen von Google und anderen Suchmaschinen besser gefunden zu werden. Ziel ist es, die Sichtbarkeit, den Traffic und letztlich den Umsatz zu steigern." },
-  { q: "Wie lange dauert es, bis SEO-Maßnahmen wirken?", a: "Erste Ergebnisse sind typischerweise nach 3-6 Monaten sichtbar. SEO ist eine langfristige Strategie – nachhaltige Rankings aufzubauen erfordert kontinuierliche Optimierung und Geduld." },
-  { q: "Was kostet SEO?", a: "Die Kosten hängen vom Umfang der Maßnahmen, dem Wettbewerb in Ihrer Branche und Ihren Zielen ab. Wir erstellen individuelle Angebote nach einer kostenlosen Erstanalyse." },
-  { q: "Was ist der Unterschied zwischen SEO und SEA?", a: "SEO optimiert Ihre Website für organische (unbezahlte) Suchergebnisse, während SEA (Search Engine Advertising) bezahlte Anzeigen in Suchmaschinen bezeichnet. Beide Strategien ergänzen sich ideal." },
-  { q: "Was ist technische SEO?", a: "Technische SEO umfasst alle Maßnahmen zur Verbesserung der technischen Grundlagen einer Website: Ladegeschwindigkeit, Crawlbarkeit, Indexierung, Mobile-Friendliness und strukturierte Daten." },
-  { q: "Was bedeutet GEO (Generative Engine Optimization)?", a: "GEO ist die Optimierung von Inhalten für KI-basierte Suchsysteme wie Google AI Overviews, ChatGPT oder Perplexity. Es geht darum, dass Ihre Inhalte von KI-Systemen als Quelle zitiert werden." },
+  {
+    q: "Bieten Sie nur SEO an oder sind Sie eine Full-Service-Agentur?",
+    a: "TrafficWerk ist eine Full-Service Digitalagentur. Neben SEO bieten wir ganzheitliches Performance Marketing, Webdesign und Content-Strategien an.",
+  },
+  {
+    q: "Wie wird der Erfolg der Maßnahmen gemessen?",
+    a: "Wir nutzen datengetriebene KPIs wie Traffic-Wachstum, Keyword-Rankings und Conversion-Rates, die wir in monatlichen transparenten Reports präsentieren.",
+  },
+  {
+    q: "Erstellen Sie auch komplette Webseiten oder Online-Shops?",
+    a: "Ja, wir entwickeln hochperformante Websites und E-Commerce-Lösungen, die von Grund auf für Suchmaschinen optimiert sind.",
+  },
+  {
+    q: "Ist SEO auch für kleine, lokale Unternehmen sinnvoll?",
+    a: "Absolut. Lokale SEO hilft kleinen Unternehmen, in ihrer Region gefunden zu werden und qualifizierte Kunden direkt vor Ort zu gewinnen.",
+  },
+  {
+    q: "Was unterscheidet TrafficWerk von anderen Agenturen?",
+    a: "Unsere Kombination aus tiefem technischem Verständnis, kreativer Content-Erstellung und einem strikten Fokus auf den ROI unserer Kunden.",
+  },
 ];
 
 const FAQSection = () => {
   return (
-    <section className="py-24">
+    <section className="bg-white py-24">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-medium uppercase tracking-widest text-primary">FAQ & Lexikon</span>
-          <h2 className="mt-4 font-display text-3xl font-bold md:text-4xl">
-            Häufige Fragen
+        <motion.div
+          className="mx-auto max-w-2xl text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
+            Support & Wissen
+          </span>
+          <h2 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+            Häufige Fragen & <span className="text-blue-600">Antworten</span>
           </h2>
-        </div>
+          <p className="mx-auto mt-4 max-w-xl text-slate-500">
+            Alles, was Sie über unsere Zusammenarbeit und unsere digitalen Strategien wissen müssen.
+          </p>
+        </motion.div>
 
-        <div className="mx-auto mt-16 max-w-3xl">
-          <Accordion type="single" collapsible className="space-y-3">
+        <motion.div
+          className="mx-auto mt-14 max-w-3xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+        >
+          <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl border border-border/50 bg-card px-6">
-                <AccordionTrigger className="text-left font-display text-sm font-semibold hover:text-primary hover:no-underline">
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="border-b border-slate-100 px-0"
+              >
+                <AccordionTrigger className="py-5 text-left text-[15px] font-semibold text-slate-900 hover:text-blue-600 hover:no-underline [&[data-state=open]]:text-blue-600">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+                <AccordionContent className="pb-5 text-sm leading-relaxed text-slate-500">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
