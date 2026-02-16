@@ -1,74 +1,67 @@
 import { motion } from "framer-motion";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from "recharts";
+import { TrendingUp, Target, Zap, BarChart3 } from "lucide-react";
 
-const trafficData = [
-  { month: "Jan", traffic: 1200 },
-  { month: "Feb", traffic: 1800 },
-  { month: "Mär", traffic: 2400 },
-  { month: "Apr", traffic: 3100 },
-  { month: "Mai", traffic: 4200 },
-  { month: "Jun", traffic: 5800 },
-  { month: "Jul", traffic: 7200 },
-  { month: "Aug", traffic: 8500 },
-];
-
-const keywordData = [
-  { name: "Top 3", value: 45, color: "hsl(142, 60%, 50%)" },
-  { name: "Top 10", value: 120, color: "hsl(142, 60%, 35%)" },
-  { name: "Top 20", value: 85, color: "hsl(220, 16%, 30%)" },
+const approaches = [
+  {
+    icon: <BarChart3 className="h-5 w-5" />,
+    title: "Datengetriebene Analyse",
+    desc: "Jede Entscheidung basiert auf Daten aus Search Console, Analytics und professionellen SEO-Tools.",
+  },
+  {
+    icon: <Target className="h-5 w-5" />,
+    title: "Fokussierte Strategie",
+    desc: "Klare Priorisierung nach Impact – wir arbeiten zuerst an dem, was den größten Unterschied macht.",
+  },
+  {
+    icon: <TrendingUp className="h-5 w-5" />,
+    title: "Nachhaltige Ergebnisse",
+    desc: "Langfristige Sichtbarkeit statt kurzfristiger Tricks. Unsere Arbeit wirkt auch in 12 Monaten noch.",
+  },
+  {
+    icon: <Zap className="h-5 w-5" />,
+    title: "Agile Umsetzung",
+    desc: "Kurze Iterationszyklen mit transparentem Reporting – damit Sie jederzeit den Fortschritt sehen.",
+  },
 ];
 
 const ResultsSection = () => {
   return (
-    <section className="py-24">
+    <section className="border-t border-slate-100 py-24">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-medium uppercase tracking-widest text-primary">Ergebnisse</span>
-          <h2 className="mt-4 font-display text-3xl font-bold md:text-4xl">
-            Ergebnisse in Zahlen
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Transparente Daten und messbare Erfolge für unsere Kunden.
-          </p>
-        </div>
-
         <motion.div
-          className="mt-16 grid gap-8 lg:grid-cols-2"
+          className="mx-auto max-w-2xl text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
-          <div className="rounded-xl border border-border/50 bg-card p-6">
-            <h3 className="font-display text-sm font-semibold">Organischer Traffic (Beispielprojekt)</h3>
-            <div className="mt-4 h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={trafficData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 14%, 18%)" />
-                  <XAxis dataKey="month" tick={{ fill: "hsl(215, 15%, 55%)", fontSize: 12 }} />
-                  <YAxis tick={{ fill: "hsl(215, 15%, 55%)", fontSize: 12 }} />
-                  <Tooltip contentStyle={{ backgroundColor: "hsl(220, 18%, 10%)", border: "1px solid hsl(220, 14%, 18%)", borderRadius: "8px", fontSize: 12 }} />
-                  <Bar dataKey="traffic" fill="hsl(142, 60%, 50%)" radius={[4, 4, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
-
-          <div className="rounded-xl border border-border/50 bg-card p-6">
-            <h3 className="font-display text-sm font-semibold">Keyword-Verteilung</h3>
-            <div className="mt-4 flex h-64 items-center justify-center">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie data={keywordData} cx="50%" cy="50%" outerRadius={80} dataKey="value" label={({ name, value }) => `${name}: ${value}`}>
-                    {keywordData.map((entry, i) => (
-                      <Cell key={i} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip contentStyle={{ backgroundColor: "hsl(220, 18%, 10%)", border: "1px solid hsl(220, 14%, 18%)", borderRadius: "8px", fontSize: 12 }} />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
+          <span className="text-xs font-medium uppercase tracking-widest text-blue-600">Unser Ansatz</span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+            So arbeiten wir
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-slate-500">
+            Transparenz, Daten und Handwerk – die Grundlagen unserer Arbeit.
+          </p>
         </motion.div>
+
+        <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {approaches.map((a, i) => (
+            <motion.div
+              key={a.title}
+              className="rounded-2xl border border-slate-100 bg-white p-6 transition-all hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                {a.icon}
+              </div>
+              <h3 className="mt-4 text-sm font-bold text-slate-900">{a.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-500">{a.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
