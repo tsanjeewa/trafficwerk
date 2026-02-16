@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 
 const posts = [
-  { title: "Core Web Vitals 2025: Was Sie jetzt wissen müssen", date: "10. Feb. 2025", category: "Technische SEO", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" },
-  { title: "KI und SEO: Wie AI-Search die Branche verändert", date: "28. Jan. 2025", category: "AI & SEO", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" },
-  { title: "Lokale SEO: 10 Tipps für mehr Sichtbarkeit in Ihrer Region", date: "15. Jan. 2025", category: "Lokale SEO", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" },
+  { title: "Core Web Vitals 2025: Was Sie jetzt wissen müssen", date: "16. Feb. 2026", category: "Technische SEO", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" },
+  { title: "KI und SEO: Wie AI-Search die Branche verändert", date: "9. Feb. 2026", category: "AI & SEO", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" },
+  { title: "Lokale SEO: 10 Tipps für mehr Sichtbarkeit in Ihrer Region", date: "2. Feb. 2026", category: "Lokale SEO", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" },
 ];
 
 const BlogSection = () => {
