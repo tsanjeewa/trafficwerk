@@ -1,23 +1,23 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { FileText, Tag, Link2, Heading, Image, BarChart3 } from "lucide-react";
+import { Monitor, Smartphone, Code2, Palette, Zap, Users } from "lucide-react";
 
 const OnPageOptimierung = () => (
   <ServicePageLayout
-    title="On-Page Optimierung"
-    subtitle="Content & Meta-Optimierung"
-    description="Perfektionieren Sie Ihre Inhalte, Meta-Tags und interne Verlinkung – für bessere Rankings, höhere Klickraten und nachhaltig mehr organischen Traffic."
+    title="Webdesign & Entwicklung"
+    subtitle="Modernes UI/UX · High-Performance Development"
+    description="Maßgeschneiderte Websites, die beeindrucken und konvertieren. Modernes Design trifft auf performante Entwicklung – für ein digitales Erlebnis, das Ihre Marke stärkt."
     features={[
-      { icon: <Tag className="h-6 w-6" />, title: "Meta-Tag Optimierung", description: "Keyword-optimierte Title-Tags und Meta-Descriptions für maximale Klickraten in den SERPs." },
-      { icon: <FileText className="h-6 w-6" />, title: "Content-Optimierung", description: "Inhalte, die exakt auf die Suchintention Ihrer Zielgruppe abgestimmt sind." },
-      { icon: <Link2 className="h-6 w-6" />, title: "Interne Verlinkung", description: "Strategische Link-Architektur für optimalen Linkjuice-Fluss und bessere Nutzerführung." },
-      { icon: <Heading className="h-6 w-6" />, title: "Heading-Struktur", description: "Saubere H1-H6-Hierarchie für bessere Lesbarkeit und Suchmaschinen-Verständnis." },
-      { icon: <Image className="h-6 w-6" />, title: "Bild-SEO", description: "Alt-Tags, Komprimierung und moderne Formate für schnelle Ladezeiten und Bildersuche." },
-      { icon: <BarChart3 className="h-6 w-6" />, title: "Content-Gap-Analyse", description: "Identifikation ungenutzter Keyword-Potenziale und neuer Content-Chancen." },
+      { icon: <Smartphone className="h-5 w-5" />, title: "Responsive Design", description: "Perfekte Darstellung auf allen Endgeräten – vom Smartphone bis zum Desktop." },
+      { icon: <Code2 className="h-5 w-5" />, title: "Clean Code", description: "Saubere, wartbare Codebasis mit modernen Technologien und Best Practices." },
+      { icon: <Users className="h-5 w-5" />, title: "User Experience", description: "Nutzerführung, die intuitiv überzeugt und Besucher in Kunden verwandelt." },
+      { icon: <Palette className="h-5 w-5" />, title: "Brand Design", description: "Visuelle Identität, die Ihre Marke widerspiegelt und Vertrauen schafft." },
+      { icon: <Zap className="h-5 w-5" />, title: "Performance", description: "Blitzschnelle Ladezeiten durch optimierte Architektur und modernes Hosting." },
+      { icon: <Monitor className="h-5 w-5" />, title: "CMS-Integration", description: "Flexible Content-Management-Systeme für einfache Pflege Ihrer Inhalte." },
     ]}
     process={[
-      { step: "Keyword-Recherche & Audit", desc: "Umfassende Keyword-Analyse kombiniert mit einer Bewertung Ihrer bestehenden Inhalte und Optimierungspotenziale." },
-      { step: "Strategische Optimierung", desc: "Überarbeitung von Meta-Tags, Content-Struktur und interner Verlinkung nach datenbasierten Prioritäten." },
-      { step: "Performance-Tracking", desc: "Laufendes Monitoring der Ranking-Entwicklung mit iterativer Verbesserung basierend auf Echtzeit-Daten." },
+      { step: "Konzept & Design", desc: "Wireframes, Designentwürfe und UX-Strategie in enger Abstimmung mit Ihrem Team." },
+      { step: "Entwicklung & Testing", desc: "Pixel-perfekte Umsetzung mit modernen Technologien, Cross-Browser-Tests und Performance-Optimierung." },
+      { step: "Launch & Betreuung", desc: "Go-Live-Begleitung, technischer Support und kontinuierliche Weiterentwicklung Ihrer Website." },
     ]}
   />
 );

@@ -1,23 +1,23 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { Gauge, Search, Smartphone, Code2, FileCode, ShieldCheck } from "lucide-react";
+import { Search, TrendingUp, BarChart3, Target, FileText, Layers } from "lucide-react";
 
 const TechnischeSEO = () => (
   <ServicePageLayout
-    title="Technische SEO"
-    subtitle="Performance & Indexierung"
-    description="Wir optimieren die technische Infrastruktur Ihrer Website für maximale Crawlbarkeit, blitzschnelle Ladezeiten und einwandfreie Indexierung – die Basis für Top-Rankings."
+    title="SEO-Strategie"
+    subtitle="Datengetriebene Suchmaschinenoptimierung"
+    description="Nachhaltige Sichtbarkeit in Google durch fundierte Analysen, strategische Keyword-Planung und technische Exzellenz. Wir bringen Ihre Website dauerhaft auf Seite 1."
     features={[
-      { icon: <Gauge className="h-6 w-6" />, title: "Core Web Vitals", description: "Optimierung von LCP, FID und CLS für beste Nutzererfahrung und Ranking-Signale." },
-      { icon: <Search className="h-6 w-6" />, title: "Crawling & Indexierung", description: "Sicherstellung, dass Suchmaschinen alle relevanten Seiten effizient finden und indexieren." },
-      { icon: <Smartphone className="h-6 w-6" />, title: "Mobile-First Optimierung", description: "Perfekte Darstellung und Performance auf allen mobilen Endgeräten." },
-      { icon: <Code2 className="h-6 w-6" />, title: "Strukturierte Daten", description: "Schema.org-Markup für Rich Snippets und bessere Darstellung in den Suchergebnissen." },
-      { icon: <FileCode className="h-6 w-6" />, title: "PageSpeed Optimierung", description: "Ladezeiten unter 2 Sekunden durch Bildkomprimierung, Caching und Code-Optimierung." },
-      { icon: <ShieldCheck className="h-6 w-6" />, title: "Sicherheit & HTTPS", description: "SSL-Zertifikate, sichere Weiterleitungen und technische Absicherung Ihrer Website." },
+      { icon: <Search className="h-5 w-5" />, title: "Keyword-Strategie", description: "Tiefgehende Recherche und Mapping relevanter Suchbegriffe mit echtem Business-Impact." },
+      { icon: <BarChart3 className="h-5 w-5" />, title: "Wettbewerbsanalyse", description: "Detaillierte Analyse der Konkurrenz, um Chancen und Lücken systematisch zu nutzen." },
+      { icon: <TrendingUp className="h-5 w-5" />, title: "Ranking-Monitoring", description: "Echtzeit-Tracking aller wichtigen Keywords mit automatisierten Performance-Reports." },
+      { icon: <Layers className="h-5 w-5" />, title: "Technisches SEO", description: "Crawlbarkeit, Indexierung und Core Web Vitals auf höchstem Niveau optimiert." },
+      { icon: <FileText className="h-5 w-5" />, title: "Content-Optimierung", description: "Bestehende Inhalte auf Suchintention und Relevanz analysieren und verbessern." },
+      { icon: <Target className="h-5 w-5" />, title: "Nachhaltige Ergebnisse", description: "White-Hat-Methoden für langfristiges Wachstum ohne Risiko von Abstrafungen." },
     ]}
     process={[
-      { step: "Technisches Audit", desc: "Umfassende Analyse aller technischen SEO-Faktoren mit Screaming Frog, PageSpeed Insights und proprietären Tools." },
-      { step: "Priorisierte Umsetzung", desc: "Systematische Behebung aller identifizierten Probleme nach Impact-Priorisierung in enger Abstimmung mit Ihrem Team." },
-      { step: "Monitoring & Iteration", desc: "Kontinuierliche Überwachung der technischen Performance mit automatisierten Alerts und regelmäßigen Re-Audits." },
+      { step: "Analyse & Audit", desc: "Umfassende Bewertung Ihrer Website, des Wettbewerbs und der aktuellen Suchlandschaft." },
+      { step: "Strategie & Umsetzung", desc: "Maßgeschneiderte SEO-Roadmap mit priorisierten Maßnahmen und transparentem Zeitplan." },
+      { step: "Reporting & Skalierung", desc: "Monatliche Performance-Reports, iterative Optimierung und kontinuierliche Strategieanpassung." },
     ]}
   />
 );
