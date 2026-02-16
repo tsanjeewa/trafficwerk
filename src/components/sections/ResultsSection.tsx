@@ -26,7 +26,7 @@ const approaches = [
 
 const ResultsSection = () => {
   return (
-    <section className="border-t border-slate-100 py-24">
+    <section className="border-t border-slate-100 py-14">
       <div className="container mx-auto px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"

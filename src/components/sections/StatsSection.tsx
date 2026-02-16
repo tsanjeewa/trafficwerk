@@ -21,7 +21,7 @@ const StatItem = ({ value, suffix, label }: { value: number; suffix: string; lab
 
 const StatsSection = () => {
   return (
-    <section className="py-20">
+    <section className="py-12">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((s) => (

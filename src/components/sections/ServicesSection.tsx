@@ -19,7 +19,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="py-14">
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-medium uppercase tracking-widest text-primary">Leistungen</span>
