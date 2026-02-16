@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { BarChart3, Leaf, Cpu } from "lucide-react";
-import aboutHero from "@/assets/about-hero.webp";
 import aboutNeonBg from "@/assets/about-neon-bg.webp";
 
 const pillars = [
@@ -23,19 +22,19 @@ const pillars = [
 
 const AboutSection = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-24">
-      {/* Neon background layer */}
-      <div className="pointer-events-none absolute inset-0">
+    <section className="relative overflow-hidden py-24">
+      {/* Neon background layer – deep behind everything */}
+      <div className="absolute inset-0 -z-10">
         <img
           src={aboutNeonBg}
           alt=""
-          className="h-full w-full object-cover opacity-20 blur-xl"
           aria-hidden="true"
+          className="h-full w-full object-cover"
+          style={{ opacity: 0.15, filter: "blur(80px)" }}
         />
       </div>
-      {/* White overlay to keep text readable */}
-      <div className="pointer-events-none absolute inset-0 bg-white/70" />
 
+      {/* Content layer */}
       <div className="container relative z-10 mx-auto px-6">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: Image */}
@@ -51,8 +50,8 @@ const AboutSection = () => {
 
             <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-blue-500/10">
               <img
-                src={aboutHero}
-                alt="Digitale Datenströme – TrafficWerk SEO-Architekten"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80"
+                alt="Moderne Glasfassade – TrafficWerk digitale Architektur"
                 className="h-80 w-full object-cover lg:h-[480px]"
               />
             </div>
@@ -79,12 +78,11 @@ const AboutSection = () => {
               Wir glauben nicht an Standardlösungen. Jedes Projekt bei TrafficWerk wird als Unikat behandelt, mit einer maßgeschneiderten Roadmap, die technisches Know-how mit kreativer Exzellenz verbindet.
             </p>
 
-            {/* Pillars */}
             <div className="mt-8 space-y-3">
               {pillars.map((p, i) => (
                 <motion.div
                   key={p.title}
-                  className="flex items-start gap-4 rounded-xl p-3 transition-colors duration-200 hover:bg-blue-50"
+                  className="flex items-start gap-4 rounded-xl p-3 transition-colors duration-200 hover:bg-blue-50/80"
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.4 }}
