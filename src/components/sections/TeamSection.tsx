@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
 import imgThushara from "@/assets/team-thushara.webp";
 import imgThomas from "@/assets/team-thomas.webp";
 import imgEyana from "@/assets/team-eyana.webp";
@@ -11,28 +10,24 @@ const team = [
     role: "Senior SEO Strategist",
     bio: "Spezialist für datengetriebene SEO-Kampagnen und nachhaltige Ranking-Optimierung.",
     image: imgThushara,
-    linkedin: "#",
   },
   {
     name: "Eden",
     role: "Strategic Management",
     bio: "Fokussiert auf visionäre Wachstumsstrategien und exzellente Kundenbetreuung.",
     image: imgThomas,
-    linkedin: "#",
   },
   {
     name: "Eyana",
     role: "Content Marketing Lead",
     bio: "Verwandelt Markenbotschaften in fesselnde Geschichten, die Reichweite generieren.",
     image: imgEyana,
-    linkedin: "#",
   },
   {
     name: "John",
     role: "Technical SEO Expert",
     bio: "Meister der Core Web Vitals und komplexen technischen Infrastrukturen.",
     image: imgAnna,
-    linkedin: "#",
   },
 ];
 
@@ -78,15 +73,6 @@ const TeamSection = () => {
               <h3 className="mt-5 text-base font-bold text-slate-900">{member.name}</h3>
               <p className="mt-1 text-xs font-semibold text-blue-600">{member.role}</p>
               <p className="mt-2 text-xs leading-relaxed text-slate-500">{member.bio}</p>
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex text-slate-300 transition-colors hover:text-blue-600"
-                aria-label={`${member.name} auf LinkedIn`}
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
             </motion.div>
           ))}
         </div>
