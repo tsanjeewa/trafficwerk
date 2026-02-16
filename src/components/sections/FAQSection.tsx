@@ -3,24 +3,28 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    q: "Bieten Sie nur SEO an oder sind Sie eine Full-Service-Agentur?",
-    a: "TrafficWerk ist eine Full-Service Digitalagentur. Neben SEO bieten wir ganzheitliches Performance Marketing, Webdesign und Content-Strategien an.",
+    q: "Was macht TrafficWerk als SEO-Agentur anders?",
+    a: "TrafficWerk setzt auf einen rein datengetriebenen Ansatz. Wir nutzen keine Standard-Templates, sondern entwickeln maßgeschneiderte SEO-Roadmaps basierend auf präzisen Marktanalysen. Wir kombinieren technisches Expertenwissen (wie React-Entwicklung) mit kreativer Content-Strategie, um Marktführerschaft zu erreichen.",
   },
   {
-    q: "Wie wird der Erfolg der Maßnahmen gemessen?",
-    a: "Wir nutzen datengetriebene KPIs wie Traffic-Wachstum, Keyword-Rankings und Conversion-Rates, die wir in monatlichen transparenten Reports präsentieren.",
+    q: "Warum ist Performance & Speed (React) so wichtig für SEO?",
+    a: "In der Ära der Core Web Vitals ist Geschwindigkeit ein kritischer Rankingfaktor. Durch den Einsatz moderner Technologien wie React sorgen wir für extrem schnelle Ladezeiten, was nicht nur Google überzeugt, sondern auch Ihre Conversion-Rates signifikant steigert.",
   },
   {
-    q: "Erstellen Sie auch komplette Webseiten oder Online-Shops?",
-    a: "Ja, wir entwickeln hochperformante Websites und E-Commerce-Lösungen, die von Grund auf für Suchmaschinen optimiert sind.",
+    q: "Was ist KI-Optimierung (GEO) und warum brauche ich das 2026?",
+    a: "Generative Engine Optimization (GEO) ist die Zukunft der Suche. Wir optimieren Ihre Inhalte so, dass sie von KI-Systemen wie Google AI Overviews, ChatGPT und Perplexity als vertrauenswürdige Quelle zitiert werden, um auch in der Ära der KI-Suche sichtbar zu bleiben.",
   },
   {
-    q: "Ist SEO auch für kleine, lokale Unternehmen sinnvoll?",
-    a: "Absolut. Lokale SEO hilft kleinen Unternehmen, in ihrer Region gefunden zu werden und qualifizierte Kunden direkt vor Ort zu gewinnen.",
+    q: "Bieten Sie auch SEA und Social Media Marketing an?",
+    a: "Ja. Als ganzheitliche Digitalagentur integrieren wir Google & Meta Ads sowie strategisches Social Media Marketing, um Ihren ROI über alle digitalen Kanäle hinweg zu maximieren.",
   },
   {
-    q: "Was unterscheidet TrafficWerk von anderen Agenturen?",
-    a: "Unsere Kombination aus tiefem technischem Verständnis, kreativer Content-Erstellung und einem strikten Fokus auf den ROI unserer Kunden.",
+    q: "Wie lange dauert es, bis ich Ergebnisse in der organischen Suche sehe?",
+    a: "SEO ist ein langfristiges Investment. Während technische Fehler sofort behoben werden können, dauert nachhaltiges organisches Wachstum in der Regel 3 bis 6 Monate. Unsere Strategien sind auf dauerhafte Marktführerschaft ausgelegt, nicht auf kurzfristige Tricks.",
+  },
+  {
+    q: "Unterstützt TrafficWerk auch lokale Unternehmen?",
+    a: "Absolut. Mit spezialisierter Lokaler SEO optimieren wir Ihr Google Business Profile und Standortseiten, damit Sie in Ihrer Region (Google Maps Local Pack) dauerhaft auf Platz 1 stehen.",
   },
 ];
 
@@ -36,14 +40,11 @@ const FAQSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
-            Support & Wissen
+            Du hast Fragen? Wir haben die Daten.
           </span>
           <h2 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            Häufige Fragen & <span className="text-blue-600">Antworten</span>
+            Häufig gestellte Fragen & <span className="text-blue-600">Antworten</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-slate-500">
-            Alles, was Sie über unsere Zusammenarbeit und unsere digitalen Strategien wissen müssen.
-          </p>
         </motion.div>
 
         <motion.div
