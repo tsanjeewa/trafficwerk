@@ -26,8 +26,8 @@ const approaches = [
 
 const ResultsSection = () => {
   return (
-    <section className="border-t border-slate-100 py-14">
-      <div className="container mx-auto px-6">
+    <section className="border-t border-slate-100 py-10 md:py-14">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ const ResultsSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-blue-600">Unser Ansatz</span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:mt-4 md:text-4xl">
             So arbeiten wir
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-slate-500">
@@ -44,11 +44,11 @@ const ResultsSection = () => {
           </p>
         </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-4 md:mt-16 md:gap-6">
           {approaches.map((a, i) => (
             <motion.div
               key={a.title}
-              className="rounded-2xl border border-slate-100 bg-white p-6 transition-all hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5"
+              className="rounded-2xl border border-slate-100 bg-white p-4 transition-all hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5 md:p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08, duration: 0.5 }}

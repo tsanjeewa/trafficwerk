@@ -8,7 +8,7 @@ const tools = [
 
 const TechStackSection = () => {
   return (
-    <section className="py-14">
+    <section className="py-10 md:py-14">
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-medium uppercase tracking-widest text-primary">Technologie</span>

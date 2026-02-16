@@ -11,7 +11,7 @@ const StatItem = ({ value, suffix, label }: { value: number; suffix: string; lab
   const { count, ref } = useCountUp(value);
   return (
     <div ref={ref} className="text-center">
-      <p className="text-4xl font-bold text-blue-600 md:text-5xl">
+      <p className="text-3xl font-bold text-blue-600 md:text-5xl">
         {count.toLocaleString("de-DE")}{suffix}
       </p>
       <p className="mt-2 text-sm text-slate-500">{label}</p>
@@ -21,9 +21,9 @@ const StatItem = ({ value, suffix, label }: { value: number; suffix: string; lab
 
 const StatsSection = () => {
   return (
-    <section className="py-12">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+    <section className="py-8 md:py-12">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
           {stats.map((s) => (
             <StatItem key={s.label} {...s} />
           ))}

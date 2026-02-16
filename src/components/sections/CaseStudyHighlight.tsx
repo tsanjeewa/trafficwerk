@@ -21,10 +21,10 @@ const projects = [
 
 const CaseStudyHighlight = () => {
   return (
-    <section className="py-14 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-10 md:py-14 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
-          className="mx-auto max-w-2xl text-center mb-16"
+          className="mx-auto max-w-2xl text-center mb-10 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -33,7 +33,7 @@ const CaseStudyHighlight = () => {
           <span className="text-xs font-medium uppercase tracking-widest text-blue-600">
             Ergebnisse
           </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:mt-4 md:text-4xl">
             Echte Ergebnisse, echte Projekte
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-slate-500">

@@ -22,7 +22,7 @@ const pillars = [
 
 const AboutSection = () => {
   return (
-    <section className="relative overflow-hidden py-14">
+    <section className="relative overflow-hidden py-10 md:py-14">
       {/* Neon background layer – deep behind everything */}
       <div className="absolute inset-0 -z-10">
         <img
@@ -35,8 +35,8 @@ const AboutSection = () => {
       </div>
 
       {/* Content layer */}
-      <div className="container relative z-10 mx-auto px-6">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Left: Image */}
           <motion.div
             className="relative"
@@ -52,7 +52,7 @@ const AboutSection = () => {
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80"
                 alt="Moderne Glasfassade – TrafficWerk digitale Architektur"
-                className="h-80 w-full object-cover lg:h-[480px]"
+                className="h-56 w-full object-cover md:h-80 lg:h-[480px]"
               />
             </div>
           </motion.div>
@@ -67,18 +67,18 @@ const AboutSection = () => {
             <span className="inline-block rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
               Über TrafficWerk
             </span>
-            <h2 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 md:mt-6 md:text-4xl">
               Wir transformieren digitale Präsenz in{" "}
               <span className="text-blue-600">messbaren Erfolg</span>.
             </h2>
-            <p className="mt-6 leading-relaxed text-slate-500">
+            <p className="mt-4 text-sm leading-relaxed text-slate-500 md:text-base">
               TrafficWerk steht für eine neue Ära des digitalen Marketings. Wir sind ein Team aus SEO-Architekten, Content-Strategen und Datenanalysten, die ein gemeinsames Ziel verfolgen: Die Marktführerschaft unserer Kunden in der organischen Suche.
             </p>
-            <p className="mt-4 leading-relaxed text-slate-500">
+            <p className="mt-3 text-sm leading-relaxed text-slate-500 md:text-base">
               Wir glauben nicht an Standardlösungen. Jedes Projekt bei TrafficWerk wird als Unikat behandelt, mit einer maßgeschneiderten Roadmap, die technisches Know-how mit kreativer Exzellenz verbindet.
             </p>
 
-            <div className="mt-8 space-y-3">
+            <div className="mt-6 space-y-2 md:mt-8 md:space-y-3">
               {pillars.map((p, i) => (
                 <motion.div
                   key={p.title}

@@ -19,19 +19,19 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-14">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-10 md:py-14">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-medium uppercase tracking-widest text-primary">Leistungen</span>
-          <h2 className="mt-4 font-display text-3xl font-bold md:text-4xl">
+          <h2 className="mt-3 font-display text-2xl font-bold md:mt-4 md:text-4xl">
             Unsere SEO-Expertise
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-3 text-sm text-muted-foreground md:mt-4 md:text-base">
             Von technischer Optimierung bis KI-basierter Suchmaschinenoptimierung – wir decken das gesamte Spektrum ab.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-10 grid gap-3 grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 md:mt-16 md:gap-4">
           {services.map((s, i) => (
             <motion.div
               key={s.path}
@@ -42,11 +42,11 @@ const ServicesSection = () => {
             >
               <Link
                 to={s.path}
-                className="group block h-full rounded-xl border border-border/50 bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                className="group block h-full rounded-xl border border-border/50 bg-card p-4 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 md:p-6"
               >
-                <s.icon className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
-                <h3 className="mt-4 font-display text-sm font-semibold">{s.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{s.desc}</p>
+                <s.icon className="h-6 w-6 text-primary transition-transform group-hover:scale-110 md:h-8 md:w-8" />
+                <h3 className="mt-3 font-display text-xs font-semibold md:mt-4 md:text-sm">{s.title}</h3>
+                <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground md:mt-2 md:text-xs">{s.desc}</p>
               </Link>
             </motion.div>
           ))}
