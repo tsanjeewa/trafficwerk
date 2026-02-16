@@ -20,6 +20,9 @@ import GoogleAds from "./pages/services/GoogleAds";
 import LeadGenerierung from "./pages/services/LeadGenerierung";
 import ECommerceSEO from "./pages/services/ECommerceSEO";
 import AISearchOptimization from "./pages/services/AISearchOptimization";
+import CoreWebVitals from "./pages/blog/CoreWebVitals";
+import KIundSEO from "./pages/blog/KIundSEO";
+import LokaleSEOTipps from "./pages/blog/LokaleSEOTipps";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +49,9 @@ const App = () => (
           <Route path="/services/lead-generierung" element={<LeadGenerierung />} />
           <Route path="/services/e-commerce-seo" element={<ECommerceSEO />} />
           <Route path="/services/ai-search-optimization" element={<AISearchOptimization />} />
+          <Route path="/blog/core-web-vitals" element={<CoreWebVitals />} />
+          <Route path="/blog/ki-und-seo" element={<KIundSEO />} />
+          <Route path="/blog/lokale-seo-tipps" element={<LokaleSEOTipps />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieBanner />
