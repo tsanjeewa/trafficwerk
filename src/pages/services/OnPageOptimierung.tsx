@@ -1,40 +1,40 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { FileText, Search, Link2, Heading, Tag, BarChart3 } from "lucide-react";
+import { Monitor, Palette, Code2, Smartphone, MousePointerClick, Gauge } from "lucide-react";
 
 const OnPageOptimierung = () => (
   <ServicePageLayout
-    title="On-Page SEO"
-    subtitle="Content-Relevanz · Meta-Tags · Interne Verlinkung"
-    description="Jede Seite ein Rankingfaktor. Wir optimieren Inhalte, Meta-Daten und Seitenstruktur für maximale Relevanz und Sichtbarkeit in den Suchergebnissen."
+    title="Webdesign & Entwicklung"
+    subtitle="UI/UX · React · Conversion-Optimierung"
+    description="Hochperformante Webseiten, die begeistern und konvertieren. Wir verbinden modernes UI/UX-Design mit React-Performance – für digitale Erlebnisse, die Besucher in Kunden verwandeln."
     features={[
-      { icon: <FileText className="h-5 w-5" />, title: "Content-Optimierung", description: "Bestehende Inhalte auf Suchintention, Relevanz und E-E-A-T analysieren und verbessern." },
-      { icon: <Tag className="h-5 w-5" />, title: "Meta-Tags & Snippets", description: "Überzeugende Title-Tags und Meta-Descriptions für höhere Klickraten in der Suche." },
-      { icon: <Link2 className="h-5 w-5" />, title: "Interne Verlinkung", description: "Strategische Linkarchitektur, die Relevanz bündelt und Crawlbarkeit verbessert." },
-      { icon: <Heading className="h-5 w-5" />, title: "Überschriftenstruktur", description: "Semantische H-Tag-Hierarchie für bessere Lesbarkeit und Suchmaschinenverständnis." },
-      { icon: <Search className="h-5 w-5" />, title: "Keyword-Mapping", description: "Jede Seite gezielt auf relevante Suchbegriffe ausgerichtet – ohne Kannibalisierung." },
-      { icon: <BarChart3 className="h-5 w-5" />, title: "Content-Gap-Analyse", description: "Identifikation fehlender Themen und Inhalte für vollständige Suchintentions-Abdeckung." },
+      { icon: <Palette className="h-5 w-5" />, title: "UI/UX Design", description: "Nutzerzentriertes Design, das intuitive Bedienung mit visueller Exzellenz vereint." },
+      { icon: <Code2 className="h-5 w-5" />, title: "React-Entwicklung", description: "Performante Single-Page-Applications mit React, TypeScript und modernem Tech-Stack." },
+      { icon: <MousePointerClick className="h-5 w-5" />, title: "Conversion-Optimierung", description: "Strategisch platzierte CTAs, optimierte Formulare und datenbasierte A/B-Tests für höhere Abschlussraten." },
+      { icon: <Smartphone className="h-5 w-5" />, title: "Responsive Design", description: "Pixel-perfekte Darstellung auf allen Endgeräten – von Desktop bis Mobile." },
+      { icon: <Gauge className="h-5 w-5" />, title: "Performance-First", description: "Blitzschnelle Ladezeiten durch Code-Splitting, Lazy Loading und optimierte Assets." },
+      { icon: <Monitor className="h-5 w-5" />, title: "Barrierefreiheit", description: "WCAG-konforme Websites, die für alle Nutzer zugänglich und bedienbar sind." },
     ]}
     process={[
-      { step: "On-Page Audit", desc: "Analyse aller Seiten auf Content-Qualität, Meta-Daten und Struktur." },
-      { step: "Keyword-Mapping", desc: "Zielgerichtete Zuordnung von Suchbegriffen zu jeder einzelnen URL." },
-      { step: "Optimierung", desc: "Systematische Verbesserung von Inhalten, Tags und interner Verlinkung." },
-      { step: "Performance-Tracking", desc: "Ranking-Monitoring und iterative Nachjustierung für anhaltenden Erfolg." },
+      { step: "Discovery & Wireframing", desc: "Anforderungsanalyse, User Research und strukturelle Konzeption Ihrer Website." },
+      { step: "Design & Prototyping", desc: "Visuelles Design mit interaktiven Prototypen und Feedback-Schleifen." },
+      { step: "Entwicklung", desc: "Saubere React-Entwicklung mit Fokus auf Performance und Wartbarkeit." },
+      { step: "Launch & Optimierung", desc: "Go-Live mit Performance-Monitoring und iterativer Conversion-Optimierung." },
     ]}
-    strategyTitle="Content mit Wirkung"
-    strategyDescription="Relevante Inhalte und perfekte Strukturierung sind der Schlüssel zu nachhaltigen Rankings."
+    strategyTitle="Design trifft Technik"
+    strategyDescription="Schöne Websites, die nicht konvertieren, sind wertlos. Wir bauen beides – Ästhetik und Ergebnis."
     strategyPoints={[
-      { text: "Suchintentions-gerechte Inhalte für jede URL" },
-      { text: "Perfekt optimierte Meta-Daten und Rich Snippets" },
-      { text: "Strategische interne Verlinkung mit Relevanz-Fokus" },
-      { text: "Regelmäßige Content-Updates für anhaltende Frische" },
+      { text: "Nutzerzentrierter Design-Prozess mit echtem User Research" },
+      { text: "Komponenten-basierte React-Architektur für Skalierbarkeit" },
+      { text: "Lighthouse-Scores über 90 auf allen Seiten" },
+      { text: "Continuous Improvement durch datenbasierte Optimierung" },
     ]}
-    growthTitle="Organisches Wachstum"
-    growthDescription="Bessere Inhalte bedeuten bessere Rankings – und mehr qualifizierten Traffic."
+    growthTitle="Digitale Exzellenz"
+    growthDescription="Ihre Website als leistungsstärkstes Vertriebsinstrument – schnell, überzeugend, messbar."
     growthPoints={[
-      { text: "Steigende Rankings für relevante Suchbegriffe" },
-      { text: "Höhere Klickraten durch optimierte Snippets" },
-      { text: "Längere Verweildauer und niedrigere Absprungraten" },
-      { text: "Mehr Conversions durch zielgerichtete Inhalte" },
+      { text: "Höhere Conversion-Raten durch optimiertes UI/UX" },
+      { text: "Bessere Rankings durch Performance-Exzellenz" },
+      { text: "Niedrigere Absprungraten und längere Verweildauer" },
+      { text: "Skalierbare Codebasis für zukünftiges Wachstum" },
     ]}
   />
 );

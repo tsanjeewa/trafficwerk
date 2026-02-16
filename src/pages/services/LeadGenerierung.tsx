@@ -1,40 +1,40 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { Target, Users, Compass, TrendingUp, BarChart3, Rocket } from "lucide-react";
+import { Gauge, Zap, Server, Image, Code2, Activity } from "lucide-react";
 
 const LeadGenerierung = () => (
   <ServicePageLayout
-    title="Digitale Strategie"
-    subtitle="B2B Lead-Gen · Conversion · Sales Funnels"
-    description="Von der digitalen Vision zur messbaren Wirkung. Wir entwickeln datengetriebene Strategien für qualifizierte Leads, optimierte Funnels und nachhaltiges Geschäftswachstum."
+    title="Performance & Speed"
+    subtitle="Core Web Vitals · Ladezeiten · Server-Optimierung"
+    description="Geschwindigkeit ist Umsatz. Wir optimieren Ihre Core Web Vitals, Server-Infrastruktur und Frontend-Performance – für blitzschnelle Ladezeiten und bessere Rankings."
     features={[
-      { icon: <Target className="h-5 w-5" />, title: "B2B Lead-Generierung", description: "Qualifizierte Geschäftskontakte durch präzise Zielgruppenansprache und Inbound-Strategien." },
-      { icon: <TrendingUp className="h-5 w-5" />, title: "Conversion-Optimierung", description: "Datenbasierte Optimierung aller Touchpoints für höhere Abschlussraten." },
-      { icon: <Compass className="h-5 w-5" />, title: "Sales Funnels", description: "Strategisch aufgebaute Funnels, die Interessenten systematisch zu Kunden konvertieren." },
-      { icon: <Users className="h-5 w-5" />, title: "Zielgruppen-Analyse", description: "Tiefgreifende Analyse Ihrer idealen Kunden für präzise Ansprache und höhere Relevanz." },
-      { icon: <BarChart3 className="h-5 w-5" />, title: "Performance-Dashboards", description: "Echtzeit-Übersicht über alle KPIs – von der Leadquelle bis zum Umsatz." },
-      { icon: <Rocket className="h-5 w-5" />, title: "Growth Frameworks", description: "Skalierbare Wachstumsstrategien, die mit Ihrem Unternehmen mitwachsen." },
+      { icon: <Gauge className="h-5 w-5" />, title: "Core Web Vitals", description: "LCP, INP und CLS auf Bestniveau – die entscheidenden Google-Ranking-Faktoren für Nutzererfahrung." },
+      { icon: <Zap className="h-5 w-5" />, title: "Frontend-Optimierung", description: "Code-Splitting, Tree Shaking und kritisches CSS für minimale Ladezeiten." },
+      { icon: <Server className="h-5 w-5" />, title: "Server-Side Optimization", description: "CDN-Konfiguration, Edge Caching und Serverless-Architekturen für globale Performance." },
+      { icon: <Image className="h-5 w-5" />, title: "Asset-Optimierung", description: "WebP/AVIF-Konvertierung, Lazy Loading und responsive Bildauslieferung für minimale Payloads." },
+      { icon: <Code2 className="h-5 w-5" />, title: "JavaScript-Audit", description: "Analyse und Reduktion von Third-Party-Skripten, Render-Blocking-Ressourcen und Bundle-Größen." },
+      { icon: <Activity className="h-5 w-5" />, title: "Performance-Monitoring", description: "Real User Monitoring und automatisierte Alerts bei Performance-Regressionen." },
     ]}
     process={[
-      { step: "Discovery", desc: "Analyse Ihrer Zielgruppe, Vertriebsprozesse und aktuellen Performance." },
-      { step: "Strategie", desc: "Maßgeschneiderte Growth-Roadmap mit klaren KPIs und Meilensteinen." },
-      { step: "Implementierung", desc: "Aufbau der Funnels, Landing Pages und Automatisierungen." },
-      { step: "Skalierung", desc: "Datenbasierte Optimierung und Skalierung erfolgreicher Kanäle." },
+      { step: "Performance-Audit", desc: "Umfassende Analyse mit Lighthouse, WebPageTest und Real User Metrics." },
+      { step: "Priorisierung", desc: "Impact-basiertes Ranking aller Optimierungspotenziale nach ROI." },
+      { step: "Implementierung", desc: "Systematische Umsetzung aller Performance-Maßnahmen." },
+      { step: "Monitoring", desc: "Kontinuierliches Tracking und proaktive Optimierung der Ladezeiten." },
     ]}
-    strategyTitle="Systematisches Wachstum"
-    strategyDescription="Nachhaltiges Wachstum braucht System – keine Zufälle."
+    strategyTitle="Jede Millisekunde zählt"
+    strategyDescription="53 % der Nutzer verlassen eine Seite, die länger als 3 Sekunden lädt. Wir sorgen dafür, dass Ihre bleibt."
     strategyPoints={[
-      { text: "Klare Zielgruppendefinition und Buyer Personas" },
-      { text: "Multi-Channel Lead-Generierung" },
-      { text: "Automatisierte Nurturing-Prozesse" },
-      { text: "Nahtlose Sales-Marketing-Alignment" },
+      { text: "Ladezeiten unter 2 Sekunden auf allen Endgeräten" },
+      { text: "Lighthouse-Scores von 90+ in allen Kategorien" },
+      { text: "Optimiertes Caching und Asset-Delivery" },
+      { text: "Minimal-invasive Optimierung ohne Redesign" },
     ]}
-    growthTitle="Qualifizierte Leads"
-    growthDescription="Weniger, aber bessere Leads – für effizienteren Vertrieb und höheren Umsatz."
+    growthTitle="Messbare Resultate"
+    growthDescription="Schnellere Seiten bedeuten bessere Rankings, weniger Absprünge und mehr Umsatz."
     growthPoints={[
-      { text: "Steigende Anzahl qualifizierter Leads" },
-      { text: "Kürzere Sales-Zyklen durch besseres Nurturing" },
-      { text: "Höhere Conversion-Raten im gesamten Funnel" },
-      { text: "Sinkende Customer Acquisition Costs" },
+      { text: "Bessere Google-Rankings durch optimierte Core Web Vitals" },
+      { text: "Niedrigere Absprungraten durch kürzere Ladezeiten" },
+      { text: "Höhere Conversion-Raten auf schnellen Seiten" },
+      { text: "Geringere Serverkosten durch effizientes Caching" },
     ]}
   />
 );
