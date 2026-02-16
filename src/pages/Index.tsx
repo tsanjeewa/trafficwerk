@@ -18,7 +18,6 @@ import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import IndustrySection from "@/components/sections/IndustrySection";
 import AwardsSection from "@/components/sections/AwardsSection";
-import NewsletterSection from "@/components/sections/NewsletterSection";
 import SEOQuickCheckSection from "@/components/sections/SEOQuickCheckSection";
 
 const Index = () => {
@@ -45,7 +44,6 @@ const Index = () => {
         <IndustrySection />
         <AwardsSection />
         <SEOQuickCheckSection />
-        <NewsletterSection />
       </main>
       <Footer />
     </div>
