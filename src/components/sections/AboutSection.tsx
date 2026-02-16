@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { BarChart3, Leaf, Cpu } from "lucide-react";
+import aboutHero from "@/assets/about-hero.webp";
+import aboutNeonBg from "@/assets/about-neon-bg.webp";
 
 const pillars = [
   {
@@ -21,10 +23,22 @@ const pillars = [
 
 const AboutSection = () => {
   return (
-    <section className="bg-white py-24">
-      <div className="container mx-auto px-6">
+    <section className="relative overflow-hidden bg-white py-24">
+      {/* Neon background layer */}
+      <div className="pointer-events-none absolute inset-0">
+        <img
+          src={aboutNeonBg}
+          alt=""
+          className="h-full w-full object-cover opacity-20 blur-xl"
+          aria-hidden="true"
+        />
+      </div>
+      {/* White overlay to keep text readable */}
+      <div className="pointer-events-none absolute inset-0 bg-white/70" />
+
+      <div className="container relative z-10 mx-auto px-6">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: Image with depth effect */}
+          {/* Left: Image */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -30 }}
@@ -32,14 +46,13 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {/* Background glow element */}
-            <div className="absolute -bottom-6 -right-6 h-64 w-64 rounded-full bg-blue-400/10 blur-[100px]" />
-            <div className="absolute -left-8 -top-8 h-48 w-48 rounded-full bg-blue-500/5 blur-[80px]" />
+            <div className="absolute -bottom-6 -right-6 h-64 w-64 rounded-full bg-blue-400/20 blur-[100px]" />
+            <div className="absolute -left-8 -top-8 h-48 w-48 rounded-full bg-blue-500/10 blur-[80px]" />
 
-            <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-blue-500/5">
+            <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-blue-500/10">
               <img
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop&q=80"
-                alt="Modernes minimalistisches Büro mit hellem Workspace"
+                src={aboutHero}
+                alt="Digitale Datenströme – TrafficWerk SEO-Architekten"
                 className="h-80 w-full object-cover lg:h-[480px]"
               />
             </div>
