@@ -17,6 +17,7 @@ const steps = [
 
 const SEOQuickCheckSection = () => {
   const [url, setUrl] = useState("");
+  const [email, setEmail] = useState("");
   const [phase, setPhase] = useState<Phase>("idle");
   const [stepIndex, setStepIndex] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -25,12 +26,19 @@ const SEOQuickCheckSection = () => {
   const isValidUrl = (v: string) =>
     /^(https?:\/\/)?[\w.-]+\.[a-z]{2,}(\/.*)?$/i.test(v.trim());
 
+  const isValidEmail = (v: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg("");
 
     if (!url.trim() || !isValidUrl(url)) {
       setErrorMsg("Bitte geben Sie eine gültige Website-URL ein.");
+      return;
+    }
+    if (!email.trim() || !isValidEmail(email)) {
+      setErrorMsg("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
       return;
     }
 
@@ -59,8 +67,16 @@ const SEOQuickCheckSection = () => {
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: "Neuer SEO-Quick-Check Anfrage",
+          from_name: "SEO-Quick-Check TrafficWerk",
+          replyto: email.trim(),
+          to: "info@trafficwerk.de",
           website_url: url.trim(),
-          message: `Neue SEO-Quick-Check Anfrage für: ${url.trim()}`,
+          "Kontakt-E-Mail": email.trim(),
+          message: `Neue SEO-Quick-Check Anfrage:\n\nWebsite: ${url.trim()}\nKontakt-E-Mail: ${email.trim()}`,
+          autoresponse: true,
+          autoresponse_to: email.trim(),
+          autoresponse_subject: "Ihre SEO-Quick-Check Anfrage bei TrafficWerk",
+          autoresponse_message: "Vielen Dank für Ihre SEO-Quick-Check Anfrage! Wir führen gerade die Analyse Ihrer Website durch. Sie erhalten in Kürze eine vorläufige Auswertung per E-Mail und den vollständigen PDF-Bericht innerhalb von 24 Stunden von unserem Team.\n\nMit freundlichen Grüßen,\nIhr TrafficWerk Team",
         }),
       });
       setPhase("done");
@@ -73,6 +89,7 @@ const SEOQuickCheckSection = () => {
   const reset = () => {
     setPhase("idle");
     setUrl("");
+    setEmail("");
     setProgress(0);
     setStepIndex(0);
     setErrorMsg("");
@@ -109,7 +126,7 @@ const SEOQuickCheckSection = () => {
                 exit={{ opacity: 0, y: -10 }}
                 className="mt-10"
               >
-                <div className="flex gap-3">
+                <div className="flex flex-col gap-3 sm:flex-row">
                   <Input
                     type="text"
                     placeholder="https://ihre-website.de"
@@ -117,10 +134,17 @@ const SEOQuickCheckSection = () => {
                     onChange={(e) => setUrl(e.target.value)}
                     className="rounded-full border-slate-200 text-slate-900 placeholder:text-slate-400"
                   />
-                  <Button type="submit" className="shrink-0 gap-2 rounded-full bg-blue-600 hover:bg-blue-700">
-                    <Search className="h-4 w-4" /> Kostenlos prüfen
-                  </Button>
+                  <Input
+                    type="email"
+                    placeholder="Ihre E-Mail-Adresse"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="rounded-full border-slate-200 text-slate-900 placeholder:text-slate-400"
+                  />
                 </div>
+                <Button type="submit" className="mt-3 w-full gap-2 rounded-full bg-blue-600 hover:bg-blue-700 sm:w-auto">
+                  <Search className="h-4 w-4" /> Kostenlos prüfen
+                </Button>
                 {errorMsg && (
                   <p className="mt-3 text-sm font-medium text-red-600">{errorMsg}</p>
                 )}
@@ -157,7 +181,7 @@ const SEOQuickCheckSection = () => {
                 <CheckCircle2 className="h-10 w-10 text-blue-600" />
                 <p className="text-lg font-semibold text-blue-600">Analyse abgeschlossen!</p>
                 <p className="text-sm text-slate-600">
-                  Wir senden den detaillierten Bericht an Ihre E-Mail-Adresse.
+                  Vielen Dank! Wir führen gerade die Analyse durch. Sie erhalten in Kürze eine vorläufige Auswertung per E-Mail und den vollständigen PDF-Bericht innerhalb von 24 Stunden von unserem Team.
                 </p>
                 <Button variant="outline" className="mt-4 rounded-full" onClick={reset}>
                   Neue Analyse starten
