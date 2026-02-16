@@ -75,6 +75,8 @@ const Navbar = () => {
               <button
                 className="nav-link-underline relative text-sm font-medium text-slate-900"
                 style={{ fontFamily: "'Inter', sans-serif" }}
+                aria-label="Leistungen Menü öffnen"
+                aria-expanded={showServices}
               >
                 Leistungen
               </button>

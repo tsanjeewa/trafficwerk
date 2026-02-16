@@ -28,10 +28,10 @@ const CookieBanner = () => {
           </p>
         </div>
         <div className="flex shrink-0 items-center gap-3">
-          <Button variant="outline" size="sm" onClick={() => handleConsent(false)}>Ablehnen</Button>
-          <Button size="sm" onClick={() => handleConsent(true)}>Akzeptieren</Button>
+          <Button variant="outline" size="sm" onClick={() => handleConsent(false)} aria-label="Cookies ablehnen">Ablehnen</Button>
+          <Button size="sm" onClick={() => handleConsent(true)} aria-label="Cookies akzeptieren">Akzeptieren</Button>
         </div>
-        <button onClick={() => handleConsent(false)} className="absolute right-4 top-4 text-muted-foreground hover:text-foreground md:hidden">
+        <button onClick={() => handleConsent(false)} className="absolute right-4 top-4 text-muted-foreground hover:text-foreground md:hidden" aria-label="Cookie-Banner schließen">
           <X className="h-4 w-4" />
         </button>
       </div>

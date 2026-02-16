@@ -14,7 +14,7 @@ const CTASection = () => {
             Lassen Sie uns gemeinsam Ihre SEO-Strategie entwickeln. Kostenlose Erstberatung – unverbindlich und ohne Verpflichtung.
           </p>
           <Button size="lg" className="mt-6 rounded-full text-base md:mt-8" asChild>
-            <Link to="/kontakt">
+            <Link to="/kontakt" aria-label="Jetzt kostenlose SEO-Beratung anfragen">
               Jetzt Beratung anfragen
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

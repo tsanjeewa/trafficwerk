@@ -10,24 +10,28 @@ const team = [
     role: "Senior SEO Strategist",
     bio: "Spezialist für datengetriebene SEO-Kampagnen und nachhaltige Ranking-Optimierung.",
     image: imgThushara,
+    alt: "Thushara – Senior SEO Strategist bei TrafficWerk",
   },
   {
     name: "Eden",
     role: "Strategic Management",
     bio: "Fokussiert auf visionäre Wachstumsstrategien und exzellente Kundenbetreuung.",
     image: imgThomas,
+    alt: "Eden – Strategic Management bei TrafficWerk",
   },
   {
     name: "Eyana",
     role: "Content Marketing Lead",
     bio: "Verwandelt Markenbotschaften in fesselnde Geschichten, die Reichweite generieren.",
     image: imgEyana,
+    alt: "Eyana – Content Marketing Lead bei TrafficWerk",
   },
   {
     name: "John",
     role: "Technical SEO Expert",
     bio: "Meister der Core Web Vitals und komplexen technischen Infrastrukturen.",
     image: imgAnna,
+    alt: "John – Technical SEO Expert bei TrafficWerk",
   },
 ];
 
@@ -66,7 +70,10 @@ const TeamSection = () => {
               <div className="mx-auto h-24 w-24 overflow-hidden rounded-2xl md:h-36 md:w-36">
                 <img
                   src={member.image}
-                  alt={member.name}
+                  alt={member.alt}
+                  loading="lazy"
+                  width={144}
+                  height={144}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>

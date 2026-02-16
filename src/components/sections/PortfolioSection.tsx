@@ -94,7 +94,10 @@ const PortfolioSection = () => {
                   <div className="h-44 overflow-hidden">
                     <img
                       src={c.image}
-                      alt={`Screenshot von ${c.name}`}
+                      alt={`Screenshot von ${c.name} – ${c.category}`}
+                      loading="lazy"
+                      width={400}
+                      height={176}
                       className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>

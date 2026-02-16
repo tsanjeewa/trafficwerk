@@ -142,7 +142,7 @@ const SEOQuickCheckSection = () => {
                     className="rounded-full border-slate-200 text-slate-900 placeholder:text-slate-400"
                   />
                 </div>
-                <Button type="submit" className="mt-3 w-full gap-2 rounded-full bg-blue-600 hover:bg-blue-700 sm:w-auto">
+                <Button type="submit" className="mt-3 w-full gap-2 rounded-full bg-blue-600 hover:bg-blue-700 sm:w-auto" aria-label="SEO-Check kostenlos starten">
                   <Search className="h-4 w-4" /> Kostenlos prüfen
                 </Button>
                 {errorMsg && (

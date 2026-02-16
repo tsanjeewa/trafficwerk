@@ -52,6 +52,9 @@ const AboutSection = () => {
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80"
                 alt="Moderne Glasfassade – TrafficWerk digitale Architektur"
+                loading="lazy"
+                width={800}
+                height={600}
                 className="h-56 w-full object-cover md:h-80 lg:h-[480px]"
               />
             </div>

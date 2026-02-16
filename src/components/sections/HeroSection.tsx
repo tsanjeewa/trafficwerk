@@ -51,13 +51,13 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.45 }}
           >
             <Button size="lg" className="rounded-full text-base" asChild>
-              <Link to="/kontakt">
+              <Link to="/kontakt" aria-label="Kostenlose SEO-Beratung anfragen">
                 Kostenlose Beratung
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
-              <a href="#services">Unsere Leistungen</a>
+              <a href="#services" aria-label="Zu unseren Leistungen scrollen">Unsere Leistungen</a>
             </Button>
           </motion.div>
         </div>
