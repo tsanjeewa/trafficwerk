@@ -3,6 +3,7 @@ import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import blogKiSeo from "@/assets/blog-ki-seo.webp";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -18,7 +19,7 @@ const KIundSEO = () => {
 
       <div className="relative h-[400px] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1400&h=600&fit=crop"
+          src={blogKiSeo}
           alt="Künstliche Intelligenz und SEO"
           className="h-full w-full object-cover"
         />
@@ -40,10 +41,10 @@ const KIundSEO = () => {
               <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
                 AI & SEO
               </span>
-              <span className="flex items-center gap-1.5 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5 text-xs text-slate-600">
                 <Calendar className="h-3 w-3" /> 9. Feb. 2026
               </span>
-              <span className="flex items-center gap-1.5 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5 text-xs text-slate-600">
                 <Clock className="h-3 w-3" /> Lesezeit: 5 Min
               </span>
             </div>

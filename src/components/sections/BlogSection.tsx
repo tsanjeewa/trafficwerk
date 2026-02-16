@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
+import blogCoreWebVitals from "@/assets/blog-core-web-vitals.webp";
+import blogKiSeo from "@/assets/blog-ki-seo.webp";
+import blogLokaleSeo from "@/assets/blog-lokale-seo.webp";
 
 const posts = [
-  { title: "Core Web Vitals 2025/2026: Was Sie jetzt wissen müssen", date: "16. Feb. 2026", category: "Technische SEO", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", slug: "/blog/core-web-vitals" },
-  { title: "KI und SEO: Wie AI-Search die Branche verändert", date: "9. Feb. 2026", category: "AI & SEO", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop", slug: "/blog/ki-und-seo" },
-  { title: "Lokale SEO: 10 Tipps für mehr Sichtbarkeit in Ihrer Region", date: "2. Feb. 2026", category: "Lokale SEO", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop", slug: "/blog/lokale-seo-tipps" },
+  { title: "Core Web Vitals 2025/2026: Was Sie jetzt wissen müssen", date: "16. Feb. 2026", category: "Technische SEO", image: blogCoreWebVitals, slug: "/blog/core-web-vitals" },
+  { title: "KI und SEO: Wie AI-Search die Branche verändert", date: "9. Feb. 2026", category: "AI & SEO", image: blogKiSeo, slug: "/blog/ki-und-seo" },
+  { title: "Lokale SEO: 10 Tipps für mehr Sichtbarkeit in Ihrer Region", date: "2. Feb. 2026", category: "Lokale SEO", image: blogLokaleSeo, slug: "/blog/lokale-seo-tipps" },
 ];
 
 const BlogSection = () => {
