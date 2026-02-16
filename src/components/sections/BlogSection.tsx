@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 
 const posts = [
-  { title: "Core Web Vitals 2025: Was Sie jetzt wissen müssen", date: "16. Feb. 2026", category: "Technische SEO", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" },
-  { title: "KI und SEO: Wie AI-Search die Branche verändert", date: "9. Feb. 2026", category: "AI & SEO", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" },
-  { title: "Lokale SEO: 10 Tipps für mehr Sichtbarkeit in Ihrer Region", date: "2. Feb. 2026", category: "Lokale SEO", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" },
+  { title: "Core Web Vitals 2025: Was Sie jetzt wissen müssen", date: "16. Feb. 2026", category: "Technische SEO", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop", url: "https://web.dev/vitals/" },
+  { title: "KI und SEO: Wie AI-Search die Branche verändert", date: "9. Feb. 2026", category: "AI & SEO", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop", url: "https://developers.google.com/search/docs/fundamentals/ai-overview" },
+  { title: "Lokale SEO: 10 Tipps für mehr Sichtbarkeit in Ihrer Region", date: "2. Feb. 2026", category: "Lokale SEO", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop", url: "https://support.google.com/business/answer/7091" },
 ];
 
 const BlogSection = () => {
@@ -20,8 +20,11 @@ const BlogSection = () => {
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {posts.map((post, i) => (
-            <motion.article
+            <motion.a
               key={i}
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group cursor-pointer overflow-hidden rounded-xl border border-border/50 bg-card transition-all hover:border-primary/30"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +45,7 @@ const BlogSection = () => {
                   Weiterlesen <ArrowRight className="ml-1 h-3 w-3" />
                 </span>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>
