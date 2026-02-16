@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  Settings, FileText, Link2, PenTool, MapPin, Globe, MousePointerClick, Users, ShoppingCart, Sparkles
+  Search, MousePointerClick, Monitor, ShoppingCart, Heart, PenTool, Sparkles, Gauge, MapPin, Compass
 } from "lucide-react";
 
 const services = [
-  { icon: Settings, title: "Technische SEO", desc: "Crawling, Indexierung und technische Performance optimieren", path: "/services/technische-seo" },
-  { icon: FileText, title: "On-Page Optimierung", desc: "Content, Meta-Tags und interne Verlinkung perfektionieren", path: "/services/on-page-optimierung" },
-  { icon: Link2, title: "Off-Page / Linkbuilding", desc: "Hochwertige Backlinks für mehr Domain-Autorität", path: "/services/off-page-linkbuilding" },
-  { icon: PenTool, title: "Content Marketing", desc: "Strategische Inhalte, die ranken und konvertieren", path: "/services/content-marketing" },
-  { icon: MapPin, title: "Lokale SEO", desc: "Regionale Sichtbarkeit und Google Maps Optimierung", path: "/services/lokale-seo" },
-  { icon: Globe, title: "Internationale SEO", desc: "Mehrsprachige SEO-Strategien für globale Märkte", path: "/services/internationale-seo" },
-  { icon: MousePointerClick, title: "Google Ads (SEA)", desc: "Performance-Marketing mit maximaler Effizienz", path: "/services/google-ads" },
-  { icon: Users, title: "Lead-Generierung", desc: "Qualifizierte Leads durch gezielte SEO-Strategien", path: "/services/lead-generierung" },
-  { icon: ShoppingCart, title: "E-Commerce SEO", desc: "Shop-Optimierung für mehr Umsatz und Sichtbarkeit", path: "/services/e-commerce-seo" },
-  { icon: Sparkles, title: "AI-Search (GEO)", desc: "Optimierung für KI-basierte Suchergebnisse", path: "/services/ai-search-optimization" },
+  { icon: Search, title: "SEO-Strategie", desc: "Nachhaltige Sichtbarkeit durch datengestützte Suchmaschinenoptimierung.", path: "/services/technische-seo" },
+  { icon: MousePointerClick, title: "Performance Marketing", desc: "Maximale Leads und Sales durch effiziente Google & Meta Ads.", path: "/services/google-ads" },
+  { icon: Monitor, title: "Webdesign & Entwicklung", desc: "Hochperformante Webseiten, die Besucher in treue Kunden verwandeln.", path: "/services/on-page-optimierung" },
+  { icon: ShoppingCart, title: "E-Commerce-Lösungen", desc: "Skalierung von Online-Shops durch gezielte Conversion-Optimierung.", path: "/services/e-commerce-seo" },
+  { icon: Heart, title: "Social Media Marketing", desc: "Markenaufbau und Community-Management auf allen relevanten Kanälen.", path: "/services/off-page-linkbuilding" },
+  { icon: PenTool, title: "Content Creation", desc: "Hochwertiges Copywriting und kreatives Design für Ihre Markenbotschaft.", path: "/services/content-marketing" },
+  { icon: Sparkles, title: "KI-Optimierung (GEO)", desc: "Optimierung für die KI-basierte Suche und generative Suchmaschinen.", path: "/services/ai-search-optimization" },
+  { icon: Gauge, title: "Performance & Speed", desc: "Maximale Ladezeiten und technische Exzellenz für bessere Rankings.", path: "/services/lead-generierung" },
+  { icon: MapPin, title: "Lokale & Globale SEO", desc: "Sichtbarkeit in Ihrer Region oder auf internationalen Märkten.", path: "/services/lokale-seo" },
+  { icon: Compass, title: "Digitale Strategie", desc: "Ganzheitliche Beratung für Ihre nachhaltige digitale Transformation.", path: "/services/internationale-seo" },
 ];
 
 const ServicesSection = () => {
