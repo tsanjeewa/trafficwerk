@@ -1,20 +1,20 @@
 import { useCountUp } from "@/hooks/useCountUp";
 
 const stats = [
-  { value: 250, suffix: "+", label: "Erfolgreiche Projekte" },
-  { value: 340, suffix: "%", label: "Ø Traffic-Steigerung" },
-  { value: 1500, suffix: "+", label: "Keywords auf Seite 1" },
-  { value: 98, suffix: "%", label: "Kundenzufriedenheit" },
+  { value: 3, suffix: "", label: "Eigene Referenzprojekte" },
+  { value: 10, suffix: "", label: "Spezialisierte Services" },
+  { value: 100, suffix: "%", label: "Datengetriebener Ansatz" },
+  { value: 4, suffix: "", label: "Experten im Team" },
 ];
 
 const StatItem = ({ value, suffix, label }: { value: number; suffix: string; label: string }) => {
   const { count, ref } = useCountUp(value);
   return (
     <div ref={ref} className="text-center">
-      <p className="font-display text-4xl font-bold text-primary md:text-5xl">
+      <p className="text-4xl font-bold text-blue-600 md:text-5xl">
         {count.toLocaleString("de-DE")}{suffix}
       </p>
-      <p className="mt-2 text-sm text-muted-foreground">{label}</p>
+      <p className="mt-2 text-sm text-slate-500">{label}</p>
     </div>
   );
 };

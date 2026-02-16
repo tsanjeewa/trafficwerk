@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
 
-const partners = [
-  "Google Partner", "Sistrix", "Ahrefs", "SEMrush", "HubSpot", "Screaming Frog"
+const tools = [
+  "Google Search Console", "Google Analytics", "Sistrix", "Ahrefs", "Screaming Frog", "Semrush"
 ];
 
 const TrustSection = () => {
   return (
-    <section className="border-y border-border/50 py-12">
+    <section className="border-y border-slate-100 py-12">
       <div className="container mx-auto px-6">
-        <p className="mb-8 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground">
-          Vertraut von führenden Unternehmen
+        <p className="mb-8 text-center text-xs font-medium uppercase tracking-widest text-slate-400">
+          Unsere Tools & Technologien
         </p>
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-          {partners.map((p, i) => (
+          {tools.map((t, i) => (
             <motion.span
-              key={p}
-              className="font-display text-lg font-semibold text-muted-foreground/50 transition-colors hover:text-muted-foreground"
+              key={t}
+              className="text-lg font-semibold text-slate-300 transition-colors hover:text-slate-500"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              {p}
+              {t}
             </motion.span>
           ))}
         </div>
