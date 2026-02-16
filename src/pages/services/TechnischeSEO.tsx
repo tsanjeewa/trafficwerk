@@ -1,40 +1,40 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { Search, Gauge, BarChart3, Bug, FileCode2, ShieldCheck } from "lucide-react";
+import { Search, TrendingUp, BarChart3, Database, Target, Leaf } from "lucide-react";
 
 const TechnischeSEO = () => (
   <ServicePageLayout
-    title="Technische SEO"
-    subtitle="PageSpeed · Core Web Vitals · Indexierung"
-    description="Die technische Grundlage für Top-Rankings. Wir optimieren Crawlbarkeit, Ladezeiten und Core Web Vitals – damit Google Ihre Seite liebt und Nutzer bleiben."
+    title="SEO-Strategie"
+    subtitle="Datengetrieben · Nachhaltig · Skalierbar"
+    description="Nachhaltiges Wachstum beginnt mit der richtigen Strategie. Wir entwickeln datengestützte SEO-Roadmaps, die Ihre organische Sichtbarkeit systematisch und langfristig steigern."
     features={[
-      { icon: <Gauge className="h-5 w-5" />, title: "Core Web Vitals", description: "LCP, INP und CLS auf höchstem Niveau – für beste Google-Bewertungen und Nutzererfahrung." },
-      { icon: <Search className="h-5 w-5" />, title: "Crawling & Indexierung", description: "Optimale Crawl-Effizienz und lückenlose Indexierung aller relevanten Seiten." },
-      { icon: <FileCode2 className="h-5 w-5" />, title: "Strukturierte Daten", description: "Schema Markup für Rich Snippets und erweiterte Suchergebnisse mit höherer Klickrate." },
-      { icon: <Bug className="h-5 w-5" />, title: "Technische Fehleranalyse", description: "Systematische Identifikation und Behebung von Crawl-Fehlern, Weiterleitungsketten und Duplikaten." },
-      { icon: <BarChart3 className="h-5 w-5" />, title: "PageSpeed Optimierung", description: "Ladezeiten unter 2 Sekunden durch Caching, Code-Splitting und Server-Optimierung." },
-      { icon: <ShieldCheck className="h-5 w-5" />, title: "Security & HTTPS", description: "SSL-Zertifikate, sichere Weiterleitungen und Security-Header für maximales Vertrauen." },
+      { icon: <Search className="h-5 w-5" />, title: "Keyword-Strategie", description: "Tiefgehende Recherche und Priorisierung relevanter Suchbegriffe nach Suchvolumen, Wettbewerb und Kaufabsicht." },
+      { icon: <BarChart3 className="h-5 w-5" />, title: "Wettbewerbsanalyse", description: "Systematische Analyse Ihrer Mitbewerber – Stärken, Schwächen und ungenutzte Potenziale identifizieren." },
+      { icon: <Database className="h-5 w-5" />, title: "Datengetriebene Insights", description: "Fundierte Entscheidungen auf Basis von Search Console, Analytics und proprietären Datenmodellen." },
+      { icon: <Target className="h-5 w-5" />, title: "Content-Roadmap", description: "Strategisch priorisierte Themenpläne, die Traffic, Autorität und Conversions systematisch aufbauen." },
+      { icon: <TrendingUp className="h-5 w-5" />, title: "Ranking-Prognosen", description: "Realistische Wachstumsprognosen und Meilensteine auf Basis historischer Daten und Marktpotenzial." },
+      { icon: <Leaf className="h-5 w-5" />, title: "Nachhaltige Sichtbarkeit", description: "Langfristige Strategien statt kurzfristiger Tricks – für organisches Wachstum, das bleibt." },
     ]}
     process={[
-      { step: "Technisches Audit", desc: "Umfassende Analyse aller technischen SEO-Faktoren mit professionellen Tools." },
-      { step: "Priorisierung", desc: "Impact-basierte Bewertung aller Findings mit klarer Maßnahmenplanung." },
-      { step: "Implementierung", desc: "Systematische Umsetzung aller technischen Optimierungen." },
-      { step: "Monitoring", desc: "Kontinuierliche Überwachung und proaktive Fehlerbehebung." },
+      { step: "Ist-Analyse", desc: "Umfassende Bestandsaufnahme Ihrer organischen Performance, Wettbewerbssituation und Marktchancen." },
+      { step: "Strategieentwicklung", desc: "Maßgeschneiderte SEO-Roadmap mit klaren Prioritäten, KPIs und Meilensteinen." },
+      { step: "Umsetzung", desc: "Gezielte Maßnahmen in Content, Technik und Offpage – koordiniert und priorisiert." },
+      { step: "Optimierung & Reporting", desc: "Monatliche Performance-Reviews und datenbasierte Anpassung der Strategie." },
     ]}
-    strategyTitle="Technische Exzellenz"
-    strategyDescription="Eine technisch einwandfreie Website ist das Fundament jeder erfolgreichen SEO-Strategie."
+    strategyTitle="Daten statt Bauchgefühl"
+    strategyDescription="Jede unserer Empfehlungen basiert auf messbaren Daten – für transparente und nachvollziehbare Ergebnisse."
     strategyPoints={[
-      { text: "Vollständige Crawlbarkeit aller relevanten Inhalte" },
-      { text: "Optimale Seitenarchitektur und URL-Struktur" },
-      { text: "Maximale Ladegeschwindigkeit auf allen Endgeräten" },
-      { text: "Fehlerfreie Indexierung und Canonical-Management" },
+      { text: "Individuelle Analyse statt Standard-Audit" },
+      { text: "Priorisierung nach Impact und Umsetzbarkeit" },
+      { text: "Transparentes Reporting mit klaren KPIs" },
+      { text: "Kontinuierliche Optimierung und Anpassung" },
     ]}
-    growthTitle="Messbare Resultate"
-    growthDescription="Technische SEO liefert die Basis für nachhaltige Rankings und bessere Nutzererfahrung."
+    growthTitle="Nachhaltiges Wachstum"
+    growthDescription="SEO ist kein Sprint – sondern ein System für langfristigen, messbaren Unternehmenserfolg."
     growthPoints={[
-      { text: "Bessere Rankings durch optimierte Core Web Vitals" },
-      { text: "Höhere Crawl-Effizienz und schnellere Indexierung" },
-      { text: "Steigende organische Sichtbarkeit und Traffic" },
-      { text: "Niedrigere Absprungraten durch schnellere Ladezeiten" },
+      { text: "Steigende organische Sichtbarkeit Monat für Monat" },
+      { text: "Qualifizierter Traffic mit hoher Kaufabsicht" },
+      { text: "Sinkende Abhängigkeit von bezahlter Werbung" },
+      { text: "Nachhaltige Marktpositionierung gegenüber Wettbewerbern" },
     ]}
   />
 );
