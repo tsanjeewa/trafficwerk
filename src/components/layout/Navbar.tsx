@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/trafficwerk-logo-new.png";
 
 const services = [
   { name: "SEO-Strategie", path: "/services/technische-seo" },
@@ -52,8 +53,8 @@ const Navbar = () => {
       >
         <div className="container mx-auto flex h-14 items-center justify-between px-6">
           {/* Logo */}
-          <Link to="/" className="font-heading text-xl font-bold tracking-tight text-slate-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            TrafficWerk
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="TrafficWerk" className="h-8" />
           </Link>
 
           {/* Desktop Nav */}
