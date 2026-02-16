@@ -3,19 +3,52 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const Kontakt = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", service: "", message: "" });
+const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORMSPREE_ID";
 
-  const handleSubmit = (e: React.FormEvent) => {
+const Kontakt = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", service: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Nachricht gesendet!", description: "Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen." });
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    setStatus("sending");
+    setErrorMsg("");
+
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setErrorMsg("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+      setStatus("error");
+      return;
+    }
+
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      } else {
+        setErrorMsg("Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.");
+      setStatus("error");
+    }
   };
 
   return (
@@ -31,30 +64,56 @@ const Kontakt = () => {
             </div>
 
             <div className="mt-16 grid gap-12 lg:grid-cols-2">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <Input placeholder="Ihr Name *" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-                  <Input type="email" placeholder="E-Mail-Adresse *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+              {status === "success" ? (
+                <div className="flex flex-col items-center justify-center rounded-2xl border border-blue-200 bg-blue-50 p-12 text-center">
+                  <CheckCircle2 className="h-12 w-12 text-blue-600" />
+                  <p className="mt-4 text-lg font-semibold text-blue-600">
+                    Vielen Dank! Ihre Nachricht wurde erfolgreich versendet.
+                  </p>
+                  <p className="mt-2 text-sm text-slate-500">
+                    Wir melden uns in Kürze bei Ihnen.
+                  </p>
+                  <Button
+                    className="mt-6 rounded-full"
+                    variant="outline"
+                    onClick={() => setStatus("idle")}
+                  >
+                    Weitere Nachricht senden
+                  </Button>
                 </div>
-                <Input type="tel" placeholder="Telefonnummer" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
-                <Select value={formData.service} onValueChange={(v) => setFormData({ ...formData, service: v })}>
-                  <SelectTrigger><SelectValue placeholder="Gewünschte Leistung" /></SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="technische-seo">Technische SEO</SelectItem>
-                    <SelectItem value="on-page">On-Page Optimierung</SelectItem>
-                    <SelectItem value="off-page">Off-Page / Linkbuilding</SelectItem>
-                    <SelectItem value="content">Content Marketing</SelectItem>
-                    <SelectItem value="lokal">Lokale SEO</SelectItem>
-                    <SelectItem value="international">Internationale SEO</SelectItem>
-                    <SelectItem value="sea">Google Ads (SEA)</SelectItem>
-                    <SelectItem value="leads">Lead-Generierung</SelectItem>
-                    <SelectItem value="ecommerce">E-Commerce SEO</SelectItem>
-                    <SelectItem value="geo">AI-Search (GEO)</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Textarea placeholder="Ihre Nachricht *" required rows={5} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
-                <Button type="submit" size="lg" className="w-full rounded-full">Nachricht senden</Button>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <Input placeholder="Ihr Name *" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                    <Input type="email" placeholder="E-Mail-Adresse *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+                  </div>
+                  <Input type="tel" placeholder="Telefonnummer" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+                  <Select value={formData.service} onValueChange={(v) => setFormData({ ...formData, service: v })}>
+                    <SelectTrigger><SelectValue placeholder="Gewünschte Leistung" /></SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="technische-seo">Technische SEO</SelectItem>
+                      <SelectItem value="on-page">On-Page Optimierung</SelectItem>
+                      <SelectItem value="off-page">Off-Page / Linkbuilding</SelectItem>
+                      <SelectItem value="content">Content Marketing</SelectItem>
+                      <SelectItem value="lokal">Lokale SEO</SelectItem>
+                      <SelectItem value="international">Internationale SEO</SelectItem>
+                      <SelectItem value="sea">Google Ads (SEA)</SelectItem>
+                      <SelectItem value="leads">Lead-Generierung</SelectItem>
+                      <SelectItem value="ecommerce">E-Commerce SEO</SelectItem>
+                      <SelectItem value="geo">AI-Search (GEO)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Textarea placeholder="Ihre Nachricht *" required rows={5} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
+
+                  {status === "error" && errorMsg && (
+                    <p className="text-sm font-medium text-red-600">{errorMsg}</p>
+                  )}
+
+                  <Button type="submit" size="lg" className="w-full rounded-full" disabled={status === "sending"}>
+                    {status === "sending" ? "Wird gesendet…" : "Nachricht senden"}
+                  </Button>
+                </form>
+              )}
 
               <div className="space-y-8">
                 <div className="rounded-xl border border-border/50 bg-card p-8">
