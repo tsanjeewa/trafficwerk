@@ -1,36 +1,36 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-slate-100 bg-white">
       <div className="container mx-auto px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
+          {/* Brand & Socials */}
           <div>
-            <Link to="/" className="font-display text-2xl font-bold">
-              Traffic<span className="text-primary">Werk</span>
+            <Link to="/" className="text-2xl font-bold text-slate-900">
+              TrafficWerk
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-slate-500">
               Ihre SEO-Agentur für nachhaltiges Wachstum. Wir bringen Ihr Unternehmen auf Seite 1 bei Google.
             </p>
-            <div className="mt-6 flex gap-4">
-              <a href="#" aria-label="LinkedIn" className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
+            <div className="mt-6 flex gap-3">
+              <a href="https://www.instagram.com/trafficwerk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href="https://www.linkedin.com/company/trafficwerk/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href="#" aria-label="Twitter" className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a href="#" aria-label="Instagram" className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
-                <Instagram className="h-4 w-4" />
+              <a href="#" aria-label="Facebook" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
+                <Facebook className="h-4 w-4" />
               </a>
             </div>
           </div>
 
           {/* Leistungen */}
           <div>
-            <h4 className="font-display text-sm font-semibold uppercase tracking-wider">Leistungen</h4>
-            <ul className="mt-4 space-y-2">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Leistungen</h4>
+            <ul className="mt-4 space-y-2.5">
               {[
                 { name: "Technische SEO", path: "/services/technische-seo" },
                 { name: "On-Page Optimierung", path: "/services/on-page-optimierung" },
@@ -39,7 +39,7 @@ const Footer = () => {
                 { name: "Google Ads", path: "/services/google-ads" },
               ].map((l) => (
                 <li key={l.path}>
-                  <Link to={l.path} className="text-sm text-muted-foreground transition-colors hover:text-primary">{l.name}</Link>
+                  <Link to={l.path} className="text-sm text-slate-500 transition-colors hover:text-blue-600">{l.name}</Link>
                 </li>
               ))}
             </ul>
@@ -47,16 +47,17 @@ const Footer = () => {
 
           {/* Unternehmen */}
           <div>
-            <h4 className="font-display text-sm font-semibold uppercase tracking-wider">Unternehmen</h4>
-            <ul className="mt-4 space-y-2">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Unternehmen</h4>
+            <ul className="mt-4 space-y-2.5">
               {[
+                { name: "Startseite", path: "/" },
+                { name: "Services", path: "/#services" },
+                { name: "Über uns", path: "/#about" },
+                { name: "Wissen", path: "/#faq" },
                 { name: "Kontakt", path: "/kontakt" },
-                { name: "Impressum", path: "/impressum" },
-                { name: "Datenschutz", path: "/datenschutz" },
-                { name: "Cookie-Richtlinie", path: "/cookie-richtlinie" },
               ].map((l) => (
-                <li key={l.path}>
-                  <Link to={l.path} className="text-sm text-muted-foreground transition-colors hover:text-primary">{l.name}</Link>
+                <li key={l.name}>
+                  <Link to={l.path} className="text-sm text-slate-500 transition-colors hover:text-blue-600">{l.name}</Link>
                 </li>
               ))}
             </ul>
@@ -64,32 +65,33 @@ const Footer = () => {
 
           {/* Kontakt */}
           <div>
-            <h4 className="font-display text-sm font-semibold uppercase tracking-wider">Kontakt</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Kontakt</h4>
             <ul className="mt-4 space-y-3">
-              <li className="flex items-start gap-3 text-sm text-muted-foreground">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <li className="flex items-start gap-3 text-sm text-slate-500">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
                 <span>Taradeauer Str. 11<br />85244 Röhrmoos</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <span>info@trafficwerk.de</span>
+              <li className="flex items-center gap-3 text-sm text-slate-500">
+                <Mail className="h-4 w-4 shrink-0 text-blue-600" />
+                <a href="mailto:info@trafficwerk.de" className="transition-colors hover:text-blue-600">info@trafficwerk.de</a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <span>+49 (0) 8139 999 000</span>
+              <li className="flex items-center gap-3 text-sm text-slate-500">
+                <Phone className="h-4 w-4 shrink-0 text-blue-600" />
+                <a href="tel:+498139999000" className="transition-colors hover:text-blue-600">+49 (0) 8139 999 000</a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} TrafficWerk. Alle Rechte vorbehalten.
+        {/* Copyright & Legal */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-100 pt-8 md:flex-row">
+          <p className="text-xs text-slate-400">
+            © 2026 TrafficWerk. Alle Rechte vorbehalten.
           </p>
           <div className="flex gap-6">
-            <Link to="/impressum" className="text-xs text-muted-foreground hover:text-primary">Impressum</Link>
-            <Link to="/datenschutz" className="text-xs text-muted-foreground hover:text-primary">Datenschutz</Link>
-            <Link to="/cookie-richtlinie" className="text-xs text-muted-foreground hover:text-primary">Cookies</Link>
+            <Link to="/impressum" className="text-xs text-slate-400 transition-colors hover:text-blue-600">Impressum</Link>
+            <Link to="/datenschutz" className="text-xs text-slate-400 transition-colors hover:text-blue-600">Datenschutz</Link>
+            <Link to="/cookie-richtlinie" className="text-xs text-slate-400 transition-colors hover:text-blue-600">Cookies</Link>
           </div>
         </div>
       </div>
