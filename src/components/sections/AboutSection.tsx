@@ -24,19 +24,25 @@ const AboutSection = () => {
     <section className="bg-white py-24">
       <div className="container mx-auto px-6">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: Image */}
+          {/* Left: Image with depth effect */}
           <motion.div
-            className="overflow-hidden rounded-3xl"
+            className="relative"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
-              alt="Modernes Office-Setting"
-              className="h-80 w-full object-cover lg:h-[480px]"
-            />
+            {/* Background glow element */}
+            <div className="absolute -bottom-6 -right-6 h-64 w-64 rounded-full bg-blue-400/10 blur-[100px]" />
+            <div className="absolute -left-8 -top-8 h-48 w-48 rounded-full bg-blue-500/5 blur-[80px]" />
+
+            <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-blue-500/5">
+              <img
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop&q=80"
+                alt="Modernes minimalistisches Büro mit hellem Workspace"
+                className="h-80 w-full object-cover lg:h-[480px]"
+              />
+            </div>
           </motion.div>
 
           {/* Right: Text */}
