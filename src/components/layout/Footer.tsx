@@ -21,7 +21,7 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/trafficwerk/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href="#" aria-label="Facebook" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
+              <a href="https://www.facebook.com/trafficwerk" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
                 <Facebook className="h-4 w-4" />
               </a>
             </div>
