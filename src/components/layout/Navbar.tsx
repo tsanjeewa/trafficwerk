@@ -5,16 +5,16 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/trafficwerk-logo.png";
 
 const services = [
-  { name: "Technische SEO", path: "/services/technische-seo" },
-  { name: "On-Page Optimierung", path: "/services/on-page-optimierung" },
-  { name: "Off-Page / Linkbuilding", path: "/services/off-page-linkbuilding" },
-  { name: "Content Marketing", path: "/services/content-marketing" },
-  { name: "Lokale SEO", path: "/services/lokale-seo" },
-  { name: "Internationale SEO", path: "/services/internationale-seo" },
-  { name: "Google Ads (SEA)", path: "/services/google-ads" },
-  { name: "Lead-Generierung", path: "/services/lead-generierung" },
-  { name: "E-Commerce SEO", path: "/services/e-commerce-seo" },
-  { name: "AI-Search (GEO)", path: "/services/ai-search-optimization" },
+  { name: "SEO-Strategie", path: "/services/technische-seo" },
+  { name: "Performance Marketing", path: "/services/google-ads" },
+  { name: "Webdesign & Entwicklung", path: "/services/on-page-optimierung" },
+  { name: "E-Commerce-Lösungen", path: "/services/e-commerce-seo" },
+  { name: "Social Media Marketing", path: "/services/off-page-linkbuilding" },
+  { name: "Content Creation", path: "/services/content-marketing" },
+  { name: "KI-Optimierung (GEO)", path: "/services/ai-search-optimization" },
+  { name: "Performance & Speed", path: "/services/lead-generierung" },
+  { name: "Lokale & Globale SEO", path: "/services/lokale-seo" },
+  { name: "Digitale Strategie", path: "/services/internationale-seo" },
 ];
 
 const Navbar = () => {
