@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BarChart3, Leaf, Cpu } from "lucide-react";
 import aboutNeonBg from "@/assets/about-neon-bg.webp";
+import aboutBuilding from "@/assets/about-building.webp";
 
 const pillars = [
   {
@@ -50,7 +51,7 @@ const AboutSection = () => {
 
             <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-blue-500/10">
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=80"
+                src={aboutBuilding}
                 alt="Moderne Glasfassade – TrafficWerk digitale Architektur"
                 loading="lazy"
                 width={800}

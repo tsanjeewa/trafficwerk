@@ -3,6 +3,7 @@ import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import blogCoreWebVitals from "@/assets/blog-core-web-vitals.webp";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -19,7 +20,7 @@ const CoreWebVitals = () => {
       {/* Hero Image */}
       <div className="relative h-[400px] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&h=600&fit=crop"
+          src={blogCoreWebVitals}
           alt="Core Web Vitals Dashboard"
           className="h-full w-full object-cover"
         />
@@ -42,10 +43,10 @@ const CoreWebVitals = () => {
               <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
                 Technische SEO
               </span>
-              <span className="flex items-center gap-1.5 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5 text-xs text-slate-600">
                 <Calendar className="h-3 w-3" /> 16. Feb. 2026
               </span>
-              <span className="flex items-center gap-1.5 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5 text-xs text-slate-600">
                 <Clock className="h-3 w-3" /> Lesezeit: 5 Min
               </span>
             </div>
