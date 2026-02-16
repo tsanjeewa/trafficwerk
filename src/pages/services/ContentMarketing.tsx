@@ -1,23 +1,23 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { PenTool, Calendar, TrendingUp, BookOpen, Target, Award } from "lucide-react";
+import { PenTool, Palette, Video, FileText, Lightbulb, Image } from "lucide-react";
 
 const ContentMarketing = () => (
   <ServicePageLayout
-    title="Content Marketing"
-    subtitle="Strategie & Storytelling"
-    description="Strategische Inhalte, die ranken, begeistern und konvertieren. Von der datengetriebenen Content-Strategie bis zur professionellen Umsetzung und Erfolgsmessung."
+    title="Content Creation"
+    subtitle="Copywriting · Kreatives Design"
+    description="Inhalte, die wirken. Von strategischem Copywriting bis zu visuellem Design – wir erstellen Content, der Ihre Zielgruppe erreicht, begeistert und zum Handeln bewegt."
     features={[
-      { icon: <Target className="h-6 w-6" />, title: "Content-Strategie", description: "Datenbasierte Strategie mit klarem Fokus auf Ihre Geschäftsziele und Zielgruppen." },
-      { icon: <PenTool className="h-6 w-6" />, title: "SEO-Copywriting", description: "Professionelle Texte, die Suchmaschinen und Leser gleichermaßen überzeugen." },
-      { icon: <Calendar className="h-6 w-6" />, title: "Redaktionsplanung", description: "Strukturierter Content-Kalender mit Themen, Formaten und Veröffentlichungsterminen." },
-      { icon: <BookOpen className="h-6 w-6" />, title: "Vielfältige Formate", description: "Blog-Artikel, Ratgeber, Whitepapers, Infografiken und interaktive Inhalte." },
-      { icon: <TrendingUp className="h-6 w-6" />, title: "Performance-Analyse", description: "Datengetriebene Auswertung der Content-Performance mit konkreten Optimierungsmaßnahmen." },
-      { icon: <Award className="h-6 w-6" />, title: "Thought Leadership", description: "Positionierung als Branchenexperte durch fundierte Fachbeiträge und Experteninterviews." },
+      { icon: <PenTool className="h-5 w-5" />, title: "Copywriting", description: "Überzeugende Texte für Website, Blog, Newsletter und Social Media – SEO-optimiert und zielgruppengerecht." },
+      { icon: <Palette className="h-5 w-5" />, title: "Kreatives Design", description: "Visuelle Inhalte, die Ihre Marke stärken – von Infografiken bis zu Social-Media-Grafiken." },
+      { icon: <Video className="h-5 w-5" />, title: "Video-Content", description: "Konzeption und Produktion von Videos, Reels und Animationen für maximale Reichweite." },
+      { icon: <FileText className="h-5 w-5" />, title: "Fachbeiträge & Guides", description: "Fundierte Ratgeber, Whitepapers und Expertenbeiträge für Thought Leadership." },
+      { icon: <Lightbulb className="h-5 w-5" />, title: "Content-Strategie", description: "Datenbasierte Themenplanung mit Fokus auf Suchvolumen, Relevanz und Conversion." },
+      { icon: <Image className="h-5 w-5" />, title: "Brand Storytelling", description: "Authentische Geschichten, die Ihre Marke erlebbar machen und Vertrauen schaffen." },
     ]}
     process={[
-      { step: "Themenrecherche & Planung", desc: "Identifikation relevanter Themen basierend auf Suchvolumen, Wettbewerb und Ihrer Zielgruppe." },
-      { step: "Erstellung & Optimierung", desc: "Professionelle Content-Produktion mit SEO-Optimierung, Lektorat und visueller Aufbereitung." },
-      { step: "Distribution & Messung", desc: "Veröffentlichung, gezielte Promotion und datenbasierte Performance-Auswertung." },
+      { step: "Briefing & Recherche", desc: "Tiefes Verständnis Ihrer Marke, Zielgruppe und Ziele als Basis für jeden Content." },
+      { step: "Erstellung & Abstimmung", desc: "Professionelle Produktion mit Feedback-Schleifen und finaler Freigabe durch Sie." },
+      { step: "Distribution & Messung", desc: "Gezielte Veröffentlichung, Promotion und datenbasierte Auswertung der Performance." },
     ]}
   />
 );
