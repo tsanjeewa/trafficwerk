@@ -1,45 +1,92 @@
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 import imgThushara from "@/assets/team-thushara.webp";
 import imgThomas from "@/assets/team-thomas.webp";
 import imgEyana from "@/assets/team-eyana.webp";
 import imgAnna from "@/assets/team-anna.webp";
 
 const team = [
-  { name: "Thushara", role: "Lead SEO Expert & Gründer", image: imgThushara },
-  { name: "Eden", role: "Inhaber & Geschäftsführer", image: imgThomas },
-  { name: "Eyana", role: "Content Specialist", image: imgEyana },
-  { name: "John", role: "Technical SEO Analyst", image: imgAnna },
+  {
+    name: "Thushara",
+    role: "Senior SEO Strategist",
+    bio: "Spezialist für datengetriebene SEO-Kampagnen und nachhaltige Ranking-Optimierung.",
+    image: imgThushara,
+    linkedin: "#",
+  },
+  {
+    name: "Eden",
+    role: "Strategic Management",
+    bio: "Fokussiert auf visionäre Wachstumsstrategien und exzellente Kundenbetreuung.",
+    image: imgThomas,
+    linkedin: "#",
+  },
+  {
+    name: "Eyana",
+    role: "Content Marketing Lead",
+    bio: "Verwandelt Markenbotschaften in fesselnde Geschichten, die Reichweite generieren.",
+    image: imgEyana,
+    linkedin: "#",
+  },
+  {
+    name: "John",
+    role: "Technical SEO Expert",
+    bio: "Meister der Core Web Vitals und komplexen technischen Infrastrukturen.",
+    image: imgAnna,
+    linkedin: "#",
+  },
 ];
 
 const TeamSection = () => {
   return (
-    <section className="section-alt py-24">
+    <section className="bg-white py-24">
       <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-medium uppercase tracking-widest text-primary">Team</span>
-          <h2 className="mt-4 font-display text-3xl font-bold md:text-4xl">
-            Unsere Experten
+        <motion.div
+          className="mx-auto max-w-2xl text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
+            Expertise & Leidenschaft
+          </span>
+          <h2 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+            Das Team hinter Ihrem Erfolg
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            Ein Team aus Spezialisten mit Leidenschaft für SEO und digitales Marketing.
+          <p className="mx-auto mt-4 max-w-xl text-slate-500">
+            Wir kombinieren jahrelange Erfahrung mit innovativen Strategien, um TrafficWerk zur ersten Wahl für SEO zu machen.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-16 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
-              className="group text-center"
-              initial={{ opacity: 0, y: 20 }}
+              className="group rounded-2xl border border-slate-100 bg-white p-5 text-center transition-all duration-300 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5"
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="mx-auto h-40 w-40 overflow-hidden rounded-2xl border-2 border-border/50 transition-colors group-hover:border-primary/30">
-                <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
+              <div className="mx-auto h-36 w-36 overflow-hidden rounded-2xl">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
               </div>
-              <h3 className="mt-4 font-display font-semibold">{member.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{member.role}</p>
+              <h3 className="mt-5 text-base font-bold text-slate-900">{member.name}</h3>
+              <p className="mt-1 text-xs font-semibold text-blue-600">{member.role}</p>
+              <p className="mt-2 text-xs leading-relaxed text-slate-500">{member.bio}</p>
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex text-slate-300 transition-colors hover:text-blue-600"
+                aria-label={`${member.name} auf LinkedIn`}
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
             </motion.div>
           ))}
         </div>
