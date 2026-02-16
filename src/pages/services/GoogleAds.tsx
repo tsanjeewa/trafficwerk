@@ -4,8 +4,8 @@ import { MousePointerClick, LineChart, Target, Wallet, SplitSquareVertical, Mega
 const GoogleAds = () => (
   <ServicePageLayout
     title="Performance Marketing"
-    subtitle="Google & Meta Ads · ROI-Optimierung"
-    description="Maximale Effizienz mit datengetriebenen Werbekampagnen. Wir konzipieren, steuern und optimieren Ihre Google- und Meta-Ads-Kampagnen für messbar höheren Return on Investment."
+    subtitle="SEA · Google & Meta Ads · ROI-Optimierung"
+    description="Maximale Effizienz mit datengetriebenen Werbekampagnen. Wir steuern und optimieren Ihre Ads-Kampagnen für messbar höheren Return on Investment."
     features={[
       { icon: <Target className="h-5 w-5" />, title: "Lead-Generierung", description: "Qualifizierte Anfragen durch präzise Zielgruppenansprache und performante Landingpages." },
       { icon: <LineChart className="h-5 w-5" />, title: "Conversion-Tracking", description: "Lückenloses Tracking vom ersten Klick bis zum Abschluss für vollständige Attribution." },
@@ -15,9 +15,26 @@ const GoogleAds = () => (
       { icon: <Megaphone className="h-5 w-5" />, title: "Multi-Channel-Strategie", description: "Abgestimmte Kampagnen über Google, Meta, LinkedIn und weitere Plattformen." },
     ]}
     process={[
-      { step: "Audit & Kampagnenplanung", desc: "Analyse bestehender Kampagnen oder professionelles Setup mit optimierter Kampagnenstruktur und Tracking." },
-      { step: "Launch & Optimierung", desc: "Laufende Bid-Anpassungen, Anzeigen-Tests und Zielgruppen-Verfeinerung für steigende Performance." },
-      { step: "Reporting & Skalierung", desc: "Transparente KPI-Reports und datenbasierte Skalierung der erfolgreichsten Kanäle und Kampagnen." },
+      { step: "Audit & Planung", desc: "Analyse bestehender Kampagnen oder professionelles Setup mit optimierter Struktur." },
+      { step: "Kampagnen-Launch", desc: "Go-Live mit optimierten Anzeigen, Zielgruppen und Tracking-Setup." },
+      { step: "Laufende Optimierung", desc: "Bid-Anpassungen, Anzeigen-Tests und Zielgruppen-Verfeinerung." },
+      { step: "Reporting & Skalierung", desc: "Transparente KPI-Reports und datenbasierte Skalierung der Top-Kanäle." },
+    ]}
+    strategyTitle="Datengetriebene Kampagnen"
+    strategyDescription="Jeder Euro zählt. Wir maximieren Ihren Werbeerfolg durch präzise Steuerung und Analyse."
+    strategyPoints={[
+      { text: "Granulare Zielgruppenaussteuerung" },
+      { text: "Vollständiges Conversion-Tracking und Attribution" },
+      { text: "Automatisierte Gebotsstrategien mit manueller Kontrolle" },
+      { text: "Kontinuierliche Creative-Optimierung" },
+    ]}
+    growthTitle="Ihr ROI-Wachstum"
+    growthDescription="Mehr Leads, mehr Umsatz – bei gleichem oder sinkendem Budget pro Conversion."
+    growthPoints={[
+      { text: "Sinkende Cost-per-Lead durch laufende Optimierung" },
+      { text: "Höhere Conversion-Raten auf Landingpages" },
+      { text: "Skalierbare Kampagnenstrukturen für Wachstum" },
+      { text: "Transparente Performance-Reports in Echtzeit" },
     ]}
   />
 );

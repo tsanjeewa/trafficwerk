@@ -15,9 +15,26 @@ const ECommerceSEO = () => (
       { icon: <BarChart3 className="h-5 w-5" />, title: "E-Commerce-Analytics", description: "Vollständiges Tracking und Attribution für fundierte Geschäftsentscheidungen." },
     ]}
     process={[
-      { step: "Shop-Audit & Strategie", desc: "Umfassende Analyse Ihres Online-Shops, der Customer Journey und aller Conversion-Barrieren." },
-      { step: "Optimierung & Entwicklung", desc: "Technische und inhaltliche Optimierung aller Shop-Bereiche mit Fokus auf Umsatzsteigerung." },
-      { step: "Monitoring & Wachstum", desc: "Laufendes Performance-Tracking, A/B-Tests und iterative Optimierung für nachhaltiges Wachstum." },
+      { step: "Shop-Audit", desc: "Umfassende Analyse Ihres Online-Shops und aller Conversion-Barrieren." },
+      { step: "Strategie", desc: "Maßgeschneiderte Roadmap für Shop-Optimierung und Umsatzsteigerung." },
+      { step: "Umsetzung", desc: "Technische und inhaltliche Optimierung aller Shop-Bereiche." },
+      { step: "Skalierung", desc: "Performance-Tracking, A/B-Tests und iterative Wachstumsoptimierung." },
+    ]}
+    strategyTitle="Shop-Expertise"
+    strategyDescription="Wir kennen die Erfolgsfaktoren im E-Commerce – von der Produktsuche bis zum Checkout."
+    strategyPoints={[
+      { text: "Plattformspezifisches Know-how für Shopify und WooCommerce" },
+      { text: "Conversion-optimierte Customer Journey" },
+      { text: "SEO-Strategien speziell für Online-Shops" },
+      { text: "Datenbasierte Entscheidungen statt Bauchgefühl" },
+    ]}
+    growthTitle="Mehr Umsatz"
+    growthDescription="Messbar mehr Verkäufe durch systematische Optimierung Ihres gesamten Shops."
+    growthPoints={[
+      { text: "Höhere Conversion-Raten im gesamten Funnel" },
+      { text: "Steigende organische Sichtbarkeit für Produkte" },
+      { text: "Niedrigere Warenkorbabbruchrate" },
+      { text: "Besserer ROI durch optimierte Werbeausgaben" },
     ]}
   />
 );

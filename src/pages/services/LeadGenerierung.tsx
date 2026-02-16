@@ -1,23 +1,40 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { Gauge, Zap, Image, Code2, Monitor, ShieldCheck } from "lucide-react";
+import { Target, Users, Compass, TrendingUp, BarChart3, Rocket } from "lucide-react";
 
 const LeadGenerierung = () => (
   <ServicePageLayout
-    title="Performance & Speed"
-    subtitle="Core Web Vitals · Maximaler PageSpeed"
-    description="Schnelle Websites gewinnen – bei Google und bei Ihren Besuchern. Wir optimieren Ladezeiten, Core Web Vitals und technische Performance für Top-Rankings und beste Nutzererfahrung."
+    title="Digitale Strategie"
+    subtitle="B2B Lead-Gen · Conversion · Sales Funnels"
+    description="Von der digitalen Vision zur messbaren Wirkung. Wir entwickeln datengetriebene Strategien für qualifizierte Leads, optimierte Funnels und nachhaltiges Geschäftswachstum."
     features={[
-      { icon: <Gauge className="h-5 w-5" />, title: "Core Web Vitals", description: "Optimierung von LCP, INP und CLS für beste Google-Bewertungen und Nutzererfahrung." },
-      { icon: <Zap className="h-5 w-5" />, title: "PageSpeed Optimierung", description: "Ladezeiten unter 2 Sekunden durch Caching, Code-Splitting und Server-Optimierung." },
-      { icon: <Image className="h-5 w-5" />, title: "Bild-Optimierung", description: "Moderne Formate, Lazy Loading und responsive Bilder für minimale Ladezeiten." },
-      { icon: <Code2 className="h-5 w-5" />, title: "Code-Optimierung", description: "Minifizierung, Tree-Shaking und effiziente Ressourcen-Bereitstellung." },
-      { icon: <Monitor className="h-5 w-5" />, title: "Hosting & CDN", description: "Optimale Hosting-Konfiguration und Content Delivery Networks für globale Performance." },
-      { icon: <ShieldCheck className="h-5 w-5" />, title: "Performance-Monitoring", description: "Kontinuierliche Überwachung mit automatisierten Alerts bei Performance-Einbrüchen." },
+      { icon: <Target className="h-5 w-5" />, title: "B2B Lead-Generierung", description: "Qualifizierte Geschäftskontakte durch präzise Zielgruppenansprache und Inbound-Strategien." },
+      { icon: <TrendingUp className="h-5 w-5" />, title: "Conversion-Optimierung", description: "Datenbasierte Optimierung aller Touchpoints für höhere Abschlussraten." },
+      { icon: <Compass className="h-5 w-5" />, title: "Sales Funnels", description: "Strategisch aufgebaute Funnels, die Interessenten systematisch zu Kunden konvertieren." },
+      { icon: <Users className="h-5 w-5" />, title: "Zielgruppen-Analyse", description: "Tiefgreifende Analyse Ihrer idealen Kunden für präzise Ansprache und höhere Relevanz." },
+      { icon: <BarChart3 className="h-5 w-5" />, title: "Performance-Dashboards", description: "Echtzeit-Übersicht über alle KPIs – von der Leadquelle bis zum Umsatz." },
+      { icon: <Rocket className="h-5 w-5" />, title: "Growth Frameworks", description: "Skalierbare Wachstumsstrategien, die mit Ihrem Unternehmen mitwachsen." },
     ]}
     process={[
-      { step: "Performance-Audit", desc: "Umfassende Analyse aller Ladezeit-Faktoren mit Lighthouse, WebPageTest und Real-User-Metriken." },
-      { step: "Priorisierte Optimierung", desc: "Systematische Behebung aller Performance-Engpässe nach Impact-Priorisierung." },
-      { step: "Monitoring & Iteration", desc: "Kontinuierliche Überwachung der Metriken und proaktive Optimierung bei Veränderungen." },
+      { step: "Discovery", desc: "Analyse Ihrer Zielgruppe, Vertriebsprozesse und aktuellen Performance." },
+      { step: "Strategie", desc: "Maßgeschneiderte Growth-Roadmap mit klaren KPIs und Meilensteinen." },
+      { step: "Implementierung", desc: "Aufbau der Funnels, Landing Pages und Automatisierungen." },
+      { step: "Skalierung", desc: "Datenbasierte Optimierung und Skalierung erfolgreicher Kanäle." },
+    ]}
+    strategyTitle="Systematisches Wachstum"
+    strategyDescription="Nachhaltiges Wachstum braucht System – keine Zufälle."
+    strategyPoints={[
+      { text: "Klare Zielgruppendefinition und Buyer Personas" },
+      { text: "Multi-Channel Lead-Generierung" },
+      { text: "Automatisierte Nurturing-Prozesse" },
+      { text: "Nahtlose Sales-Marketing-Alignment" },
+    ]}
+    growthTitle="Qualifizierte Leads"
+    growthDescription="Weniger, aber bessere Leads – für effizienteren Vertrieb und höheren Umsatz."
+    growthPoints={[
+      { text: "Steigende Anzahl qualifizierter Leads" },
+      { text: "Kürzere Sales-Zyklen durch besseres Nurturing" },
+      { text: "Höhere Conversion-Raten im gesamten Funnel" },
+      { text: "Sinkende Customer Acquisition Costs" },
     ]}
   />
 );
