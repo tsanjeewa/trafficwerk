@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="section-alt py-24">
+    <section className="section-alt py-14">
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-card p-12 text-center md:p-16">
           <h2 className="font-display text-3xl font-bold md:text-4xl">

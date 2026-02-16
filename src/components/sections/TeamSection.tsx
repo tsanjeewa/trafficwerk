@@ -33,7 +33,7 @@ const team = [
 
 const TeamSection = () => {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <div className="container mx-auto px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"

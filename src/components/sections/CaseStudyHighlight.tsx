@@ -21,7 +21,7 @@ const projects = [
 
 const CaseStudyHighlight = () => {
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-14 overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center mb-16"

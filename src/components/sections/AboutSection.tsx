@@ -22,7 +22,7 @@ const pillars = [
 
 const AboutSection = () => {
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-14">
       {/* Neon background layer – deep behind everything */}
       <div className="absolute inset-0 -z-10">
         <img
