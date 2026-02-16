@@ -48,8 +48,8 @@ const cases = [
 
 const PortfolioSection = () => {
   return (
-    <section className="py-14">
-      <div className="container mx-auto px-6">
+    <section className="py-10 md:py-14">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ const PortfolioSection = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="text-xs font-medium uppercase tracking-widest text-blue-600">Referenzen</span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:mt-4 md:text-4xl">
             Ausgewählte Referenzen & Eigene Projekte
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-slate-500">
@@ -66,7 +66,7 @@ const PortfolioSection = () => {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:mt-16 md:grid-cols-3 md:gap-8">
           {cases.map((c, i) => (
             <motion.a
               key={c.name}

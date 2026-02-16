@@ -35,7 +35,7 @@ const fadeUp = {
 
 const AnalyticsSection = () => {
   return (
-    <section className="bg-white py-14">
+    <section className="bg-white py-10 md:py-14">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div

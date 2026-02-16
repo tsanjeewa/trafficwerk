@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-[90vh] items-center overflow-hidden pt-20">
+    <section className="relative flex min-h-[80vh] items-center overflow-hidden pt-16 md:min-h-[90vh] md:pt-20">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
       <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
@@ -24,7 +24,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.h1
-            className="mt-8 font-display text-5xl font-bold leading-tight tracking-tight md:text-7xl"
+            className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight md:mt-8 md:text-7xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
@@ -36,7 +36,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
+            className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:mt-6 md:text-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -45,7 +45,7 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}

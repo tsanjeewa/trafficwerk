@@ -30,8 +30,8 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="bg-white py-14">
-      <div className="container mx-auto px-6">
+    <section className="bg-white py-10 md:py-14">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -42,13 +42,13 @@ const FAQSection = () => {
           <span className="inline-block rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
             Du hast Fragen? Wir haben die Daten.
           </span>
-          <h2 className="mt-6 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 md:mt-6 md:text-4xl">
             Häufig gestellte Fragen & <span className="text-blue-600">Antworten</span>
           </h2>
         </motion.div>
 
         <motion.div
-          className="mx-auto mt-14 max-w-3xl"
+          className="mx-auto mt-8 max-w-3xl md:mt-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
