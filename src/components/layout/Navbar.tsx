@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Search, Wrench, FileText, TrendingUp, Eye, Bot } from "lucide-react";
+import { Menu, X, ChevronDown, Search, Wrench, FileText, TrendingUp, Eye, Bot, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/trafficwerk-logo-new.png";
 
@@ -86,6 +86,15 @@ const megaMenuCategories = [
       { name: "ChatGPT Sichtbarkeit", path: "/lp/chatgpt-sichtbarkeit-verbessern" },
       { name: "KI-gestütztes Marketing", path: "/lp/ki-gestuetztes-marketing" },
       { name: "Optimierung KI-Suche", path: "/lp/optimierung-ki-suche" },
+    ],
+  },
+  {
+    title: "Domain Management",
+    icon: Globe,
+    items: [
+      { name: "Domain Portfolio", path: "/domain-portfolio" },
+      { name: "Hub-and-Spoke Strategie", path: "/domain-portfolio" },
+      { name: "Domain-Checker", path: "/domain-portfolio" },
     ],
   },
 ];
