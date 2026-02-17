@@ -25,6 +25,7 @@ import KIundSEO from "./pages/blog/KIundSEO";
 import LokaleSEOTipps from "./pages/blog/LokaleSEOTipps";
 import LandingPage from "./pages/LandingPage";
 import DomainPortfolio from "./pages/DomainPortfolio";
+import Wissen from "./pages/Wissen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/blog/ki-und-seo" element={<KIundSEO />} />
           <Route path="/blog/lokale-seo-tipps" element={<LokaleSEOTipps />} />
           <Route path="/domain-portfolio" element={<DomainPortfolio />} />
+          <Route path="/wissen" element={<Wissen />} />
           {/* 35 Keyword Landing Pages */}
           <Route path="/lp/:slug" element={<LandingPage />} />
           <Route path="*" element={<NotFound />} />
