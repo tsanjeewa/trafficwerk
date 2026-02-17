@@ -23,6 +23,7 @@ import AISearchOptimization from "./pages/services/AISearchOptimization";
 import CoreWebVitals from "./pages/blog/CoreWebVitals";
 import KIundSEO from "./pages/blog/KIundSEO";
 import LokaleSEOTipps from "./pages/blog/LokaleSEOTipps";
+import LandingPage from "./pages/LandingPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,8 @@ const App = () => (
           <Route path="/blog/core-web-vitals" element={<CoreWebVitals />} />
           <Route path="/blog/ki-und-seo" element={<KIundSEO />} />
           <Route path="/blog/lokale-seo-tipps" element={<LokaleSEOTipps />} />
+          {/* 35 Keyword Landing Pages */}
+          <Route path="/lp/:slug" element={<LandingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieBanner />
