@@ -138,6 +138,12 @@ const Wissen = () => {
     if (q) setSearch(q);
   }, [searchParams]);
 
+  useEffect(() => {
+    document.title = "SEO-Glossar – Fachbegriffe einfach erklärt | TrafficWerk";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Über 90 SEO- und Online-Marketing-Begriffe verständlich erklärt. Von Backlink bis XML Sitemap – das umfassende Glossar von TrafficWerk.");
+  }, []);
+
   const filteredTerms = useMemo(() => {
     let terms = glossaryTerms;
     if (activeLetter) {

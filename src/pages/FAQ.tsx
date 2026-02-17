@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -117,6 +118,12 @@ const faqItems = [
 ];
 
 const FAQ = () => {
+  useEffect(() => {
+    document.title = "FAQ – Häufig gestellte Fragen zu SEO & Marketing | TrafficWerk";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Antworten auf die wichtigsten Fragen zu SEO, Google Ads, KI-Optimierung und digitaler Strategie. Jetzt informieren bei TrafficWerk.");
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />

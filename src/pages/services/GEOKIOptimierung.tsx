@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Bot, Brain, Sparkles, Globe, Search, Eye, FileCheck, Zap } from "lucide-react";
@@ -33,6 +34,12 @@ const process = [
 ];
 
 const GEOKIOptimierung = () => {
+  useEffect(() => {
+    document.title = "GEO & KI-Optimierung – AI Search Sichtbarkeit | TrafficWerk";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Generative Engine Optimization: Wir machen Ihre Marke sichtbar in ChatGPT, Google AI Overviews & Perplexity. Jetzt GEO-Strategie starten.");
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
