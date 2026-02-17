@@ -11,66 +11,50 @@ import { HelpCircle } from "lucide-react";
 
 const faqItems = [
   {
-    question: "Was ist SEO?",
+    question: "Was ist der Unterschied zwischen SEO und SEA?",
     answer: (
       <>
-        <Link to="/wissen?search=Suchmaschinenoptimierung" className="text-blue-600 hover:underline">Suchmaschinenoptimierung (SEO)</Link> umfasst alle Maßnahmen, um die Sichtbarkeit einer Website in den unbezahlten Suchergebnissen von Google zu erhöhen.
+        <Link to="/wissen?search=Technical+SEO" className="text-blue-600 hover:underline">SEO</Link> (Suchmaschinenoptimierung) sorgt für nachhaltigen, unbezahlten <Link to="/wissen?search=Organic+Traffic" className="text-blue-600 hover:underline">organischen Traffic</Link> durch die Optimierung Ihrer Website. <Link to="/wissen?search=SEA" className="text-blue-600 hover:underline">SEA (Google Ads)</Link> hingegen liefert sofortige Sichtbarkeit durch bezahlte Anzeigen. Beide Kanäle ergänzen sich ideal – SEO für langfristiges Wachstum, SEA für schnelle Ergebnisse.
       </>
     ),
   },
   {
-    question: "Was kostet SEO?",
-    answer: "Die Kosten variieren je nach Wettbewerb und Aufwand. In der Regel bieten wir maßgeschneiderte Pakete an, die auf Ihre Ziele zugeschnitten sind.",
-  },
-  {
-    question: "Wie lange dauert SEO?",
-    answer: "SEO ist ein langfristiger Prozess. Erste signifikante Ergebnisse sind meist nach 3 bis 6 Monaten sichtbar.",
-  },
-  {
-    question: "SEO oder Google Ads?",
+    question: "Warum ist UI/UX Design wichtig für die Conversion?",
     answer: (
       <>
-        SEO bietet nachhaltigen, kostenlosen <Link to="/wissen?search=Organic+Traffic" className="text-blue-600 hover:underline">organischen Traffic</Link>, während <Link to="/wissen?search=AdWords" className="text-blue-600 hover:underline">Google Ads (SEA)</Link> sofortige Sichtbarkeit gegen Bezahlung ermöglichen.
+        Ein durchdachtes <Link to="/wissen?search=UI%2FUX+Design" className="text-blue-600 hover:underline">UI/UX Design</Link> sorgt dafür, dass Besucher sich intuitiv auf Ihrer Website zurechtfinden. Das steigert die <Link to="/wissen?search=Conversion-Rate" className="text-blue-600 hover:underline">Conversion-Rate</Link> erheblich, weil Nutzer schneller zur gewünschten Aktion – etwa einem Kauf oder einer Kontaktanfrage – geführt werden. Auch die <Link to="/wissen?search=Core+Web+Vitals" className="text-blue-600 hover:underline">Core Web Vitals</Link> spielen dabei eine wichtige Rolle.
       </>
     ),
   },
   {
-    question: "Was ist Local SEO?",
+    question: "Wie hilft TrafficWerk bei der KI-Optimierung (GEO)?",
     answer: (
       <>
-        Die Optimierung für <Link to="/wissen?search=Local+SEO" className="text-blue-600 hover:underline">lokale Suchanfragen</Link>, damit Ihr Unternehmen in Ihrer spezifischen Region (z.B. Röhrmoos oder München) gefunden wird.
+        Mit <Link to="/wissen?search=Generative+Engine+Optimization" className="text-blue-600 hover:underline">Generative Engine Optimization (GEO)</Link> optimieren wir Ihre Inhalte so, dass sie von KI-Suchsystemen wie <Link to="/wissen?search=AI+Search" className="text-blue-600 hover:underline">AI Search</Link> und ChatGPT bevorzugt als Quelle herangezogen werden. So steigern wir Ihre <Link to="/wissen?search=ChatGPT-Sichtbarkeit" className="text-blue-600 hover:underline">ChatGPT-Sichtbarkeit</Link> und sichern Ihnen einen Vorsprung in der neuen Ära der Suche.
       </>
     ),
   },
   {
-    question: "Gibt es eine Ranking-Garantie?",
-    answer: "Keine seriöse Agentur kann Platz 1 garantieren, da Google den Algorithmus kontrolliert. Wir garantieren jedoch eine deutliche Verbesserung der Sichtbarkeit.",
-  },
-  {
-    question: "SEO für KMU?",
-    answer: "Ja, besonders für kleine und mittlere Unternehmen ist gezieltes SEO wichtig, um sich lokal gegen größere Konkurrenten durchzusetzen.",
-  },
-  {
-    question: "Wie oft braucht man neuen Content?",
+    question: "Was kostet eine ganzheitliche digitale Strategie?",
     answer: (
       <>
-        Regelmäßige Updates signalisieren Google Relevanz. Einmal pro Monat ist ein guter Richtwert für neue Artikel oder Blogposts. Erfahren Sie mehr über <Link to="/wissen?search=Content+Marketing" className="text-blue-600 hover:underline">Content Marketing</Link>.
+        Die Kosten hängen von Ihren Zielen und dem Wettbewerbsumfeld ab. Eine ganzheitliche Strategie kann <Link to="/wissen?search=Technical+SEO" className="text-blue-600 hover:underline">SEO</Link>, <Link to="/wissen?search=SEA" className="text-blue-600 hover:underline">Google Ads</Link>, <Link to="/wissen?search=Content+Marketing" className="text-blue-600 hover:underline">Content Marketing</Link> und <Link to="/wissen?search=UI%2FUX+Design" className="text-blue-600 hover:underline">UI/UX Design</Link> umfassen. Wir erstellen für jedes Unternehmen ein maßgeschneidertes Angebot – kontaktieren Sie uns für eine kostenlose Erstberatung.
       </>
     ),
   },
   {
-    question: "Kann ich SEO selbst machen?",
+    question: "Wie lange dauert es, bis SEO-Ergebnisse sichtbar sind?",
     answer: (
       <>
-        Grundlagen ja, aber für nachhaltige Erfolge und <Link to="/wissen?search=Technical+SEO" className="text-blue-600 hover:underline">technische Optimierungen</Link> ist Expertenwissen meist unumgänglich.
+        SEO ist ein langfristiger Prozess. Erste signifikante Verbesserungen in <Link to="/wissen?search=Organic+Traffic" className="text-blue-600 hover:underline">organischem Traffic</Link> und <Link to="/wissen?search=Domain+Authority" className="text-blue-600 hover:underline">Domain Authority</Link> sind meist nach 3 bis 6 Monaten sichtbar. Die genaue Dauer hängt vom Wettbewerb, dem aktuellen Zustand Ihrer Website und der gewählten Strategie ab.
       </>
     ),
   },
   {
-    question: "Ist Mobile SEO wichtig?",
+    question: "Bietet TrafficWerk auch Support für Shopify/WooCommerce?",
     answer: (
       <>
-        Absolut. Google nutzt „Mobile-First-Indexing". Eine Website muss auf Smartphones perfekt funktionieren, um gut zu ranken. Mehr dazu unter <Link to="/wissen?search=PageSpeed" className="text-blue-600 hover:underline">PageSpeed</Link>.
+        Ja! Wir bieten professionelle <Link to="/wissen?search=Shopify" className="text-blue-600 hover:underline">Shopify & WooCommerce Optimierung</Link> an – von <Link to="/wissen?search=Checkout-Optimierung" className="text-blue-600 hover:underline">Checkout-Optimierung</Link> über <Link to="/wissen?search=Shop-Skalierung" className="text-blue-600 hover:underline">Shop-Skalierung</Link> bis hin zu technischem SEO für E-Commerce. So stellen wir sicher, dass Ihr Online-Shop schnell lädt, gut rankt und optimal konvertiert.
       </>
     ),
   },
