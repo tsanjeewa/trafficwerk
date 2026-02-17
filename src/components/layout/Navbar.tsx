@@ -229,6 +229,14 @@ const Navbar = () => {
             </Link>
 
             <Link
+              to="/faq"
+              className="nav-link-underline relative text-sm font-medium text-slate-900"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              FAQ
+            </Link>
+
+            <Link
               to="/kontakt"
               className="nav-link-underline relative text-sm font-medium text-slate-900"
               style={{ fontFamily: "'Inter', sans-serif" }}
@@ -344,6 +352,14 @@ const Navbar = () => {
                 className="py-3 text-lg font-bold text-slate-900"
               >
                 Wissen
+              </Link>
+
+              <Link
+                to="/faq"
+                onClick={() => setIsOpen(false)}
+                className="py-3 text-lg font-bold text-slate-900"
+              >
+                FAQ
               </Link>
 
               <Link
