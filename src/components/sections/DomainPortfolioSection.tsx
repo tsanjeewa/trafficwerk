@@ -48,7 +48,7 @@ const DomainPortfolioSection = () => {
 
               <Link
                 to="/domain-portfolio"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-yellow-400 px-7 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-yellow-400/20 transition-all hover:bg-yellow-300 hover:shadow-yellow-400/30"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:shadow-primary/30"
               >
                 Portfolio & Domain-Checker ansehen
                 <ArrowRight className="h-4 w-4" />
