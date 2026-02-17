@@ -51,7 +51,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-2.5">
               {[
                 { name: "Startseite", path: "/" },
-                { name: "Services", path: "/#services" },
+                { name: "Leistungen", path: "/#services" },
                 { name: "Über uns", path: "/#about" },
                 { name: "Wissen", path: "/#faq" },
                 { name: "Kontakt", path: "/kontakt" },
