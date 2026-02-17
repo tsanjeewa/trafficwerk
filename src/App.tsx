@@ -24,6 +24,7 @@ import CoreWebVitals from "./pages/blog/CoreWebVitals";
 import KIundSEO from "./pages/blog/KIundSEO";
 import LokaleSEOTipps from "./pages/blog/LokaleSEOTipps";
 import LandingPage from "./pages/LandingPage";
+import DomainPortfolio from "./pages/DomainPortfolio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/blog/core-web-vitals" element={<CoreWebVitals />} />
           <Route path="/blog/ki-und-seo" element={<KIundSEO />} />
           <Route path="/blog/lokale-seo-tipps" element={<LokaleSEOTipps />} />
+          <Route path="/domain-portfolio" element={<DomainPortfolio />} />
           {/* 35 Keyword Landing Pages */}
           <Route path="/lp/:slug" element={<LandingPage />} />
           <Route path="*" element={<NotFound />} />
