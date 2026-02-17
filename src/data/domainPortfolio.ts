@@ -20,6 +20,16 @@ export const hubDomains: DomainEntry[] = [
   { domain: "eiscafe-florenz-leipzig.de", ssl: true, type: "hub", description: "Lokales Eiscafé – Referenzprojekt für Local SEO" },
 ];
 
+export const referenceDomains: DomainEntry[] = [
+  { domain: "softeis.org", ssl: false, type: "independent", description: "Aktives Nischenportal für Softeis-Liebhaber & Gastronomen" },
+  { domain: "eisbereiter.org", ssl: false, type: "independent", description: "Fachportal für Eisbereitung, Rezepte & Zubereitung" },
+  { domain: "mein-eisladen.de", ssl: false, type: "independent", description: "Ressourcen & Inspiration für Eisladen-Gründer" },
+];
+
+export const trademarkDomains: DomainEntry[] = [
+  { domain: "minigel.de", ssl: false, type: "independent", description: "Strategische Domain im Bereich markenrechtlich geschützter Begriffe (Trademark-SEO)" },
+];
+
 export const domainCategories: DomainCategory[] = [
   {
     title: "E-Commerce & Shop",

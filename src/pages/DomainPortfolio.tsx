@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { hubDomains, domainCategories, totalDomains, sslEnabled } from "@/data/domainPortfolio";
+import { hubDomains, referenceDomains, trademarkDomains, domainCategories, totalDomains, sslEnabled } from "@/data/domainPortfolio";
 
 const categoryIcons: Record<string, React.ElementType> = {
   ShoppingCart, IceCream, Globe, Search, User, Wrench,
@@ -185,16 +185,93 @@ const DomainPortfolio = () => {
           </div>
         </section>
 
-        {/* Categorized Domains – Zukunftsprojekte (no links, text only) */}
+        {/* Aktive Referenzprojekte */}
+        <section className="border-t border-border bg-gradient-to-b from-background to-secondary/30 py-16 md:py-20">
+          <div className="container mx-auto px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="text-xs font-semibold uppercase tracking-widest text-primary">Aktive Referenzen</span>
+              <h2 className="mt-3 text-2xl font-bold text-foreground md:text-3xl">
+                Referenzprojekte in Aktion
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Diese Nischen-Domains betreiben wir aktiv als Referenzprojekte – sie zeigen unsere SEO-Expertise in der Praxis.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {referenceDomains.map((ref, i) => (
+                <motion.div
+                  key={ref.domain}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
+                >
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="rounded-lg bg-primary/10 p-2.5">
+                      <Globe className="h-5 w-5 text-primary" />
+                    </div>
+                    <span className="flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-semibold text-primary">
+                      <CheckCircle2 className="h-3 w-3" /> Aktiv
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">{ref.domain}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{ref.description}</p>
+                  <a
+                    href={`https://${ref.domain}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                  >
+                    Website besuchen <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Markenschutz-Expertise */}
+        <section className="border-t border-border py-16 md:py-20">
+          <div className="container mx-auto px-6">
+            <div className="mx-auto max-w-3xl">
+              <div className="rounded-2xl border border-border bg-card p-8">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-lg bg-primary/10 p-3">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-primary">Markenschutz-Expertise</span>
+                    <h2 className="mt-2 text-xl font-bold text-foreground md:text-2xl">
+                      Trademark-Strategien für geschützte Begriffe
+                    </h2>
+                    <p className="mt-3 text-muted-foreground">
+                      Wir entwickeln SEO-Strategien für Domains mit markenrechtlich geschützten Begriffen. Unser Wissen über Trademark-SEO hilft Unternehmen, rechtssicher im digitalen Raum zu agieren.
+                    </p>
+                    <div className="mt-4 flex items-center gap-3 rounded-lg border border-border bg-background px-4 py-3">
+                      <Globe className="h-4 w-4 shrink-0 text-primary" />
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">{trademarkDomains[0].domain}</p>
+                        <p className="text-xs text-muted-foreground">{trademarkDomains[0].description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Categorized Domains – Vollständige Liste */}
         <section className="border-t border-border section-alt py-16 md:py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <span className="text-xs font-semibold uppercase tracking-widest text-primary">Zukunftsprojekte</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-primary">Vollständige Liste</span>
               <h2 className="mt-3 text-2xl font-bold text-foreground md:text-3xl">
-                Strategisches Domain-Portfolio
+                Alle {totalDomains} Domains im Überblick
               </h2>
               <p className="mt-3 text-muted-foreground">
-                Wir sichern uns wertvolle digitale Assets frühzeitig. Diese Domains sind Teil unserer langfristigen SEO-Strategie – kategorisiert nach Einsatzzweck.
+                Unser gesamtes strategisches Domain-Portfolio – kategorisiert nach Einsatzzweck. Diese Domains sind Teil unserer langfristigen Hub-and-Spoke-SEO-Strategie.
               </p>
             </div>
 
