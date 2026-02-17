@@ -1,5 +1,5 @@
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { Search, TrendingUp, BarChart3, Database, Target, Leaf } from "lucide-react";
+import { Search, TrendingUp, BarChart3, Database, Target, Leaf, Zap, Shield, Code, Image, FileCode, Server } from "lucide-react";
 
 const TechnischeSEO = () => (
   <ServicePageLayout
@@ -13,9 +13,15 @@ const TechnischeSEO = () => (
       { icon: <Target className="h-5 w-5" />, title: "Content-Roadmap", description: "Strategisch priorisierte Themenpläne, die Traffic, Autorität und Conversions systematisch aufbauen." },
       { icon: <TrendingUp className="h-5 w-5" />, title: "Ranking-Prognosen", description: "Realistische Wachstumsprognosen und Meilensteine auf Basis historischer Daten und Marktpotenzial." },
       { icon: <Leaf className="h-5 w-5" />, title: "Nachhaltige Sichtbarkeit", description: "Langfristige Strategien statt kurzfristiger Tricks – für organisches Wachstum, das bleibt." },
+      { icon: <Zap className="h-5 w-5" />, title: "Core Web Vitals (LCP, FID, CLS)", description: "Optimierung der drei Google-Metriken für Ladegeschwindigkeit, Interaktivität und visuelle Stabilität." },
+      { icon: <Shield className="h-5 w-5" />, title: "HTTPS & Security Setup", description: "Sichere Verschlüsselung via SSL/TLS – ein Rankingfaktor und Vertrauenssignal für Nutzer und Google." },
+      { icon: <Code className="h-5 w-5" />, title: "Structured Data & JSON-LD", description: "Schema Markup für Rich Snippets, FAQ-Dropdowns und erweiterte Suchergebnisse in Google." },
+      { icon: <Image className="h-5 w-5" />, title: "Image SEO & Optimierung", description: "Bildkomprimierung, WebP-Formate, Lazy Loading und Alt-Texte für maximale Performance und Sichtbarkeit." },
+      { icon: <FileCode className="h-5 w-5" />, title: "React & Next.js Performance", description: "SSR, Pre-Rendering und Code-Splitting für SEO-freundliche Single Page Applications." },
+      { icon: <Server className="h-5 w-5" />, title: "Headless CMS & SSR", description: "Optimale Crawlbarkeit durch Server-Side Rendering und moderne Headless-CMS-Architekturen." },
     ]}
     process={[
-      { step: "Ist-Analyse", desc: "Umfassende Bestandsaufnahme Ihrer organischen Performance, Wettbewerbssituation und Marktchancen." },
+      { step: "Technisches Audit", desc: "Umfassende Analyse von Core Web Vitals, Crawl-Fehlern, 404-Seiten, XML Sitemaps und Robots.txt." },
       { step: "Strategieentwicklung", desc: "Maßgeschneiderte SEO-Roadmap mit klaren Prioritäten, KPIs und Meilensteinen." },
       { step: "Umsetzung", desc: "Gezielte Maßnahmen in Content, Technik und Offpage – koordiniert und priorisiert." },
       { step: "Optimierung & Reporting", desc: "Monatliche Performance-Reviews und datenbasierte Anpassung der Strategie." },
