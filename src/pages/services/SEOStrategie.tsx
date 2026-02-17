@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Search, TrendingUp, BarChart3, Target, Leaf, Globe, Shield, Zap, Layers } from "lucide-react";
@@ -34,6 +35,12 @@ const advancedStrategies = [
 ];
 
 const SEOStrategie = () => {
+  useEffect(() => {
+    document.title = "SEO-Strategie – Datengetriebene Roadmaps | TrafficWerk";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Nachhaltige SEO-Strategien für messbares Wachstum. Hub-and-Spoke, Growth Hacking, ROI-Maximierung & internationale Expansion. Jetzt beraten lassen.");
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
