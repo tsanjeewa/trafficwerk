@@ -19,9 +19,9 @@ const DomainPortfolio = () => {
   const [checkResult, setCheckResult] = useState<null | { available: boolean; domain: string }>(null);
 
   useEffect(() => {
-    document.title = "Domain Portfolio | TrafficWerk – 50+ Domains im Hub-and-Spoke-Modell";
+    document.title = "Strategisches Domain-Portfolio | TrafficWerk – 50+ Domains im Hub-and-Spoke-Modell";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Entdecken Sie unser Portfolio aus über 50 verwalteten Domains. Bewährte Hub-and-Spoke-SEO-Strategie für maximale Sichtbarkeit.");
+    if (meta) meta.setAttribute("content", "Entdecken Sie unser strategisches Portfolio aus über 50 verwalteten Domains. Bewährte Hub-and-Spoke-SEO-Strategie für maximale Sichtbarkeit.");
   }, []);
 
   const handleDomainCheck = () => {
@@ -44,14 +44,14 @@ const DomainPortfolio = () => {
         {/* Hero */}
         <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-white pt-28 pb-20">
           <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-primary/5 blur-[100px]" />
-          <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-accent/5 blur-[80px]" />
+          <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-primary/10 blur-[80px]" />
           <div className="container relative mx-auto px-6 text-center">
             <motion.span
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary"
             >
-              Domain Portfolio
+              Strategisches Domain-Portfolio
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ const DomainPortfolio = () => {
               transition={{ delay: 0.2 }}
               className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground"
             >
-              Wir verwalten ein professionelles Domain-Portfolio im Hub-and-Spoke-Modell – mit Fokus auf maximale SEO-Wirkung und nachhaltiges Wachstum.
+              Wir sichern uns wertvolle digitale Assets frühzeitig. Hier sehen Sie einen Auszug aus unserem Portfolio an strategischen Domains.
             </motion.p>
 
             {/* Domain Checker */}
@@ -78,9 +78,9 @@ const DomainPortfolio = () => {
               transition={{ delay: 0.3 }}
               className="mx-auto mt-10 max-w-xl"
             >
-              <div className="flex overflow-hidden rounded-xl border border-border bg-card shadow-lg">
+              <div className="flex overflow-hidden rounded-xl border-2 border-primary/20 bg-card shadow-lg shadow-primary/5">
                 <div className="flex flex-1 items-center gap-3 px-4">
-                  <Search className="h-5 w-5 text-muted-foreground" />
+                  <Search className="h-5 w-5 text-primary/60" />
                   <input
                     type="text"
                     placeholder="Domain-Verfügbarkeit prüfen (z.B. meinshop.de)"
@@ -166,7 +166,7 @@ const DomainPortfolio = () => {
                       {i === 0 ? <ShoppingCart className="h-5 w-5 text-primary" /> : i === 1 ? <TrendingUp className="h-5 w-5 text-primary" /> : <Server className="h-5 w-5 text-primary" />}
                     </div>
                     <span className="flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-600">
-                      <ShieldCheck className="h-3 w-3" /> SSL
+                      <ShieldCheck className="h-3 w-3" /> SSL aktiv
                     </span>
                   </div>
                   <h3 className="text-lg font-bold text-foreground">{hub.domain}</h3>
@@ -185,16 +185,16 @@ const DomainPortfolio = () => {
           </div>
         </section>
 
-        {/* Categorized Domains */}
+        {/* Categorized Domains – Zukunftsprojekte (no links, text only) */}
         <section className="border-t border-border section-alt py-16 md:py-20">
           <div className="container mx-auto px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <span className="text-xs font-semibold uppercase tracking-widest text-primary">Netzwerk</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-primary">Zukunftsprojekte</span>
               <h2 className="mt-3 text-2xl font-bold text-foreground md:text-3xl">
-                Gesamtes Domain-Portfolio
+                Strategisches Domain-Portfolio
               </h2>
               <p className="mt-3 text-muted-foreground">
-                Alle Domains, kategorisiert nach Einsatzzweck – von E-Commerce über Gastronomie bis hin zu SEO und Personal Branding.
+                Wir sichern uns wertvolle digitale Assets frühzeitig. Diese Domains sind Teil unserer langfristigen SEO-Strategie – kategorisiert nach Einsatzzweck.
               </p>
             </div>
 
@@ -223,7 +223,7 @@ const DomainPortfolio = () => {
                       {cat.domains.map((d) => (
                         <div
                           key={d.domain}
-                          className="flex items-start gap-3 rounded-lg border border-border bg-background px-4 py-3 transition-colors hover:border-primary/20 hover:bg-primary/5"
+                          className="flex items-start gap-3 rounded-lg border border-border bg-background px-4 py-3"
                         >
                           <Globe className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
                           <div className="min-w-0">
@@ -233,8 +233,8 @@ const DomainPortfolio = () => {
                             </div>
                             <p className="mt-0.5 text-xs text-muted-foreground">{d.description}</p>
                             {d.redirectsTo && (
-                              <p className="mt-0.5 flex items-center gap-1 text-[11px] text-primary">
-                                <ArrowRight className="h-3 w-3" /> {d.redirectsTo}
+                              <p className="mt-0.5 flex items-center gap-1 text-[11px] text-primary/70">
+                                <ArrowRight className="h-3 w-3" /> → {d.redirectsTo}
                               </p>
                             )}
                           </div>
@@ -260,7 +260,7 @@ const DomainPortfolio = () => {
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 to="/kontakt"
-                className="rounded-full bg-yellow-400 px-8 py-3 text-sm font-bold text-slate-900 shadow-lg shadow-yellow-400/20 transition-colors hover:bg-yellow-300"
+                className="rounded-full bg-white px-8 py-3 text-sm font-bold text-primary shadow-lg transition-colors hover:bg-white/90"
               >
                 Kostenlose Beratung anfragen
               </Link>
