@@ -26,6 +26,7 @@ import LokaleSEOTipps from "./pages/blog/LokaleSEOTipps";
 import LandingPage from "./pages/LandingPage";
 import DomainPortfolio from "./pages/DomainPortfolio";
 import Wissen from "./pages/Wissen";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/blog/lokale-seo-tipps" element={<LokaleSEOTipps />} />
           <Route path="/domain-portfolio" element={<DomainPortfolio />} />
           <Route path="/wissen" element={<Wissen />} />
+          <Route path="/faq" element={<FAQ />} />
           {/* 35 Keyword Landing Pages */}
           <Route path="/lp/:slug" element={<LandingPage />} />
           <Route path="*" element={<NotFound />} />
