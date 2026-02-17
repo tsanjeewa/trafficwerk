@@ -5,13 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/trafficwerk-logo-new.png";
 
 const services = [
-  { name: "SEO-Strategie", path: "/services/technische-seo" },
+  { name: "SEO-Strategie", path: "/seo-strategie" },
+  { name: "Technische SEO", path: "/services/technische-seo" },
   { name: "Performance Marketing", path: "/services/google-ads" },
   { name: "Webdesign & Entwicklung", path: "/services/on-page-optimierung" },
   { name: "E-Commerce-Lösungen", path: "/services/e-commerce-seo" },
   { name: "Social Media Marketing", path: "/services/off-page-linkbuilding" },
   { name: "Content Creation", path: "/services/content-marketing" },
-  { name: "KI-Optimierung (GEO)", path: "/services/ai-search-optimization" },
+  { name: "GEO & KI-Optimierung", path: "/geo" },
   { name: "Performance & Speed", path: "/services/lead-generierung" },
   { name: "Lokale & Globale SEO", path: "/services/lokale-seo" },
   { name: "Digitale Strategie", path: "/services/internationale-seo" },

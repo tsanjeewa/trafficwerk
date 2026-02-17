@@ -22,7 +22,7 @@ const faqItems = [
     question: "Warum ist UI/UX Design wichtig für die Conversion?",
     answer: (
       <>
-        Ein durchdachtes <Link to="/wissen?search=UI%2FUX+Design" className="text-blue-600 hover:underline">UI/UX Design</Link> sorgt dafür, dass Besucher sich intuitiv auf Ihrer Website zurechtfinden. Das steigert die <Link to="/wissen?search=Conversion-Rate" className="text-blue-600 hover:underline">Conversion-Rate</Link> erheblich, weil Nutzer schneller zur gewünschten Aktion – etwa einem Kauf oder einer Kontaktanfrage – geführt werden. Auch die <Link to="/wissen?search=Core+Web+Vitals" className="text-blue-600 hover:underline">Core Web Vitals</Link> spielen dabei eine wichtige Rolle.
+        Ein durchdachtes <Link to="/wissen?search=UI%2FUX+Design" className="text-blue-600 hover:underline">UI/UX Design</Link> sorgt dafür, dass Besucher sich intuitiv auf Ihrer Website zurechtfinden. Das steigert die <Link to="/wissen?search=Conversion-Rate" className="text-blue-600 hover:underline">Conversion-Rate</Link> erheblich, weil Nutzer schneller zur gewünschten Aktion geführt werden. Auch die <Link to="/wissen?search=Core+Web+Vitals" className="text-blue-600 hover:underline">Core Web Vitals</Link> spielen dabei eine wichtige Rolle.
       </>
     ),
   },
@@ -54,7 +54,63 @@ const faqItems = [
     question: "Bietet TrafficWerk auch Support für Shopify/WooCommerce?",
     answer: (
       <>
-        Ja! Wir bieten professionelle <Link to="/wissen?search=Shopify" className="text-blue-600 hover:underline">Shopify & WooCommerce Optimierung</Link> an – von <Link to="/wissen?search=Checkout-Optimierung" className="text-blue-600 hover:underline">Checkout-Optimierung</Link> über <Link to="/wissen?search=Shop-Skalierung" className="text-blue-600 hover:underline">Shop-Skalierung</Link> bis hin zu technischem SEO für E-Commerce. So stellen wir sicher, dass Ihr Online-Shop schnell lädt, gut rankt und optimal konvertiert.
+        Ja! Wir bieten professionelle <Link to="/wissen?search=Shopify" className="text-blue-600 hover:underline">Shopify & WooCommerce Optimierung</Link> an – von <Link to="/wissen?search=Checkout-Optimierung" className="text-blue-600 hover:underline">Checkout-Optimierung</Link> über <Link to="/wissen?search=Shop-Skalierung" className="text-blue-600 hover:underline">Shop-Skalierung</Link> bis hin zu technischem SEO für E-Commerce.
+      </>
+    ),
+  },
+  {
+    question: "Was kostet ein SEO Audit?",
+    answer: (
+      <>
+        Ein professionelles <Link to="/wissen?search=Technical+SEO" className="text-blue-600 hover:underline">SEO Audit</Link> bei TrafficWerk umfasst eine umfassende Analyse Ihrer Website – von der technischen Infrastruktur über <Link to="/wissen?search=Core+Web+Vitals" className="text-blue-600 hover:underline">Core Web Vitals</Link> bis hin zu <Link to="/wissen?search=Content+Silo" className="text-blue-600 hover:underline">Content-Struktur</Link>. Die Kosten variieren je nach Umfang und Website-Größe. Kontaktieren Sie uns für ein individuelles Angebot.
+      </>
+    ),
+  },
+  {
+    question: "Wie lange dauert der ROI bei Ads?",
+    answer: (
+      <>
+        Bei <Link to="/wissen?search=SEA" className="text-blue-600 hover:underline">Google Ads (SEA)</Link> können erste Ergebnisse bereits innerhalb weniger Tage sichtbar sein. Der tatsächliche <Link to="/wissen?search=ROI" className="text-blue-600 hover:underline">ROI</Link> hängt von der Branche, dem <Link to="/wissen?search=ROAS" className="text-blue-600 hover:underline">ROAS</Link>-Ziel und der Kampagnenoptimierung ab. In der Regel stabilisiert sich der ROI nach 4–8 Wochen kontinuierlicher Optimierung.
+      </>
+    ),
+  },
+  {
+    question: "Ist React gut für SEO?",
+    answer: (
+      <>
+        <Link to="/wissen?search=React" className="text-blue-600 hover:underline">React</Link> kann für SEO hervorragend funktionieren – vorausgesetzt, man setzt auf Server-Side Rendering (SSR) oder Pre-Rendering. Ohne diese Maßnahmen kann das <Link to="/wissen?search=Crawling" className="text-blue-600 hover:underline">Crawling</Link> durch Suchmaschinen erschwert sein. Wir sorgen dafür, dass Ihre React-Anwendung vollständig indexierbar ist und optimale <Link to="/wissen?search=Core+Web+Vitals" className="text-blue-600 hover:underline">Core Web Vitals</Link> erreicht.
+      </>
+    ),
+  },
+  {
+    question: "Warum ist PageSpeed wichtig?",
+    answer: (
+      <>
+        <Link to="/wissen?search=PageSpeed" className="text-blue-600 hover:underline">PageSpeed</Link> ist ein direkter <Link to="/wissen?search=Rank+Tracking" className="text-blue-600 hover:underline">Rankingfaktor</Link> bei Google. Langsame Seiten führen zu höherer <Link to="/wissen?search=Bounce+Rate" className="text-blue-600 hover:underline">Bounce Rate</Link> und schlechteren <Link to="/wissen?search=User+Signals" className="text-blue-600 hover:underline">Nutzersignalen</Link>. Die <Link to="/wissen?search=Core+Web+Vitals" className="text-blue-600 hover:underline">Core Web Vitals</Link> messen diese Performance – wir optimieren Ihre Website auf Bestwerte.
+      </>
+    ),
+  },
+  {
+    question: "Brauche ich einen Blog für SEO?",
+    answer: (
+      <>
+        Ein Blog ist eines der effektivsten Werkzeuge für <Link to="/wissen?search=Content+Marketing" className="text-blue-600 hover:underline">Content Marketing</Link> und SEO. Regelmäßige, hochwertige Artikel stärken Ihre <Link to="/wissen?search=Topical+Authority" className="text-blue-600 hover:underline">Topical Authority</Link>, generieren <Link to="/wissen?search=Long+Tail" className="text-blue-600 hover:underline">Long-Tail-Traffic</Link> und unterstützen Ihre <Link to="/wissen?search=Internal+Linking" className="text-blue-600 hover:underline">interne Verlinkung</Link>.
+      </>
+    ),
+  },
+  {
+    question: "Wie verändert KI die SEO-Branche?",
+    answer: (
+      <>
+        KI transformiert die Suche grundlegend: <Link to="/wissen?search=AI+Search" className="text-blue-600 hover:underline">AI Search</Link>-Systeme wie Google AI Overviews und ChatGPT liefern direkte Antworten. Mit <Link to="/wissen?search=Generative+Engine+Optimization" className="text-blue-600 hover:underline">GEO (Generative Engine Optimization)</Link> optimieren wir Ihre Inhalte, damit sie von KI-Systemen als Quelle zitiert werden. <Link to="/wissen?search=E-E-A-T" className="text-blue-600 hover:underline">E-E-A-T-Signale</Link> werden dabei immer wichtiger.
+      </>
+    ),
+  },
+  {
+    question: "Was sind die besten Marketing-Tools 2026?",
+    answer: (
+      <>
+        Zu den wichtigsten Tools gehören die <Link to="/wissen?search=GSC" className="text-blue-600 hover:underline">Google Search Console</Link> für SEO-Monitoring, Google Ads für <Link to="/wissen?search=SEA" className="text-blue-600 hover:underline">Suchmaschinenwerbung</Link>, sowie Tools für <Link to="/wissen?search=Rank+Tracking" className="text-blue-600 hover:underline">Rank Tracking</Link>, <Link to="/wissen?search=Keyword+Gap" className="text-blue-600 hover:underline">Keyword-Gap-Analysen</Link> und <Link to="/wissen?search=TF-IDF" className="text-blue-600 hover:underline">TF-IDF-Analysen</Link>. Für KI-SEO empfehlen wir spezialisierte GEO-Monitoring-Tools.
       </>
     ),
   },

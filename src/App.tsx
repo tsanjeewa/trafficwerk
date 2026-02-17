@@ -11,6 +11,8 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import CookieRichtlinie from "./pages/CookieRichtlinie";
 import TechnischeSEO from "./pages/services/TechnischeSEO";
+import SEOStrategie from "./pages/services/SEOStrategie";
+import GEOKIOptimierung from "./pages/services/GEOKIOptimierung";
 import OnPageOptimierung from "./pages/services/OnPageOptimierung";
 import OffPageLinkbuilding from "./pages/services/OffPageLinkbuilding";
 import ContentMarketing from "./pages/services/ContentMarketing";
@@ -44,6 +46,8 @@ const App = () => (
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
           <Route path="/services/technische-seo" element={<TechnischeSEO />} />
+          <Route path="/seo-strategie" element={<SEOStrategie />} />
+          <Route path="/geo" element={<GEOKIOptimierung />} />
           <Route path="/services/on-page-optimierung" element={<OnPageOptimierung />} />
           <Route path="/services/off-page-linkbuilding" element={<OffPageLinkbuilding />} />
           <Route path="/services/content-marketing" element={<ContentMarketing />} />
@@ -59,7 +63,6 @@ const App = () => (
           <Route path="/domain-portfolio" element={<DomainPortfolio />} />
           <Route path="/wissen" element={<Wissen />} />
           <Route path="/faq" element={<FAQ />} />
-          {/* 35 Keyword Landing Pages */}
           <Route path="/lp/:slug" element={<LandingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

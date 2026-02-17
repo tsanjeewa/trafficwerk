@@ -32,8 +32,9 @@ const Footer = () => {
             <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Leistungen</h4>
             <ul className="mt-4 space-y-2.5">
               {[
+                { name: "SEO-Strategie", path: "/seo-strategie" },
                 { name: "Technische SEO", path: "/services/technische-seo" },
-                { name: "On-Page Optimierung", path: "/services/on-page-optimierung" },
+                { name: "GEO & KI-Optimierung", path: "/geo" },
                 { name: "Content Marketing", path: "/services/content-marketing" },
                 { name: "Lokale SEO", path: "/services/lokale-seo" },
                 { name: "Google Ads", path: "/services/google-ads" },
