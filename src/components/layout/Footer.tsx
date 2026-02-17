@@ -54,7 +54,7 @@ const Footer = () => {
                 { name: "Leistungen", path: "/#services" },
                 { name: "Domain Portfolio", path: "/domain-portfolio" },
                 { name: "Über uns", path: "/#about" },
-                { name: "Wissen", path: "/#faq" },
+                { name: "Wissen (Glossar)", path: "/wissen" },
                 { name: "Kontakt", path: "/kontakt" },
               ].map((l) => (
                 <li key={l.name}>
