@@ -165,7 +165,7 @@ const Navbar = () => {
                   >
                     {/* Core Services */}
                     <div className="mb-5 border-b border-slate-100 pb-5">
-                      <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Unsere Services</p>
+                      <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Unsere Leistungen</p>
                       <div className="grid grid-cols-2 gap-1">
                         {services.map((s) => (
                           <Link
@@ -260,7 +260,7 @@ const Navbar = () => {
 
               {/* Mobile Services */}
               <div className="border-t border-slate-100 pt-2">
-                <p className="py-3 text-xs font-bold uppercase tracking-widest text-slate-400">Unsere Services</p>
+                <p className="py-3 text-xs font-bold uppercase tracking-widest text-slate-400">Unsere Leistungen</p>
                 {services.map((s) => (
                   <Link
                     key={s.path}
