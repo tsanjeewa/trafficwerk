@@ -45,7 +45,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            TrafficWerk ist Ihre Agentur für Suchmaschinenoptimierung. Mit datengetriebenen Strategien sorgen wir für mehr Sichtbarkeit, mehr Traffic und mehr Umsatz – messbar und nachhaltig.
+            TrafficWerk ist Ihre Agentur für Suchmaschinenoptimierung. Wir sorgen für mehr Sichtbarkeit, mehr Traffic und mehr Umsatz – messbar und nachhaltig.
           </motion.p>
 
           <motion.div

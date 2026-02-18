@@ -228,89 +228,96 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* ── Full-width Mega Menu ── */}
+        {/* ── Full-width Mega Menu (edge-to-edge) ── */}
         <AnimatePresence>
           {showMega && (
             <motion.div
-              initial={{ opacity: 0, y: -6 }}
+              initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.18 }}
-              className="absolute left-0 right-0 top-full border-t border-slate-100 bg-white shadow-xl"
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="fixed left-0 right-0 top-16 z-40 border-t border-slate-100 bg-white shadow-2xl"
               onMouseEnter={openMega}
               onMouseLeave={closeMega}
             >
-              <div className="container mx-auto px-6 py-8">
+              {/* Full-bleed inner layout */}
+              <div className="mx-auto max-w-screen-2xl px-8 py-8">
                 <div className="flex gap-10">
-                  {/* Left: Featured quick-links */}
-                  <div className="w-64 shrink-0">
-                    <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-slate-400">
-                      Unsere Kernleistungen
+
+                  {/* ── LEFT PANEL: Kernleistungen + CTA ── */}
+                  <div className="w-72 shrink-0 border-r border-slate-100 pr-8">
+                    <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                      Kernleistungen
                     </p>
-                    <div className="grid grid-cols-1 gap-1">
+                    <div className="space-y-0.5">
                       {featuredServices.map((s) => {
                         const Icon = s.icon;
                         return (
                           <Link
                             key={s.path}
                             to={s.path}
-                            className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-slate-50"
+                            className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all hover:bg-slate-50"
                           >
-                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
                               <Icon className="h-4 w-4 text-primary" />
                             </div>
                             <div>
-                              <p className="text-sm font-semibold text-slate-800 group-hover:text-primary">
+                              <p className="text-sm font-semibold text-slate-800 transition-colors group-hover:text-primary">
                                 {s.label}
                               </p>
-                              <p className="text-[11px] text-slate-400">{s.desc}</p>
+                              <p className="text-[11px] leading-tight text-slate-400">{s.desc}</p>
                             </div>
                           </Link>
                         );
                       })}
                     </div>
 
-                    <div className="mt-5 rounded-xl bg-primary/5 p-4">
-                      <p className="text-xs font-bold text-primary">Gratis SEO-Audit</p>
-                      <p className="mt-1 text-[11px] text-slate-500 leading-relaxed">
-                        Wir analysieren Ihre Website kostenlos & zeigen Ihnen konkretes Potenzial.
+                    {/* CTA Card */}
+                    <div className="mt-6 rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/8 to-primary/4 p-5">
+                      <div className="mb-1 flex items-center gap-2">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary/15">
+                          <Sparkles className="h-3.5 w-3.5 text-primary" />
+                        </div>
+                        <p className="text-xs font-bold text-primary">Gratis SEO-Audit</p>
+                      </div>
+                      <p className="mb-3 text-[11px] leading-relaxed text-slate-500">
+                        Wir analysieren Ihre Website kostenlos und zeigen konkretes Wachstumspotenzial.
                       </p>
                       <a
                         href="/#seo-analyse"
-                        className="mt-3 inline-flex items-center gap-1 rounded-full bg-primary px-4 py-1.5 text-xs font-bold text-primary-foreground hover:bg-primary/90"
+                        className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-bold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
                       >
-                        Jetzt starten
+                        Jetzt starten →
                       </a>
                     </div>
                   </div>
 
-                  {/* Divider */}
-                  <div className="w-px bg-slate-100" />
-
-                  {/* Right: Category grid */}
+                  {/* ── RIGHT PANEL: All Categories ── */}
                   <div className="flex-1">
-                    <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                    <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
                       Alle Spezialisierungen
                     </p>
-                    <div className="grid grid-cols-4 gap-x-6 gap-y-6">
+                    <div className="grid grid-cols-4 gap-x-8 gap-y-7">
                       {megaMenuCategories.map((cat) => {
                         const Icon = cat.icon;
                         return (
                           <div key={cat.title}>
-                            <div className="mb-2 flex items-center gap-2">
-                              <div className={`flex h-6 w-6 items-center justify-center rounded-md ${cat.bg}`}>
+                            {/* Category header */}
+                            <div className="mb-3 flex items-center gap-2">
+                              <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${cat.bg}`}>
                                 <Icon className={`h-3.5 w-3.5 ${cat.color}`} />
                               </div>
-                              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
                                 {cat.title}
                               </span>
                             </div>
-                            <ul className="space-y-0.5">
+                            {/* Items */}
+                            <ul className="space-y-1">
                               {cat.items.map((item) => (
                                 <li key={item.path + item.name}>
                                   <Link
                                     to={item.path}
-                                    className="block rounded px-1 py-1 text-[13px] text-slate-500 transition-colors hover:bg-slate-50 hover:text-primary"
+                                    className="flex items-center gap-1.5 rounded-md px-1.5 py-1 text-[12.5px] text-slate-500 transition-all hover:bg-slate-50 hover:text-primary hover:pl-2.5"
                                   >
                                     {item.name}
                                   </Link>
@@ -321,7 +328,22 @@ const Navbar = () => {
                         );
                       })}
                     </div>
+
+                    {/* Bottom bar */}
+                    <div className="mt-7 flex items-center justify-between border-t border-slate-100 pt-5">
+                      <p className="text-[11px] text-slate-400">
+                        Nicht sicher welche Leistung passt?{" "}
+                        <Link to="/kontakt" className="font-semibold text-primary hover:underline">
+                          Kostenlos beraten lassen →
+                        </Link>
+                      </p>
+                      <div className="flex items-center gap-1 text-[11px] text-slate-400">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                        Über 150 zufriedene Kunden
+                      </div>
+                    </div>
                   </div>
+
                 </div>
               </div>
             </motion.div>
