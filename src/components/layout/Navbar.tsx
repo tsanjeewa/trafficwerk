@@ -245,13 +245,13 @@ const Navbar = () => {
               Kontakt
             </Link>
 
-            <Link
-              to="/kontakt"
+            <a
+              href="/#seo-analyse"
               className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Gratis Analyse
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Toggle */}

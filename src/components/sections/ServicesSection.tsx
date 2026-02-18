@@ -5,14 +5,14 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: Search, title: "SEO-Strategie", desc: "Nachhaltige Sichtbarkeit durch datengestützte Suchmaschinenoptimierung.", path: "/services/technische-seo" },
+  { icon: Search, title: "SEO-Strategie", desc: "Nachhaltige Sichtbarkeit durch datengestützte Suchmaschinenoptimierung.", path: "/seo-strategie" },
   { icon: MousePointerClick, title: "Performance Marketing", desc: "Maximale Leads und Sales durch effiziente Google & Meta Ads.", path: "/services/google-ads" },
   { icon: Monitor, title: "Webdesign & Entwicklung", desc: "Hochperformante Webseiten, die Besucher in treue Kunden verwandeln.", path: "/services/on-page-optimierung" },
   { icon: ShoppingCart, title: "E-Commerce-Lösungen", desc: "Skalierung von Online-Shops durch gezielte Conversion-Optimierung.", path: "/services/e-commerce-seo" },
   { icon: Heart, title: "Social Media Marketing", desc: "Markenaufbau und Community-Management auf allen relevanten Kanälen.", path: "/services/off-page-linkbuilding" },
   { icon: PenTool, title: "Content Creation", desc: "Hochwertiges Copywriting und kreatives Design für Ihre Markenbotschaft.", path: "/services/content-marketing" },
-  { icon: Sparkles, title: "KI-Optimierung (GEO)", desc: "Optimierung für die KI-basierte Suche und generative Suchmaschinen.", path: "/services/ai-search-optimization" },
-  { icon: Gauge, title: "Performance & Speed", desc: "Maximale Ladezeiten und technische Exzellenz für bessere Rankings.", path: "/services/lead-generierung" },
+  { icon: Sparkles, title: "KI-Optimierung (GEO)", desc: "Optimierung für die KI-basierte Suche und generative Suchmaschinen.", path: "/geo" },
+  { icon: Gauge, title: "Performance & Speed", desc: "Maximale Ladezeiten und technische Exzellenz für bessere Rankings.", path: "/services/technische-seo" },
   { icon: MapPin, title: "Lokale & Globale SEO", desc: "Sichtbarkeit in Ihrer Region oder auf internationalen Märkten.", path: "/services/lokale-seo" },
   { icon: Compass, title: "Digitale Strategie", desc: "Ganzheitliche Beratung für Ihre nachhaltige digitale Transformation.", path: "/services/internationale-seo" },
 ];
@@ -42,7 +42,7 @@ const ServicesSection = () => {
             >
               <Link
                 to={s.path}
-                className="group block h-full rounded-xl border border-border/50 bg-card p-4 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 md:p-6"
+                className="group block h-full rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/10 md:p-6"
               >
                 <s.icon className="h-6 w-6 text-primary transition-transform group-hover:scale-110 md:h-8 md:w-8" />
                 <h3 className="mt-3 font-display text-xs font-semibold md:mt-4 md:text-sm">{s.title}</h3>

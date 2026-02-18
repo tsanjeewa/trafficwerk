@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, TrendingUp, MapPin, ShoppingCart } from "lucide-react";
-import imgLustaufeis from "@/assets/portfolio-lustaufeis.webp";
-import imgEismaschine from "@/assets/portfolio-eismaschine.webp";
+import imgLustaufeis from "@/assets/portfolio-lustaufeis-new.webp";
+import imgEismaschine from "@/assets/portfolio-eismaschine-new.webp";
 import imgEiscafe from "@/assets/portfolio-eiscafe.webp";
 
 const cases = [
