@@ -2,8 +2,16 @@ import { motion } from "framer-motion";
 import imgThushara from "@/assets/team-thushara-real.webp";
 import imgEyana from "@/assets/team-eyana-real.webp";
 import imgJohn from "@/assets/team-john-real.webp";
+import imgEden from "@/assets/team-eden-real.webp";
 
 const team = [
+  {
+    name: "Eden",
+    role: "Strategic Management",
+    bio: "Fokussiert auf visionäre Wachstumsstrategien und exzellente Kundenbetreuung.",
+    image: imgEden,
+    alt: "Eden – Strategic Management bei TrafficWerk",
+  },
   {
     name: "Thushara",
     role: "Strategic Management",
