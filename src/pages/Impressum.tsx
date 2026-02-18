@@ -92,7 +92,7 @@ const Impressum = () => (
                 Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den
                 allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
                 verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
-                forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                forschen, die on eine rechtswidrige Tätigkeit hinweisen.
               </p>
             </Section>
 
@@ -100,7 +100,7 @@ const Impressum = () => (
               <p>
                 Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
                 Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
-                verlinkතැන් පේළි වලට stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
               </p>
             </Section>
           </div>
