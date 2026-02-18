@@ -127,7 +127,7 @@ const Kontakt = () => {
                     Nutzen Sie unser spezielles Analyse-Formular – mit Report-Vorschau und allen Details.
                   </p>
                   <a
-                    href="/gratis-analyse"
+                    href="/gratis-analyse#analyse-formular"
                     className="mt-3 inline-block rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90"
                   >
                     Zur Gratis-Analyse →
