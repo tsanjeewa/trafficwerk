@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
-import imgThushara from "@/assets/team-thomas-ceo.webp";
-import imgThomas from "@/assets/team-thomas.webp";
-import imgEyana from "@/assets/team-eyana-portrait.webp";
-import imgAnna from "@/assets/team-john-new.webp";
+import imgThomas from "@/assets/team-thomas-real.webp";
+import imgThushara from "@/assets/team-thushara-real.webp";
+import imgEyana from "@/assets/team-eyana-real.webp";
+import imgJohn from "@/assets/team-john-real.webp";
 
 const team = [
   {
     name: "Thomas",
     role: "Senior SEO Strategist",
     bio: "Spezialist für strategische SEO-Kampagnen und nachhaltige Ranking-Optimierung.",
-    image: imgThushara,
+    image: imgThomas,
     alt: "Thomas – Senior SEO Strategist bei TrafficWerk",
   },
   {
     name: "Thushara",
     role: "Strategic Management",
     bio: "Fokussiert auf visionäre Wachstumsstrategien und exzellente Kundenbetreuung.",
-    image: imgThomas,
+    image: imgThushara,
     alt: "Thushara – Strategic Management bei TrafficWerk",
   },
   {
@@ -30,7 +30,7 @@ const team = [
     name: "John",
     role: "Technical SEO Expert",
     bio: "Meister der Core Web Vitals und komplexen technischen Infrastrukturen.",
-    image: imgAnna,
+    image: imgJohn,
     alt: "John – Technical SEO Expert bei TrafficWerk",
   },
 ];
