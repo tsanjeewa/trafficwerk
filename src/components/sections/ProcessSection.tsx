@@ -70,18 +70,10 @@ const ProcessSection = () => {
                 transition: { duration: 0.2 },
               }}
             >
-              {/* Step number – top right */}
-              <span className="absolute top-5 right-5 font-display text-3xl font-bold text-primary/10 select-none">
-                {s.number}
-              </span>
-
               {/* Icon */}
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20">
                 <s.icon className="h-6 w-6 text-primary" />
               </div>
-
-              {/* Step label */}
-              <span className="mb-1 text-xs font-bold uppercase tracking-widest text-primary">{s.number}</span>
 
               {/* Title */}
               <h3 className="font-display text-lg font-bold text-foreground md:text-xl">{s.title}</h3>
