@@ -83,6 +83,18 @@
 
   .section-accent {
     background-color: hsl(var(--section-accent));
+    background-image: url('/src/assets/content-section-accent-bg.webp');
+    background-size: cover;
+    background-position: right center;
+    position: relative;
+  }
+
+  .section-accent::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--background) / 0.88);
+    pointer-events: none;
   }
 
   .nc-card {

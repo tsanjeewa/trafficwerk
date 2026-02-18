@@ -2,14 +2,18 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import heroBg from "@/assets/trafficwerk-hero-bg.webp";
 
 const HeroSection = () => {
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-16 md:min-h-[90vh] md:pt-20">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
-      <div className="absolute right-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
-      <div className="absolute left-1/4 bottom-0 h-[300px] w-[300px] rounded-full bg-accent/5 blur-[100px]" />
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      {/* Subtle overlay so text stays readable */}
+      <div className="absolute inset-0 bg-white/70" />
 
       <div className="container relative mx-auto px-6">
         <div className="mx-auto max-w-3xl text-center">
