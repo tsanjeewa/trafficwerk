@@ -1,34 +1,34 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Search, Wrench, FileText, TrendingUp, Eye, Bot, Globe } from "lucide-react";
+import {
+  Menu, X, ChevronDown,
+  Search, Wrench, FileText, TrendingUp, Eye, Bot, Globe,
+  Sparkles, BarChart2, MapPin, ShoppingBag, Link2, Zap,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/trafficwerk-logo-new.png";
 
-const services = [
-  { name: "SEO-Strategie", path: "/seo-strategie" },
-  { name: "Technische SEO", path: "/services/technische-seo" },
-  { name: "Performance Marketing", path: "/services/google-ads" },
-  { name: "Webdesign & Entwicklung", path: "/services/on-page-optimierung" },
-  { name: "E-Commerce-Lösungen", path: "/services/e-commerce-seo" },
-  { name: "Social Media Marketing", path: "/services/off-page-linkbuilding" },
-  { name: "Content Creation", path: "/services/content-marketing" },
-  { name: "GEO & KI-Optimierung", path: "/geo" },
-  { name: "Performance & Speed", path: "/services/lead-generierung" },
-  { name: "Lokale & Globale SEO", path: "/services/lokale-seo" },
-  { name: "Digitale Strategie", path: "/services/internationale-seo" },
+/* ─── Data ─────────────────────────────────────────────────────────── */
+
+const topNavLinks = [
+  { label: "Startseite", to: "/" },
+  { label: "Wissen", to: "/wissen" },
+  { label: "FAQ", to: "/faq" },
+  { label: "Kontakt", to: "/kontakt" },
 ];
 
 const megaMenuCategories = [
   {
     title: "SEO Beratung",
     icon: Search,
+    color: "text-blue-600",
+    bg: "bg-blue-50",
     items: [
       { name: "SEO Agentur Deutschland", path: "/lp/seo-agentur-deutschland" },
       { name: "Professionelle SEO Beratung", path: "/lp/seo-beratung" },
       { name: "Kostenlose SEO Analyse", path: "/lp/seo-analyse" },
       { name: "Strategische SEO Planung", path: "/lp/seo-strategie" },
       { name: "Umfassendes SEO Audit", path: "/lp/seo-audit-service" },
-      { name: "Individuelle SEO Beratung", path: "/lp/seo-experten-beratung" },
       { name: "SEO für KMU", path: "/lp/seo-fuer-kmu" },
       { name: "SEO Coaching & Workshop", path: "/lp/seo-coaching" },
     ],
@@ -36,10 +36,11 @@ const megaMenuCategories = [
   {
     title: "Technik & Analyse",
     icon: Wrench,
+    color: "text-violet-600",
+    bg: "bg-violet-50",
     items: [
       { name: "Technisches SEO Audit", path: "/lp/technisches-seo-audit" },
       { name: "OnPage SEO Optimierung", path: "/lp/onpage-seo-optimierung" },
-      { name: "Technisches Web-Audit", path: "/lp/technisches-web-audit" },
       { name: "Conversion Optimierung", path: "/lp/conversion-optimierung" },
       { name: "SEO Monitoring", path: "/lp/seo-monitoring" },
       { name: "Keyword Recherche", path: "/lp/keyword-recherche" },
@@ -48,6 +49,8 @@ const megaMenuCategories = [
   {
     title: "Content & Links",
     icon: FileText,
+    color: "text-emerald-600",
+    bg: "bg-emerald-50",
     items: [
       { name: "Content Marketing Agentur", path: "/lp/content-marketing-agentur" },
       { name: "SEO Content Erstellung", path: "/lp/seo-content-erstellung" },
@@ -58,57 +61,76 @@ const megaMenuCategories = [
   {
     title: "Online Marketing",
     icon: TrendingUp,
+    color: "text-orange-600",
+    bg: "bg-orange-50",
     items: [
       { name: "Onlinemarketing", path: "/lp/onlinemarketing" },
-      { name: "Suchmaschinenmarketing", path: "/lp/suchmaschinenmarketing" },
       { name: "E-Commerce SEO", path: "/lp/e-commerce-seo-optimierung" },
       { name: "Shop SEO", path: "/lp/shop-seo" },
       { name: "WordPress SEO", path: "/lp/wordpress-seo" },
+      { name: "Google Ads", path: "/services/google-ads" },
     ],
   },
   {
     title: "Google Sichtbarkeit",
     icon: Eye,
+    color: "text-sky-600",
+    bg: "bg-sky-50",
     items: [
       { name: "Google Ranking verbessern", path: "/lp/google-ranking-verbessern" },
-      { name: "Sichtbarkeit bei Google steigern", path: "/lp/sichtbarkeit-google-erhoehen" },
-      { name: "Bei Google gefunden werden", path: "/lp/bei-google-gefunden-werden" },
-      { name: "Online sichtbar werden", path: "/lp/google-sichtbar-werden" },
-      { name: "Online-Präsenz erhöhen", path: "/lp/online-sichtbarkeit" },
+      { name: "Lokale SEO", path: "/services/lokale-seo" },
+      { name: "Internationale SEO", path: "/services/internationale-seo" },
       { name: "Suchmaschinenoptimierung", path: "/lp/suchmaschinenoptimierung" },
       { name: "Local SEO Experten", path: "/lp/local-seo-agentur" },
     ],
   },
   {
-    title: "KI-SEO",
+    title: "KI-SEO & GEO",
     icon: Bot,
+    color: "text-fuchsia-600",
+    bg: "bg-fuchsia-50",
     items: [
       { name: "Bei ChatGPT gefunden werden", path: "/lp/bei-chatgpt-gefunden-werden" },
-      { name: "ChatGPT Sichtbarkeit", path: "/lp/chatgpt-sichtbarkeit-verbessern" },
+      { name: "GEO & KI-Optimierung", path: "/geo" },
       { name: "KI-gestütztes Marketing", path: "/lp/ki-gestuetztes-marketing" },
-      { name: "Optimierung KI-Suche", path: "/lp/optimierung-ki-suche" },
+      { name: "AI Search Optimization", path: "/services/ai-search-optimization" },
     ],
   },
   {
     title: "Domain Management",
     icon: Globe,
+    color: "text-teal-600",
+    bg: "bg-teal-50",
     items: [
-      { name: "Domain Portfolio", path: "/domain-portfolio" },
+      { name: "Domain Portfolio ansehen", path: "/domain-portfolio" },
       { name: "Hub-and-Spoke Strategie", path: "/domain-portfolio" },
       { name: "Domain-Checker", path: "/domain-portfolio" },
     ],
   },
 ];
 
+/* featured service cards shown in the left panel of the mega menu */
+const featuredServices = [
+  { icon: Sparkles, label: "SEO-Strategie", desc: "Ganzheitliche Planung", path: "/seo-strategie" },
+  { icon: BarChart2, label: "Technische SEO", desc: "Core Web Vitals & mehr", path: "/services/technische-seo" },
+  { icon: MapPin, label: "Lokale SEO", desc: "Google Maps Dominanz", path: "/services/lokale-seo" },
+  { icon: ShoppingBag, label: "E-Commerce SEO", desc: "Shop-Optimierung", path: "/services/e-commerce-seo" },
+  { icon: Link2, label: "Linkbuilding", desc: "Autorität aufbauen", path: "/services/off-page-linkbuilding" },
+  { icon: Zap, label: "GEO / KI-SEO", desc: "Zukunft der Suche", path: "/geo" },
+];
+
+/* ─── Component ─────────────────────────────────────────────────────── */
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showMegaMenu, setShowMegaMenu] = useState(false);
+  const [showMega, setShowMega] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+  const [mobileAcc, setMobileAcc] = useState<string | null>(null);
+  const megaTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
@@ -119,93 +141,176 @@ const Navbar = () => {
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
-    setShowMegaMenu(false);
-    setMobileAccordion(null);
+    setShowMega(false);
+    setMobileAcc(null);
   }, [location.pathname]);
+
+  const openMega = () => {
+    if (megaTimerRef.current) clearTimeout(megaTimerRef.current);
+    setShowMega(true);
+  };
+  const closeMega = () => {
+    megaTimerRef.current = setTimeout(() => setShowMega(false), 120);
+  };
 
   return (
     <>
+      {/* ── Desktop Navbar ── */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-white shadow-sm" : "bg-transparent"
+          scrolled || showMega ? "bg-white shadow-sm border-b border-slate-100" : "bg-white/95 backdrop-blur-sm"
         }`}
       >
-        <div className="container mx-auto flex h-14 items-center justify-between px-6">
-          <Link to="/" className="flex items-center">
+        <div className="container mx-auto flex h-16 items-center justify-between px-6">
+          {/* Logo */}
+          <Link to="/" className="flex items-center shrink-0">
             <img src={logo} alt="TrafficWerk" className="h-8" />
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden items-center gap-8 lg:flex">
+          {/* Desktop Links */}
+          <div className="hidden items-center gap-1 lg:flex">
             <Link
               to="/"
-              className="nav-link-underline relative text-sm font-medium text-slate-900"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
               Startseite
             </Link>
 
-            {/* Leistungen with Mega Menu */}
+            {/* Leistungen mega-trigger */}
             <div
               className="relative"
-              onMouseEnter={() => setShowMegaMenu(true)}
-              onMouseLeave={() => setShowMegaMenu(false)}
+              onMouseEnter={openMega}
+              onMouseLeave={closeMega}
             >
               <button
-                className="nav-link-underline relative flex items-center gap-1 text-sm font-medium text-slate-900"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-                aria-label="Leistungen Menü öffnen"
-                aria-expanded={showMegaMenu}
+                className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-slate-100 ${
+                  showMega ? "bg-slate-100 text-slate-900" : "text-slate-700"
+                }`}
+                aria-expanded={showMega}
               >
                 Leistungen
-                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${showMegaMenu ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`h-3.5 w-3.5 transition-transform duration-200 ${showMega ? "rotate-180" : ""}`}
+                />
               </button>
+            </div>
 
-              <AnimatePresence>
-                {showMegaMenu && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute right-0 top-full mt-3 w-[820px] -translate-x-1/4 rounded-2xl border border-slate-100 bg-white p-6 shadow-xl"
-                  >
-                    {/* Core Services */}
-                    <div className="mb-5 border-b border-slate-100 pb-5">
-                      <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Unsere Leistungen</p>
-                      <div className="grid grid-cols-2 gap-1">
-                        {services.map((s) => (
+            {topNavLinks.slice(1).map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="hidden items-center gap-3 lg:flex">
+            <a
+              href="/#seo-analyse"
+              className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+            >
+              Gratis Analyse
+            </a>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="relative z-50 flex h-9 w-9 items-center justify-center rounded-md text-slate-700 hover:bg-slate-100 lg:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Menü öffnen"
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+
+        {/* ── Full-width Mega Menu ── */}
+        <AnimatePresence>
+          {showMega && (
+            <motion.div
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.18 }}
+              className="absolute left-0 right-0 top-full border-t border-slate-100 bg-white shadow-xl"
+              onMouseEnter={openMega}
+              onMouseLeave={closeMega}
+            >
+              <div className="container mx-auto px-6 py-8">
+                <div className="flex gap-10">
+                  {/* Left: Featured quick-links */}
+                  <div className="w-64 shrink-0">
+                    <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                      Unsere Kernleistungen
+                    </p>
+                    <div className="grid grid-cols-1 gap-1">
+                      {featuredServices.map((s) => {
+                        const Icon = s.icon;
+                        return (
                           <Link
                             key={s.path}
                             to={s.path}
-                            className="rounded-lg px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-600"
+                            className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-slate-50"
                           >
-                            {s.name}
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                              <Icon className="h-4 w-4 text-primary" />
+                            </div>
+                            <div>
+                              <p className="text-sm font-semibold text-slate-800 group-hover:text-primary">
+                                {s.label}
+                              </p>
+                              <p className="text-[11px] text-slate-400">{s.desc}</p>
+                            </div>
                           </Link>
-                        ))}
-                      </div>
+                        );
+                      })}
                     </div>
 
-                    {/* Mega Menu Categories */}
-                    <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">Spezialisierungen</p>
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="mt-5 rounded-xl bg-primary/5 p-4">
+                      <p className="text-xs font-bold text-primary">Gratis SEO-Audit</p>
+                      <p className="mt-1 text-[11px] text-slate-500 leading-relaxed">
+                        Wir analysieren Ihre Website kostenlos & zeigen Ihnen konkretes Potenzial.
+                      </p>
+                      <a
+                        href="/#seo-analyse"
+                        className="mt-3 inline-flex items-center gap-1 rounded-full bg-primary px-4 py-1.5 text-xs font-bold text-primary-foreground hover:bg-primary/90"
+                      >
+                        Jetzt starten
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-px bg-slate-100" />
+
+                  {/* Right: Category grid */}
+                  <div className="flex-1">
+                    <p className="mb-4 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                      Alle Spezialisierungen
+                    </p>
+                    <div className="grid grid-cols-4 gap-x-6 gap-y-6">
                       {megaMenuCategories.map((cat) => {
                         const Icon = cat.icon;
                         return (
                           <div key={cat.title}>
                             <div className="mb-2 flex items-center gap-2">
-                              <Icon className="h-4 w-4 text-blue-600" />
-                              <span className="text-xs font-bold uppercase tracking-wider text-slate-900">{cat.title}</span>
+                              <div className={`flex h-6 w-6 items-center justify-center rounded-md ${cat.bg}`}>
+                                <Icon className={`h-3.5 w-3.5 ${cat.color}`} />
+                              </div>
+                              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                                {cat.title}
+                              </span>
                             </div>
                             <ul className="space-y-0.5">
                               {cat.items.map((item) => (
-                                <li key={item.path}>
+                                <li key={item.path + item.name}>
                                   <Link
                                     to={item.path}
-                                    className="block rounded-md px-2 py-1 text-[13px] text-slate-500 transition-colors hover:bg-blue-50 hover:text-blue-600"
+                                    className="block rounded px-1 py-1 text-[13px] text-slate-500 transition-colors hover:bg-slate-50 hover:text-primary"
                                   >
                                     {item.name}
                                   </Link>
@@ -216,168 +321,156 @@ const Navbar = () => {
                         );
                       })}
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <Link
-              to="/wissen"
-              className="nav-link-underline relative text-sm font-medium text-slate-900"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
-              Wissen
-            </Link>
-
-            <Link
-              to="/faq"
-              className="nav-link-underline relative text-sm font-medium text-slate-900"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
-              FAQ
-            </Link>
-
-            <Link
-              to="/kontakt"
-              className="nav-link-underline relative text-sm font-medium text-slate-900"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
-              Kontakt
-            </Link>
-
-            <a
-              href="/#seo-analyse"
-              className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
-              Gratis Analyse
-            </a>
-          </div>
-
-          {/* Mobile Toggle */}
-          <button
-            className="relative z-50 lg:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Menü"
-          >
-            {isOpen ? <X className="h-6 w-6 text-slate-900" /> : <Menu className="h-6 w-6 text-slate-900" />}
-          </button>
-        </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
-      {/* Mobile Fullscreen Overlay */}
+      {/* ── Mobile Fullscreen Overlay ── */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
             className="fixed inset-0 z-40 overflow-y-auto bg-white pt-16"
           >
-            <div className="flex flex-col gap-2 px-6 py-6">
+            <div className="flex flex-col px-6 py-4">
+              {/* Main links */}
               <Link
                 to="/"
                 onClick={() => setIsOpen(false)}
-                className="py-3 text-lg font-bold text-slate-900"
+                className="border-b border-slate-100 py-4 text-base font-semibold text-slate-900"
               >
                 Startseite
               </Link>
 
-              {/* Mobile Services */}
-              <div className="border-t border-slate-100 pt-2">
-                <p className="py-3 text-xs font-bold uppercase tracking-widest text-slate-400">Unsere Leistungen</p>
-                {services.map((s) => (
-                  <Link
-                    key={s.path}
-                    to={s.path}
-                    onClick={() => setIsOpen(false)}
-                    className="block py-2 text-sm font-medium text-slate-600 hover:text-blue-600"
-                  >
-                    {s.name}
-                  </Link>
-                ))}
-              </div>
+              {/* Leistungen accordion */}
+              <div className="border-b border-slate-100">
+                <button
+                  onClick={() => setMobileAcc(mobileAcc === "leistungen" ? null : "leistungen")}
+                  className="flex w-full items-center justify-between py-4 text-base font-semibold text-slate-900"
+                >
+                  Leistungen
+                  <ChevronDown
+                    className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${
+                      mobileAcc === "leistungen" ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {mobileAcc === "leistungen" && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      {/* Featured */}
+                      <div className="pb-2">
+                        <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                          Kernleistungen
+                        </p>
+                        <div className="grid grid-cols-2 gap-1">
+                          {featuredServices.map((s) => {
+                            const Icon = s.icon;
+                            return (
+                              <Link
+                                key={s.path}
+                                to={s.path}
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2 rounded-lg p-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary"
+                              >
+                                <Icon className="h-4 w-4 text-primary shrink-0" />
+                                {s.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
 
-              {/* Mobile Mega Menu Accordions */}
-              <div className="border-t border-slate-100 pt-2">
-                <p className="py-3 text-xs font-bold uppercase tracking-widest text-slate-400">Spezialisierungen</p>
-                {megaMenuCategories.map((cat) => {
-                  const Icon = cat.icon;
-                  const isAccOpen = mobileAccordion === cat.title;
-                  return (
-                    <div key={cat.title} className="border-b border-slate-50">
-                      <button
-                        onClick={() => setMobileAccordion(isAccOpen ? null : cat.title)}
-                        className="flex w-full items-center justify-between py-3"
-                        aria-expanded={isAccOpen}
-                      >
-                        <span className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-                          <Icon className="h-4 w-4 text-blue-600" />
-                          {cat.title}
-                        </span>
-                        <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${isAccOpen ? "rotate-180" : ""}`} />
-                      </button>
-                      <AnimatePresence>
-                        {isAccOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="pb-3 pl-6">
-                              {cat.items.map((item) => (
-                                <Link
-                                  key={item.path}
-                                  to={item.path}
-                                  onClick={() => setIsOpen(false)}
-                                  className="block py-1.5 text-sm text-slate-500 hover:text-blue-600"
-                                >
-                                  {item.name}
-                                </Link>
-                              ))}
+                      {/* Categories */}
+                      <div className="mt-2 space-y-1 pb-4">
+                        <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                          Spezialisierungen
+                        </p>
+                        {megaMenuCategories.map((cat) => {
+                          const Icon = cat.icon;
+                          const isOpen2 = mobileAcc === cat.title;
+                          return (
+                            <div key={cat.title} className="rounded-lg border border-slate-100">
+                              <button
+                                onClick={() =>
+                                  setMobileAcc(isOpen2 ? "leistungen" : cat.title)
+                                }
+                                className="flex w-full items-center justify-between px-3 py-2.5"
+                              >
+                                <span className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                                  <Icon className={`h-4 w-4 ${cat.color}`} />
+                                  {cat.title}
+                                </span>
+                                <ChevronDown
+                                  className={`h-3.5 w-3.5 text-slate-400 transition-transform ${
+                                    isOpen2 ? "rotate-180" : ""
+                                  }`}
+                                />
+                              </button>
+                              <AnimatePresence>
+                                {isOpen2 && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.15 }}
+                                    className="overflow-hidden"
+                                  >
+                                    <div className="border-t border-slate-100 px-3 pb-3 pt-2">
+                                      {cat.items.map((item) => (
+                                        <Link
+                                          key={item.path + item.name}
+                                          to={item.path}
+                                          onClick={() => setIsOpen(false)}
+                                          className="block py-1.5 pl-6 text-sm text-slate-500 hover:text-primary"
+                                        >
+                                          {item.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
                             </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  );
-                })}
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
-              <Link
-                to="/wissen"
-                onClick={() => setIsOpen(false)}
-                className="py-3 text-lg font-bold text-slate-900"
-              >
-                Wissen
-              </Link>
+              {topNavLinks.slice(1).map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setIsOpen(false)}
+                  className="border-b border-slate-100 py-4 text-base font-semibold text-slate-900"
+                >
+                  {l.label}
+                </Link>
+              ))}
 
-              <Link
-                to="/faq"
+              <a
+                href="/#seo-analyse"
                 onClick={() => setIsOpen(false)}
-                className="py-3 text-lg font-bold text-slate-900"
-              >
-                FAQ
-              </Link>
-
-              <Link
-                to="/kontakt"
-                onClick={() => setIsOpen(false)}
-                className="py-3 text-lg font-bold text-slate-900"
-              >
-                Kontakt
-              </Link>
-
-              <Link
-                to="/kontakt"
-                onClick={() => setIsOpen(false)}
-                className="mt-4 rounded-full bg-blue-600 px-8 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-blue-700"
+                className="mt-6 rounded-full bg-primary px-8 py-3 text-center text-base font-semibold text-primary-foreground hover:bg-primary/90"
               >
                 Gratis Analyse
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
