@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Menu, X, ChevronDown,
   Search, Wrench, FileText, TrendingUp, Eye, Bot, Globe,
@@ -12,8 +12,8 @@ import logo from "@/assets/trafficwerk-logo-new.png";
 
 const topNavLinks = [
   { label: "Startseite", to: "/" },
-  { label: "Über uns", to: "/#about" },
-  { label: "Team", to: "/#team" },
+  { label: "Über uns", to: "/", anchor: "about" },
+  { label: "Team", to: "/", anchor: "team" },
   { label: "Wissen", to: "/wissen" },
   { label: "FAQ", to: "/faq" },
   { label: "Kontakt", to: "/kontakt" },
@@ -130,6 +130,21 @@ const Navbar = () => {
   const [mobileAcc, setMobileAcc] = useState<string | null>(null);
   const megaTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToAnchor = (anchor: string, close?: () => void) => {
+    const doScroll = () => {
+      const el = document.getElementById(anchor);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(doScroll, 400);
+    } else {
+      doScroll();
+    }
+    close?.();
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -200,14 +215,14 @@ const Navbar = () => {
             </div>
 
             {topNavLinks.slice(1).map((l) => (
-              l.to.startsWith("/#") ? (
-                <a
-                  key={l.to}
-                  href={l.to}
+              l.anchor ? (
+                <button
+                  key={l.anchor}
+                  onClick={() => scrollToAnchor(l.anchor!)}
                   className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
                 >
                   {l.label}
-                </a>
+                </button>
               ) : (
                 <Link
                   key={l.to}
@@ -488,15 +503,14 @@ const Navbar = () => {
               </div>
 
               {topNavLinks.slice(1).map((l) => (
-                l.to.startsWith("/#") ? (
-                  <a
-                    key={l.to}
-                    href={l.to}
-                    onClick={() => setIsOpen(false)}
-                    className="border-b border-slate-100 py-4 text-base font-semibold text-slate-900"
+                l.anchor ? (
+                  <button
+                    key={l.anchor}
+                    onClick={() => scrollToAnchor(l.anchor!, () => setIsOpen(false))}
+                    className="border-b border-slate-100 py-4 text-left text-base font-semibold text-slate-900 w-full"
                   >
                     {l.label}
-                  </a>
+                  </button>
                 ) : (
                   <Link
                     key={l.to}
