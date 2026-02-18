@@ -124,6 +124,14 @@ const glossaryTerms: GlossaryTerm[] = [
   { term: "AI Search", definition: "KI-gestützte Suchsysteme wie Google SGE oder Perplexity, die Antworten mithilfe generativer KI direkt in den Suchergebnissen zusammenfassen.", category: "KI-Optimierung (GEO)" },
   { term: "ChatGPT-Sichtbarkeit", definition: "Strategien, um als Marke oder Unternehmen in den Antworten von KI-Chatbots wie ChatGPT referenziert und empfohlen zu werden.", category: "KI-Optimierung (GEO)" },
   { term: "Generative Engine Optimization (GEO)", definition: "Die Optimierung von Inhalten, damit sie von generativen KI-Suchmaschinen bevorzugt als Quelle herangezogen und zitiert werden.", category: "KI-Optimierung (GEO)" },
+
+  // SEO Strategy & Growth (2026)
+  { term: "Data-Driven SEO Roadmap", definition: "Eine datenbasierte SEO-Planung, die auf Keyword-Analyse, Wettbewerbsdaten und KPI-Tracking aufbaut, um nachhaltiges Wachstum für 2026 und darüber hinaus zu sichern.", category: "SEO" },
+  { term: "Sustainable Growth (SEO)", definition: "Nachhaltige SEO-Strategien, die langfristig organische Sichtbarkeit und qualifizierten Traffic aufbauen – ohne risikoreiche Shortcuts oder Black-Hat-Methoden.", category: "SEO" },
+  { term: "Core Web Vitals Optimization 2026", definition: "Die aktuelle Best-Practice-Umsetzung der Google Core Web Vitals (LCP, INP, CLS) nach den aktualisierten Anforderungen für 2026, inklusive INP-Optimierung als Nachfolger von FID.", category: "Webdesign & Tech" },
+  { term: "LCP Optimization Guide", definition: "Largest Contentful Paint (LCP) misst, wie schnell das größte sichtbare Element einer Seite geladen wird. Optimierungsmaßnahmen umfassen Image-Komprimierung, serverseitiges Rendering, CDN-Einsatz und Preloading kritischer Ressourcen.", category: "Webdesign & Tech" },
+  { term: "E-E-A-T Guidelines (2026)", definition: "Experience, Expertise, Authoritativeness, Trustworthiness – Googles aktualisierte Qualitätsrichtlinien betonen nachgewiesene Erfahrung des Autors, transparente Autorenprofile, aktuelle Quellenangaben und vertrauensbildende Signale als zentrale Ranking-Faktoren.", category: "SEO" },
+  { term: "Search Intent Optimization", definition: "Die präzise Ausrichtung von Inhalten auf die Suchintention (informational, navigational, commercial, transactional), um maximale Relevanz für Nutzer und Suchmaschinen zu erzielen und die organische CTR zu steigern.", category: "SEO" },
 ];
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("").filter((c) => /[A-Z0-9]/.test(c));
