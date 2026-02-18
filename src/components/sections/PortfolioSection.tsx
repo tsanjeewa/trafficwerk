@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, TrendingUp, MapPin, ShoppingCart } from "lucide-react";
-import imgLustaufeis from "@/assets/portfolio-lustaufeis-new.webp";
-import imgEismaschine from "@/assets/portfolio-eismaschine-new.webp";
-import imgEiscafe from "@/assets/portfolio-eiscafe.webp";
+import imgLustaufeis from "@/assets/portfolio-lustaufeis-mockup.webp";
+import imgEismaschine from "@/assets/portfolio-eismaschine-mockup.webp";
+import imgEiscafe from "@/assets/portfolio-eiscafe-mockup.webp";
 
 const cases = [
   {
@@ -48,7 +48,7 @@ const cases = [
 
 const PortfolioSection = () => {
   return (
-    <section className="py-10 md:py-14">
+    <section className="section-accent py-10 md:py-14">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -57,12 +57,12 @@ const PortfolioSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-xs font-medium uppercase tracking-widest text-blue-600">Referenzen</span>
-          <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:mt-4 md:text-4xl">
+          <span className="text-xs font-medium uppercase tracking-widest text-primary">Referenzen</span>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-foreground md:mt-4 md:text-4xl">
             Ausgewählte Referenzen & Eigene Projekte
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-slate-500">
-            Wir sprechen nicht nur über Ergebnisse, wir liefern sie. Hier sehen Sie Beispiele unserer datengetriebenen Arbeit in der Praxis – von lokalem Business bis zum E-Commerce Shop.
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+            Wir sprechen nicht nur über Ergebnisse, wir liefern sie. Beispiele unserer datengestützten Arbeit in der Praxis – von lokalem Business bis zum E-Commerce Shop.
           </p>
         </motion.div>
 
@@ -73,21 +73,21 @@ const PortfolioSection = () => {
               href={c.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group overflow-hidden rounded-2xl border border-slate-100 bg-white transition-all duration-300 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-600/5"
+              className="nc-card group overflow-hidden rounded-xl border transition-all duration-300 hover:border-primary/20"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
             >
               {/* Screenshot in browser mockup */}
-              <div className="relative overflow-hidden bg-slate-50 p-4 pb-0">
-                <div className="rounded-t-lg border border-slate-200 bg-white shadow-sm">
+              <div className="relative overflow-hidden bg-muted p-4 pb-0">
+                <div className="rounded-t-lg border border-border bg-background shadow-sm">
                   {/* Browser chrome */}
-                  <div className="flex items-center gap-1.5 border-b border-slate-100 px-3 py-2">
-                    <div className="h-2 w-2 rounded-full bg-slate-200" />
-                    <div className="h-2 w-2 rounded-full bg-slate-200" />
-                    <div className="h-2 w-2 rounded-full bg-slate-200" />
-                    <div className="ml-2 flex-1 rounded bg-slate-50 px-2 py-0.5 text-[10px] text-slate-400">
+                  <div className="flex items-center gap-1.5 border-b border-border px-3 py-2">
+                    <div className="h-2 w-2 rounded-full bg-muted-foreground/20" />
+                    <div className="h-2 w-2 rounded-full bg-muted-foreground/20" />
+                    <div className="h-2 w-2 rounded-full bg-muted-foreground/20" />
+                    <div className="ml-2 flex-1 rounded bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
                       {c.url.replace("https://", "")}
                     </div>
                   </div>
@@ -108,22 +108,22 @@ const PortfolioSection = () => {
               <div className="p-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-semibold text-blue-600">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-semibold text-primary">
                       {c.icon}
                       {c.category}
                     </span>
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-slate-300 transition-all group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 transition-all group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
 
-                <h3 className="mt-3 text-lg font-bold text-slate-900">{c.name}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{c.desc}</p>
+                <h3 className="mt-3 text-lg font-bold text-foreground">{c.name}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
 
                 {/* Honest results */}
                 <ul className="mt-4 space-y-1.5">
                   {c.results.map((r, j) => (
-                    <li key={j} className="flex items-center gap-2 text-xs text-slate-600">
-                      <TrendingUp className="h-3 w-3 flex-shrink-0 text-blue-600" />
+                    <li key={j} className="flex items-center gap-2 text-xs text-foreground/70">
+                      <TrendingUp className="h-3 w-3 flex-shrink-0 text-primary" />
                       {r}
                     </li>
                   ))}

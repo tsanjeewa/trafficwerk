@@ -42,7 +42,7 @@ const ServicesSection = () => {
             >
               <Link
                 to={s.path}
-                className="group block h-full rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/10 md:p-6"
+                className="nc-card group block h-full rounded-xl border p-4 transition-all duration-300 hover:border-primary/20 md:p-6"
               >
                 <s.icon className="h-6 w-6 text-primary transition-transform group-hover:scale-110 md:h-8 md:w-8" />
                 <h3 className="mt-3 font-display text-xs font-semibold md:mt-4 md:text-sm">{s.title}</h3>
