@@ -38,8 +38,8 @@ const ProcessSection = () => {
                   <s.icon className="h-5 w-5 text-primary md:h-7 md:w-7" />
                 </div>
                 <span className="mt-1.5 block text-xs font-bold text-primary md:mt-2">0{i + 1}</span>
-                <h3 className="mt-1 font-display text-sm font-semibold md:mt-2 md:text-base">{s.title}</h3>
-                <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground md:mt-2 md:text-xs">{s.desc}</p>
+                <h3 className="mt-1 font-display text-sm font-bold text-foreground md:mt-2 md:text-base">{s.title}</h3>
+                <p className="mt-1 text-[11px] leading-relaxed text-slate-600 md:mt-2 md:text-xs">{s.desc}</p>
               </motion.div>
             ))}
           </div>
