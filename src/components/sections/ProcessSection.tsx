@@ -11,11 +11,11 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section className="bg-slate-950 py-14 md:py-20">
+    <section className="section-accent py-10 md:py-14">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-medium uppercase tracking-widest text-primary">Prozess</span>
-          <h2 className="mt-3 font-display text-2xl font-bold text-white md:mt-4 md:text-4xl">
+          <h2 className="mt-3 font-display text-2xl font-bold text-slate-900 md:mt-4 md:text-4xl">
             Unser SEO-Prozess
           </h2>
         </div>
@@ -38,8 +38,8 @@ const ProcessSection = () => {
                   <s.icon className="h-5 w-5 text-primary md:h-7 md:w-7" />
                 </div>
                 <span className="mt-1.5 block text-xs font-bold text-primary md:mt-2">0{i + 1}</span>
-                <h3 className="mt-1 font-display text-sm font-bold text-white md:mt-2 md:text-base">{s.title}</h3>
-                <p className="mt-1 text-[11px] leading-relaxed text-slate-400 md:mt-2 md:text-xs">{s.desc}</p>
+                <h3 className="mt-1 font-display text-sm font-bold text-slate-900 md:mt-2 md:text-base">{s.title}</h3>
+                <p className="mt-1 text-[11px] leading-relaxed text-slate-700 md:mt-2 md:text-xs">{s.desc}</p>
               </motion.div>
             ))}
           </div>
