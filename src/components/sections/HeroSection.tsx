@@ -2,18 +2,22 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import heroBg from "@/assets/trafficwerk-hero-bg.webp";
+import networkBg from "@/assets/about-network-bg.webp";
 
 const HeroSection = () => {
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-16 md:min-h-[90vh] md:pt-20">
       {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      {/* Subtle overlay so text stays readable */}
-      <div className="absolute inset-0 bg-white/70" />
+      <div className="absolute inset-0">
+        <img
+          src={networkBg}
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full object-cover object-center"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#010d1f]/60" />
+      </div>
 
       <div className="container relative mx-auto px-6">
         <div className="mx-auto max-w-3xl text-center">
@@ -22,13 +26,13 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+            <span className="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium text-white/90 backdrop-blur-sm">
               SEO-Agentur für nachhaltiges Wachstum
             </span>
           </motion.div>
 
           <motion.h1
-            className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight md:mt-8 md:text-7xl"
+            className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight text-white md:mt-8 md:text-7xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
@@ -40,7 +44,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:mt-6 md:text-lg"
+            className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/75 md:mt-6 md:text-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -60,7 +64,7 @@ const HeroSection = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
+            <Button size="lg" variant="outline" className="rounded-full border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 text-base" asChild>
               <Link to="/gratis-analyse" aria-label="Kostenlose SEO-Analyse anfordern">Gratis Analyse</Link>
             </Button>
           </motion.div>
