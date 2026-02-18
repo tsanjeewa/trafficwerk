@@ -12,6 +12,7 @@ import logo from "@/assets/trafficwerk-logo-new.png";
 
 const topNavLinks = [
   { label: "Startseite", to: "/" },
+  { label: "Über uns", to: "/#team" },
   { label: "Wissen", to: "/wissen" },
   { label: "FAQ", to: "/faq" },
   { label: "Kontakt", to: "/kontakt" },
@@ -198,24 +199,34 @@ const Navbar = () => {
             </div>
 
             {topNavLinks.slice(1).map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
-              >
-                {l.label}
-              </Link>
+              l.to.startsWith("/#") ? (
+                <a
+                  key={l.to}
+                  href={l.to}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
+                >
+                  {l.label}
+                </Link>
+              )
             ))}
           </div>
 
           {/* CTA */}
           <div className="hidden items-center gap-3 lg:flex">
-            <a
-              href="/#seo-analyse"
+            <Link
+              to="/gratis-analyse"
               className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
             >
               Gratis Analyse
-            </a>
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -283,12 +294,12 @@ const Navbar = () => {
                       <p className="mb-3 text-[11px] leading-relaxed text-slate-500">
                         Wir analysieren Ihre Website kostenlos und zeigen konkretes Wachstumspotenzial.
                       </p>
-                      <a
-                        href="/#seo-analyse"
+                      <Link
+                        to="/gratis-analyse"
                         className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-xs font-bold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
                       >
                         Jetzt starten →
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -476,23 +487,34 @@ const Navbar = () => {
               </div>
 
               {topNavLinks.slice(1).map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  onClick={() => setIsOpen(false)}
-                  className="border-b border-slate-100 py-4 text-base font-semibold text-slate-900"
-                >
-                  {l.label}
-                </Link>
+                l.to.startsWith("/#") ? (
+                  <a
+                    key={l.to}
+                    href={l.to}
+                    onClick={() => setIsOpen(false)}
+                    className="border-b border-slate-100 py-4 text-base font-semibold text-slate-900"
+                  >
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={l.to}
+                    to={l.to}
+                    onClick={() => setIsOpen(false)}
+                    className="border-b border-slate-100 py-4 text-base font-semibold text-slate-900"
+                  >
+                    {l.label}
+                  </Link>
+                )
               ))}
 
-              <a
-                href="/#seo-analyse"
+              <Link
+                to="/gratis-analyse"
                 onClick={() => setIsOpen(false)}
                 className="mt-6 rounded-full bg-primary px-8 py-3 text-center text-base font-semibold text-primary-foreground hover:bg-primary/90"
               >
                 Gratis Analyse
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
