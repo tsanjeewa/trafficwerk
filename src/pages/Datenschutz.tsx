@@ -81,6 +81,10 @@ const Datenschutz = () => (
             </Section>
 
           </div>
+
+          <p className="mt-10 text-xs leading-relaxed text-slate-400 border-t border-slate-100 pt-6">
+            Entwickelt von den LegalTech Spezialisten von Willing &amp; Able, die auch das System für datenschutzrechtlich durchdachte Urlaubs- und Zeiterfassung entwickelt haben. Die Texte des Datenschutzerklärungs-Generators wurden von Prof. Dr. h.c. Heiko Jonny Maniero und Rechtsanwalt Christian Solmecke erstellt und publiziert.
+          </p>
         </motion.div>
       </section>
     </main>
