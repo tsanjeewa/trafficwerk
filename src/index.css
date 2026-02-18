@@ -116,3 +116,9 @@
     @apply origin-bottom-left scale-x-100;
   }
 }
+
+/* ── CSS Marquee animation (replaces rAF JS loop → eliminates forced reflows) ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

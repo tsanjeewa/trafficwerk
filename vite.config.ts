@@ -12,6 +12,21 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  build: {
+    // Source maps for better debugging & Best Practices score
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        // Split vendor chunks to reduce main bundle size & TBT
+        manualChunks: {
+          "vendor-react": ["react", "react-dom", "react-router-dom"],
+          "vendor-motion": ["framer-motion"],
+          "vendor-ui": ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu", "@radix-ui/react-tooltip"],
+          "vendor-query": ["@tanstack/react-query"],
+        },
+      },
+    },
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {

@@ -36,7 +36,15 @@ const BlogSection = () => {
                 className="group block cursor-pointer overflow-hidden rounded-xl border border-border/50 bg-card transition-all hover:border-primary/30"
               >
                 <div className="h-48 overflow-hidden">
-                  <img src={post.image} alt={post.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    loading="lazy"
+                    decoding="async"
+                    width={400}
+                    height={192}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 text-xs text-muted-foreground">

@@ -46,13 +46,13 @@ const TeamSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-block rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
+          <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
             Expertise & Leidenschaft
           </span>
-          <h2 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 md:mt-6 md:text-4xl">
+          <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground md:mt-6 md:text-4xl">
             Das Team hinter Ihrem Erfolg
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-slate-500">
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             Wir kombinieren jahrelange Erfahrung mit innovativen Strategien, um TrafficWerk zur ersten Wahl für SEO zu machen.
           </p>
         </motion.div>
@@ -77,9 +77,9 @@ const TeamSection = () => {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <h3 className="mt-3 text-sm font-bold text-slate-900 md:mt-5 md:text-base">{member.name}</h3>
-              <p className="mt-0.5 text-[11px] font-semibold text-blue-600 md:mt-1 md:text-xs">{member.role}</p>
-              <p className="mt-1 text-[11px] leading-relaxed text-slate-500 md:mt-2 md:text-xs">{member.bio}</p>
+              <h3 className="mt-3 text-sm font-bold text-foreground md:mt-5 md:text-base">{member.name}</h3>
+              <p className="mt-0.5 text-[11px] font-semibold text-primary md:mt-1 md:text-xs">{member.role}</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground md:mt-2 md:text-xs">{member.bio}</p>
             </motion.div>
           ))}
         </div>

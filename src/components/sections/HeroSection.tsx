@@ -7,11 +7,19 @@ import heroBg from "@/assets/trafficwerk-hero-bg.webp";
 const HeroSection = () => {
   return (
     <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-16 md:min-h-[90vh] md:pt-20">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+      {/* Background image – LCP optimised: explicit img tag with fetchpriority */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="sync"
+          width={1920}
+          height={1080}
+          className="h-full w-full object-cover object-center"
+        />
+      </div>
       {/* Subtle overlay so text stays readable */}
       <div className="absolute inset-0 bg-white/70" />
 

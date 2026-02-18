@@ -11,10 +11,11 @@ const StatItem = ({ value, suffix, label }: { value: number; suffix: string; lab
   const { count, ref } = useCountUp(value);
   return (
     <div ref={ref} className="text-center">
-      <p className="text-3xl font-bold text-blue-600 md:text-5xl">
+      {/* Use foreground-based color token for WCAG AA contrast */}
+      <p className="text-3xl font-bold text-primary md:text-5xl">
         {count.toLocaleString("de-DE")}{suffix}
       </p>
-      <p className="mt-2 text-sm text-slate-500">{label}</p>
+      <p className="mt-2 text-sm text-foreground/60">{label}</p>
     </div>
   );
 };
