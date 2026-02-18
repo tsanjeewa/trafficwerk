@@ -1,17 +1,9 @@
 import { motion } from "framer-motion";
-import imgThomas from "@/assets/team-thomas-real.webp";
 import imgThushara from "@/assets/team-thushara-real.webp";
 import imgEyana from "@/assets/team-eyana-real.webp";
 import imgJohn from "@/assets/team-john-real.webp";
 
 const team = [
-  {
-    name: "Thomas",
-    role: "Senior SEO Strategist",
-    bio: "Spezialist für strategische SEO-Kampagnen und nachhaltige Ranking-Optimierung.",
-    image: imgThomas,
-    alt: "Thomas – Senior SEO Strategist bei TrafficWerk",
-  },
   {
     name: "Thushara",
     role: "Strategic Management",
