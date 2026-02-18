@@ -36,13 +36,13 @@ const Footer = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-900">Leistungen</h4>
             <ul className="mt-4 space-y-2.5">
               {[
-                { name: "SEO-Strategie & Beratung", path: "/services/seo-strategie" },
+                { name: "SEO-Strategie & Beratung", path: "/seo-strategie" },
                 { name: "Technische SEO", path: "/services/technische-seo" },
                 { name: "On-Page Optimierung", path: "/services/on-page-optimierung" },
                 { name: "Lokale SEO", path: "/services/lokale-seo" },
                 { name: "Content Marketing", path: "/services/content-marketing" },
                 { name: "Off-Page & Linkbuilding", path: "/services/off-page-linkbuilding" },
-                { name: "GEO / KI-Optimierung", path: "/services/geo-ki-optimierung" },
+                { name: "GEO / KI-Optimierung", path: "/geo" },
                 { name: "E-Commerce SEO", path: "/services/e-commerce-seo" },
               ].map((l) => (
                 <li key={l.path}>
