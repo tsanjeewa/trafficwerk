@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { BarChart3, Leaf, Cpu } from "lucide-react";
-import aboutAbstractBg from "@/assets/about-abstract-bg.webp";
+import aboutWaveBg from "@/assets/about-wave-bg.webp";
 
 const pillars = [
   {
@@ -60,13 +60,13 @@ const AboutSection = () => {
               viewport={{ once: true }}
             >
               {/* Abstract background image – subtle overlay */}
-              <div className="absolute inset-0 z-0">
+              <div className="absolute inset-0 z-0 overflow-hidden rounded-2xl">
                 <img
-                  src={aboutAbstractBg}
+                  src={aboutWaveBg}
                   alt=""
                   aria-hidden="true"
-                  className="h-full w-full object-cover"
-                  style={{ opacity: 0.18 }}
+                  className="h-full w-full object-cover object-center"
+                  style={{ opacity: 0.22 }}
                 />
               </div>
 
