@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import imgThushara from "@/assets/team-thushara.webp";
 import imgThomas from "@/assets/team-thomas.webp";
-import imgEyana from "@/assets/team-eyana.webp";
-import imgAnna from "@/assets/team-anna.webp";
+import imgEyana from "@/assets/team-eyana-new.webp";
+import imgAnna from "@/assets/team-john-new.webp";
 
 const team = [
   {
@@ -37,7 +37,7 @@ const team = [
 
 const TeamSection = () => {
   return (
-    <section className="bg-white py-10 md:py-14">
+    <section id="team" className="bg-white py-10 md:py-14">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"

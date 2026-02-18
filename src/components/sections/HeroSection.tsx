@@ -5,14 +5,14 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-[80vh] items-center overflow-hidden pt-16 md:min-h-[90vh] md:pt-20">
+    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-16 md:min-h-[90vh] md:pt-20">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
-      <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
+      <div className="absolute right-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
       <div className="absolute left-1/4 bottom-0 h-[300px] w-[300px] rounded-full bg-accent/5 blur-[100px]" />
 
       <div className="container relative mx-auto px-6">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,16 +36,16 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:mt-6 md:text-lg"
+            className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:mt-6 md:text-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            TrafficWerk ist Ihre Agentur für datengetriebene Suchmaschinenoptimierung. Mehr Sichtbarkeit, mehr Traffic, mehr Umsatz – messbar und nachhaltig.
+            TrafficWerk ist Ihre Agentur für Suchmaschinenoptimierung. Mit datengetriebenen Strategien sorgen wir für mehr Sichtbarkeit, mehr Traffic und mehr Umsatz – messbar und nachhaltig.
           </motion.p>
 
           <motion.div
-            className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-4"
+            className="mt-8 flex flex-wrap justify-center gap-3 md:mt-10 md:gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
@@ -57,7 +57,7 @@ const HeroSection = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
-              <a href="#services" aria-label="Zu unseren Leistungen scrollen">Unsere Leistungen</a>
+              <a href="#seo-analyse" aria-label="Zu unserer Gratis Analyse scrollen">Gratis Analyse</a>
             </Button>
           </motion.div>
         </div>
