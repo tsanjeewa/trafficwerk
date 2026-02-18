@@ -5,7 +5,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MapPin, CheckCircle2, FileText, BarChart2, Search, AlertTriangle, Zap, Users, TrendingUp, Shield } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import seoPreview from "@/assets/seo-performance-preview.webp";
+import seoPreview from "@/assets/seo-dashboard-preview.webp";
+import seoAuditImg from "@/assets/seo-audit-preview.webp";
+import accentBg from "@/assets/content-section-accent-bg.webp";
 
 const WEB3FORMS_URL = "https://api.web3forms.com/submit";
 const WEB3FORMS_KEY = "972a2eeb-c625-4b2a-9991-b60bf2d7912d";
@@ -114,8 +116,13 @@ const Kontakt = () => {
         </section>
 
         {/* SEO Report Preview – visuell */}
-        <section id="seo-analyse" className="py-16 md:py-20">
-          <div className="container mx-auto px-6">
+        <section
+          id="seo-analyse"
+          className="relative py-16 md:py-20"
+          style={{ backgroundImage: `url(${accentBg})`, backgroundSize: 'cover', backgroundPosition: 'right center' }}
+        >
+          <div className="absolute inset-0 bg-white/85" />
+          <div className="container relative mx-auto px-6">
             <div className="mx-auto max-w-2xl text-center">
               <span className="text-xs font-medium uppercase tracking-widest text-primary">Report-Vorschau</span>
               <h2 className="mt-3 text-2xl font-bold text-foreground md:text-3xl">
@@ -126,31 +133,62 @@ const Kontakt = () => {
               </p>
             </div>
 
-            {/* Dashboard Preview Image */}
-            <div className="mx-auto mt-10 max-w-4xl">
+            {/* Split: Dashboard + Audit-Foto */}
+            <div className="mx-auto mt-10 grid max-w-5xl items-center gap-8 md:grid-cols-2">
+              {/* Dashboard Screenshot */}
               <div className="nc-card overflow-hidden rounded-2xl border">
-                {/* Browser chrome mockup */}
                 <div className="flex items-center gap-1.5 border-b border-border bg-muted/50 px-4 py-3">
-                  <div className="h-3 w-3 rounded-full bg-red-400/60" />
-                  <div className="h-3 w-3 rounded-full bg-yellow-400/60" />
-                  <div className="h-3 w-3 rounded-full bg-green-400/60" />
-                  <div className="ml-3 flex-1 rounded-md bg-muted px-3 py-1 text-xs text-muted-foreground">
-                    trafficwerk.de/seo-report/ihre-domain
+                  <div className="h-2.5 w-2.5 rounded-full bg-red-400/60" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-yellow-400/60" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-green-400/60" />
+                  <div className="ml-2 flex-1 rounded-md bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
+                    trafficwerk.de/seo-report
                   </div>
-                  <Shield className="h-4 w-4 text-green-500" />
+                  <Shield className="h-3.5 w-3.5 text-green-500" />
                 </div>
                 <img
                   src={seoPreview}
                   alt="SEO Performance Report Dashboard Vorschau – TrafficWerk"
                   loading="lazy"
-                  width={960}
-                  height={640}
+                  width={720}
+                  height={480}
                   className="w-full object-cover"
                 />
               </div>
-              <p className="mt-3 text-center text-xs text-muted-foreground">
-                ↑ Beispiel-Dashboard: Keywords, Traffic, Backlinks & Core Web Vitals auf einen Blick
-              </p>
+
+              {/* Audit-Foto mit Bullet-Points */}
+              <div className="space-y-6">
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src={seoAuditImg}
+                    alt="SEO Audit Report – professionelle Analyse durch TrafficWerk"
+                    loading="lazy"
+                    width={600}
+                    height={400}
+                    className="w-full rounded-2xl object-cover shadow-md"
+                  />
+                </div>
+                <ul className="space-y-3">
+                  {[
+                    "Keyword-Rankings & Wachstumspotenziale",
+                    "Technische Fehler & PageSpeed-Score",
+                    "Backlink-Profil & Wettbewerbs-Vergleich",
+                    "Content-Lücken & Quick-Wins",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-sm text-foreground">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <TrendingUp className="h-3 w-3" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-3">
+                  <p className="text-sm font-semibold text-primary">
+                    ✅ Kostenlos · Unverbindlich · DSGVO-konform · Innerhalb 24 h
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Was beinhaltet der Report – Cards */}
@@ -158,10 +196,7 @@ const Kontakt = () => {
               {reportItems.map((item, i) => {
                 const Icon = item.icon;
                 return (
-                  <div
-                    key={i}
-                    className="nc-card rounded-xl border p-6 transition-shadow"
-                  >
+                  <div key={i} className="nc-card rounded-xl border bg-background p-6 transition-shadow">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
@@ -173,13 +208,6 @@ const Kontakt = () => {
                   </div>
                 );
               })}
-            </div>
-
-            <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
-              <p className="flex items-center justify-center gap-2 text-sm font-semibold text-primary">
-                <TrendingUp className="h-4 w-4" />
-                Kostenlos, unverbindlich & DSGVO-konform – Report als PDF innerhalb von 24 Stunden per E-Mail.
-              </p>
             </div>
           </div>
         </section>
