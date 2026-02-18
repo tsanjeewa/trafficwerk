@@ -22,7 +22,7 @@ const pillars = [
 
 const AboutSection = () => {
   return (
-    <section className="relative overflow-hidden bg-background py-16 md:py-24">
+    <section id="about" className="relative overflow-hidden bg-background py-16 md:py-24">
       <div className="container relative z-10 mx-auto px-4 md:px-6">
 
         {/* Header */}

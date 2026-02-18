@@ -6,7 +6,7 @@ import heroBg from "@/assets/trafficwerk-hero-bg.webp";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-16 md:min-h-[90vh] md:pt-20">
+    <section id="hero" className="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-16 md:min-h-[90vh] md:pt-20">
       {/* Background image – LCP optimised: explicit img tag with fetchpriority */}
       <div className="absolute inset-0 overflow-hidden">
         <img

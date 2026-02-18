@@ -12,7 +12,8 @@ import logo from "@/assets/trafficwerk-logo-new.png";
 
 const topNavLinks = [
   { label: "Startseite", to: "/" },
-  { label: "Über uns", to: "/#team" },
+  { label: "Über uns", to: "/#about" },
+  { label: "Team", to: "/#team" },
   { label: "Wissen", to: "/wissen" },
   { label: "FAQ", to: "/faq" },
   { label: "Kontakt", to: "/kontakt" },
