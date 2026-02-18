@@ -14,10 +14,10 @@ const team = [
   },
   {
     name: "Thushara",
-    role: "Strategic Management",
-    bio: "Fokussiert auf visionäre Wachstumsstrategien und exzellente Kundenbetreuung.",
+    role: "Senior SEO Strategist",
+    bio: "Spezialist für datengetriebene SEO-Kampagnen und nachhaltige Ranking-Optimierung.",
     image: imgThushara,
-    alt: "Thushara – Strategic Management bei TrafficWerk",
+    alt: "Thushara – Senior SEO Strategist bei TrafficWerk",
   },
   {
     name: "Eyana",
