@@ -28,17 +28,17 @@ const ProcessSection = () => {
             {steps.map((s, i) => (
               <motion.div
                 key={i}
-                className="nc-card relative rounded-xl p-4 text-center md:p-6"
+                className="relative text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-primary/25 bg-primary/10 md:h-14 md:w-14">
-                  <s.icon className="h-5 w-5 text-primary md:h-6 md:w-6" />
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-primary/10 md:h-16 md:w-16">
+                  <s.icon className="h-5 w-5 text-primary md:h-7 md:w-7" />
                 </div>
-                <span className="mt-2 block text-xs font-bold text-primary">0{i + 1}</span>
-                <h3 className="mt-1 font-display text-sm font-semibold text-foreground md:mt-2 md:text-base">{s.title}</h3>
+                <span className="mt-1.5 block text-xs font-bold text-primary md:mt-2">0{i + 1}</span>
+                <h3 className="mt-1 font-display text-sm font-semibold md:mt-2 md:text-base">{s.title}</h3>
                 <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground md:mt-2 md:text-xs">{s.desc}</p>
               </motion.div>
             ))}

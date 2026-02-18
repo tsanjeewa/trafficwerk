@@ -42,12 +42,10 @@ const ServicesSection = () => {
             >
               <Link
                 to={s.path}
-                className="group nc-card block h-full rounded-xl p-4 transition-all md:p-6"
+                className="group block h-full rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/10 md:p-6"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white md:h-11 md:w-11">
-                  <s.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-3 font-display text-xs font-semibold text-foreground md:mt-4 md:text-sm">{s.title}</h3>
+                <s.icon className="h-6 w-6 text-primary transition-transform group-hover:scale-110 md:h-8 md:w-8" />
+                <h3 className="mt-3 font-display text-xs font-semibold md:mt-4 md:text-sm">{s.title}</h3>
                 <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground md:mt-2 md:text-xs">{s.desc}</p>
               </Link>
             </motion.div>

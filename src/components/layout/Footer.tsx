@@ -3,104 +3,92 @@ import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border bg-section-alt">
+    <footer className="border-t border-slate-100 bg-white">
       <div className="container mx-auto px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand & Socials */}
           <div>
-            <Link to="/" className="text-2xl font-bold text-foreground font-display">
+            <Link to="/" className="text-2xl font-bold text-slate-900">
               TrafficWerk
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-slate-500">
               Ihre SEO-Agentur für nachhaltiges Wachstum. Wir bringen Ihr Unternehmen auf Seite 1 bei Google.
             </p>
             <div className="mt-6 flex gap-3">
-              <a href="https://www.instagram.com/trafficwerk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-                className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
+              <a href="https://www.instagram.com/trafficwerk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="https://www.linkedin.com/company/trafficwerk/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
+              <a href="https://www.linkedin.com/company/trafficwerk/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href="https://www.facebook.com/trafficwerk" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-                className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary">
+              <a href="https://www.facebook.com/trafficwerk" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full border border-slate-200 p-2 text-slate-400 transition-colors hover:border-blue-600 hover:text-blue-600">
                 <Facebook className="h-4 w-4" />
               </a>
             </div>
           </div>
 
-          {/* Leistungen – linked to the correct service pages */}
+          {/* Leistungen */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground">Leistungen</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Leistungen</h4>
             <ul className="mt-4 space-y-2.5">
               {[
                 { name: "SEO-Strategie", path: "/seo-strategie" },
                 { name: "Technische SEO", path: "/services/technische-seo" },
-                { name: "On-Page Optimierung", path: "/services/on-page-optimierung" },
-                { name: "Off-Page & Linkbuilding", path: "/services/off-page-linkbuilding" },
+                { name: "GEO & KI-Optimierung", path: "/geo" },
                 { name: "Content Marketing", path: "/services/content-marketing" },
                 { name: "Lokale SEO", path: "/services/lokale-seo" },
-                { name: "E-Commerce SEO", path: "/services/e-commerce-seo" },
                 { name: "Google Ads", path: "/services/google-ads" },
-                { name: "GEO & KI-Optimierung", path: "/geo" },
               ].map((l) => (
                 <li key={l.path}>
-                  <Link to={l.path} className="text-sm text-muted-foreground transition-colors hover:text-primary">{l.name}</Link>
+                  <Link to={l.path} className="text-sm text-slate-500 transition-colors hover:text-blue-600">{l.name}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Unternehmen – Über uns → #team anchor */}
+          {/* Unternehmen */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground">Unternehmen</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Unternehmen</h4>
             <ul className="mt-4 space-y-2.5">
-              <li><Link to="/" className="text-sm text-muted-foreground transition-colors hover:text-primary">Startseite</Link></li>
-              <li><Link to="/#services" className="text-sm text-muted-foreground transition-colors hover:text-primary">Leistungen</Link></li>
-              <li><a href="/#team" className="text-sm text-muted-foreground transition-colors hover:text-primary">Über uns / Team</a></li>
-              <li><Link to="/domain-portfolio" className="text-sm text-muted-foreground transition-colors hover:text-primary">Domain Portfolio</Link></li>
-              <li><Link to="/wissen" className="text-sm text-muted-foreground transition-colors hover:text-primary">SEO-Glossar</Link></li>
-              <li><Link to="/faq" className="text-sm text-muted-foreground transition-colors hover:text-primary">FAQ</Link></li>
-              <li><Link to="/kontakt" className="text-sm text-muted-foreground transition-colors hover:text-primary">Kontakt</Link></li>
+              <li><Link to="/" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Startseite</Link></li>
+              <li><Link to="/#services" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Leistungen</Link></li>
+              <li><Link to="/domain-portfolio" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Domain Portfolio</Link></li>
+              <li><Link to="/#team" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Über uns / Team</Link></li>
+              <li><Link to="/wissen" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Wissen (Glossar)</Link></li>
+              <li><Link to="/faq" className="text-sm text-slate-500 transition-colors hover:text-blue-600">FAQ</Link></li>
+              <li><Link to="/kontakt" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Kontakt</Link></li>
             </ul>
           </div>
 
           {/* Kontakt */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground">Kontakt</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Kontakt</h4>
             <ul className="mt-4 space-y-3">
-              <li className="flex items-start gap-3 text-sm text-muted-foreground">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <li className="flex items-start gap-3 text-sm text-slate-500">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
                 <span>Taradeauer Str. 11<br />85244 Röhrmoos</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <a href="mailto:info@trafficwerk.de" className="transition-colors hover:text-primary">info@trafficwerk.de</a>
+              <li className="flex items-center gap-3 text-sm text-slate-500">
+                <Mail className="h-4 w-4 shrink-0 text-blue-600" />
+                <a href="mailto:info@trafficwerk.de" className="transition-colors hover:text-blue-600">info@trafficwerk.de</a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <a href="tel:+4915782208713" className="transition-colors hover:text-primary">+49 1578 2208713</a>
+              <li className="flex items-center gap-3 text-sm text-slate-500">
+                <Phone className="h-4 w-4 shrink-0 text-blue-600" />
+                <a href="tel:+4915782208713" className="transition-colors hover:text-blue-600">+49 1578 2208713</a>
               </li>
             </ul>
-
-            {/* Trust badge */}
-            <div className="mt-6 rounded-xl border border-border bg-background p-3 text-center">
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Zertifizierter Partner</p>
-              <p className="mt-1 text-xs font-bold text-foreground">Google · Meta · Sistrix</p>
-            </div>
           </div>
         </div>
 
         {/* Copyright & Legal */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
-          <p className="text-xs text-muted-foreground">
-            © 2026 TrafficWerk GmbH. Alle Rechte vorbehalten.
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-100 pt-8 md:flex-row">
+          <p className="text-xs text-slate-400">
+            © 2026 TrafficWerk. Alle Rechte vorbehalten.
           </p>
           <div className="flex gap-6">
-            <Link to="/impressum" className="text-xs text-muted-foreground transition-colors hover:text-primary">Impressum</Link>
-            <Link to="/datenschutz" className="text-xs text-muted-foreground transition-colors hover:text-primary">Datenschutz</Link>
-            <Link to="/cookie-richtlinie" className="text-xs text-muted-foreground transition-colors hover:text-primary">Cookies</Link>
+            <Link to="/impressum" className="text-xs text-slate-400 transition-colors hover:text-blue-600">Impressum</Link>
+            <Link to="/datenschutz" className="text-xs text-slate-400 transition-colors hover:text-blue-600">Datenschutz</Link>
+            <Link to="/cookie-richtlinie" className="text-xs text-slate-400 transition-colors hover:text-blue-600">Cookies</Link>
           </div>
         </div>
       </div>

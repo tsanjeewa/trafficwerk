@@ -11,10 +11,10 @@ const StatItem = ({ value, suffix, label }: { value: number; suffix: string; lab
   const { count, ref } = useCountUp(value);
   return (
     <div ref={ref} className="text-center">
-      <p className="text-3xl font-bold text-primary md:text-5xl">
+      <p className="text-3xl font-bold text-blue-600 md:text-5xl">
         {count.toLocaleString("de-DE")}{suffix}
       </p>
-      <p className="mt-2 text-sm text-muted-foreground">{label}</p>
+      <p className="mt-2 text-sm text-slate-500">{label}</p>
     </div>
   );
 };
@@ -23,11 +23,9 @@ const StatsSection = () => {
   return (
     <section className="py-8 md:py-12">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="nc-card grid grid-cols-2 gap-0 divide-x divide-y divide-border rounded-2xl overflow-hidden md:grid-cols-4 md:divide-y-0">
-          {stats.map((s, i) => (
-            <div key={s.label} className={`p-6 text-center ${i === 0 ? '' : ''}`}>
-              <StatItem {...s} />
-            </div>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
+          {stats.map((s) => (
+            <StatItem key={s.label} {...s} />
           ))}
         </div>
       </div>

@@ -46,10 +46,10 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="absolute -bottom-6 -right-6 h-64 w-64 rounded-full bg-primary/15 blur-[100px]" />
-            <div className="absolute -left-8 -top-8 h-48 w-48 rounded-full bg-primary/8 blur-[80px]" />
+            <div className="absolute -bottom-6 -right-6 h-64 w-64 rounded-full bg-blue-400/20 blur-[100px]" />
+            <div className="absolute -left-8 -top-8 h-48 w-48 rounded-full bg-blue-500/10 blur-[80px]" />
 
-            <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/10">
+            <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-blue-500/10">
               <img
                 src={aboutBuilding}
                 alt="Moderne Glasfassade – TrafficWerk digitale Architektur"
@@ -68,17 +68,17 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
+            <span className="inline-block rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
               Über TrafficWerk
             </span>
-            <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground md:mt-6 md:text-4xl">
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 md:mt-6 md:text-4xl">
               Wir transformieren digitale Präsenz in{" "}
-              <span className="text-primary">messbaren Erfolg</span>.
+              <span className="text-blue-600">messbaren Erfolg</span>.
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="mt-4 text-sm leading-relaxed text-slate-500 md:text-base">
               TrafficWerk steht für eine neue Ära des digitalen Marketings. Wir sind ein Team aus SEO-Architekten, Content-Strategen und Datenanalysten, die ein gemeinsames Ziel verfolgen: Die Marktführerschaft unserer Kunden in der organischen Suche.
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-500 md:text-base">
               Wir glauben nicht an Standardlösungen. Jedes Projekt bei TrafficWerk wird als Unikat behandelt, mit einer maßgeschneiderten Roadmap, die technisches Know-how mit kreativer Exzellenz verbindet.
             </p>
 
@@ -86,18 +86,18 @@ const AboutSection = () => {
               {pillars.map((p, i) => (
                 <motion.div
                   key={p.title}
-                  className="nc-card flex items-start gap-4 rounded-xl p-3 transition-all"
+                  className="flex items-start gap-4 rounded-xl p-3 transition-colors duration-200 hover:bg-blue-50/80"
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
                     <p.icon className="h-4 w-4" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-foreground">{p.title}</h3>
-                    <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{p.desc}</p>
+                    <h3 className="text-sm font-bold text-slate-900">{p.title}</h3>
+                    <p className="mt-0.5 text-xs leading-relaxed text-slate-500">{p.desc}</p>
                   </div>
                 </motion.div>
               ))}

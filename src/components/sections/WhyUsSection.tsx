@@ -48,18 +48,18 @@ const WhyUsSection = () => {
             >
               <Link
                 to={s.path}
-                className="group nc-card flex h-full gap-4 rounded-xl p-4 transition-all md:gap-5 md:p-6"
+                className="group flex h-full gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition-all duration-300 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5 md:gap-5 md:p-6"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white md:h-12 md:w-12">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white md:h-12 md:w-12">
                   <s.icon className="h-4 w-4 md:h-5 md:w-5" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-foreground md:text-base">{s.title}</h3>
-                    <ArrowRight className="h-3.5 w-3.5 text-muted-foreground/40 transition-all group-hover:translate-x-1 group-hover:text-primary md:h-4 md:w-4" />
+                    <h3 className="text-sm font-bold text-slate-900 md:text-base">{s.title}</h3>
+                    <ArrowRight className="h-3.5 w-3.5 text-slate-300 transition-all group-hover:translate-x-1 group-hover:text-blue-600 md:h-4 md:w-4" />
                   </div>
-                  <p className="mt-0.5 text-[11px] font-medium text-primary/70 md:text-xs">{s.subtitle}</p>
-                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground md:mt-2 md:text-sm">{s.desc}</p>
+                  <p className="mt-0.5 text-[11px] font-medium text-blue-600/70 md:text-xs">{s.subtitle}</p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-slate-500 md:mt-2 md:text-sm">{s.desc}</p>
                 </div>
               </Link>
             </motion.div>
