@@ -61,7 +61,7 @@ const HeroSection = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full text-base" asChild>
-              <a href="#seo-analyse" aria-label="Zu unserer Gratis Analyse scrollen">Gratis Analyse</a>
+              <Link to="/gratis-analyse" aria-label="Kostenlose SEO-Analyse anfordern">Gratis Analyse</Link>
             </Button>
           </motion.div>
         </div>

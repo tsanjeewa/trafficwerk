@@ -27,21 +27,24 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Leistungen */}
+          {/* SEO Wissen – Keyword-fokussiertes Internal Linking */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Leistungen</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">SEO-Wissen</h4>
+            <p className="mt-2 text-xs text-slate-400 leading-relaxed">
+              Alles, was Sie über Suchmaschinenoptimierung wissen müssen – verständlich erklärt.
+            </p>
             <ul className="mt-4 space-y-2.5">
               {[
-                { name: "SEO-Strategie", path: "/seo-strategie" },
-                { name: "Technische SEO", path: "/services/technische-seo" },
-                { name: "GEO & KI-Optimierung", path: "/geo" },
-                { name: "Content Marketing", path: "/services/content-marketing" },
-                { name: "Lokale SEO", path: "/services/lokale-seo" },
-                { name: "Google Ads", path: "/services/google-ads" },
-                { name: "E-Commerce SEO", path: "/services/e-commerce-seo" },
-                { name: "Off-Page & Linkbuilding", path: "/services/off-page-linkbuilding" },
+                { name: "Was ist SEO? (Einstieg)", path: "/wissen" },
+                { name: "Wie funktioniert Google-Ranking?", path: "/wissen" },
+                { name: "Technische SEO erklärt", path: "/services/technische-seo" },
+                { name: "Lokale SEO für lokale Betriebe", path: "/services/lokale-seo" },
+                { name: "Content Marketing – was steckt dahinter?", path: "/services/content-marketing" },
+                { name: "Was sind Backlinks?", path: "/services/off-page-linkbuilding" },
+                { name: "KI & die Zukunft der Suche (GEO)", path: "/geo" },
+                { name: "Häufige SEO-Fragen (FAQ)", path: "/faq" },
               ].map((l) => (
-                <li key={l.path}>
+                <li key={l.path + l.name}>
                   <Link to={l.path} className="text-sm text-slate-500 transition-colors hover:text-blue-600">{l.name}</Link>
                 </li>
               ))}
@@ -53,11 +56,9 @@ const Footer = () => {
             <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900">Unternehmen</h4>
             <ul className="mt-4 space-y-2.5">
               <li><Link to="/" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Startseite</Link></li>
-              <li><a href="/#services" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Leistungen</a></li>
-              <li><Link to="/domain-portfolio" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Domain Portfolio</Link></li>
-              <li><a href="/#team" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Über uns</a></li>
-              <li><Link to="/wissen" className="text-sm text-slate-500 transition-colors hover:text-blue-600">SEO-Glossar</Link></li>
-              <li><Link to="/faq" className="text-sm text-slate-500 transition-colors hover:text-blue-600">FAQ</Link></li>
+              <li><a href="/#team" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Über uns & Team</a></li>
+              <li><Link to="/domain-portfolio" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Domain-Portfolio</Link></li>
+              <li><Link to="/gratis-analyse" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Gratis SEO-Analyse</Link></li>
               <li><Link to="/kontakt" className="text-sm text-slate-500 transition-colors hover:text-blue-600">Kontakt</Link></li>
             </ul>
           </div>
