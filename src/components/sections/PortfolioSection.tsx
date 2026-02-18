@@ -48,7 +48,7 @@ const cases = [
 
 const PortfolioSection = () => {
   return (
-    <section className="section-accent py-10 md:py-14">
+    <section className="py-10 md:py-14">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
