@@ -39,9 +39,12 @@ const Impressum = () => (
               </p>
             </Section>
 
-            <Section title="Umsatzsteuer-ID">
-              <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />[USt-ID wird nachgetragen]</p>
-            </Section>
+           <Section title="Umsatzsteuer-ID">
+  <p>
+    Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+    DE208168690
+  </p>
+</Section>>
 
             <Section title="Redaktionell verantwortlich">
               <p>
