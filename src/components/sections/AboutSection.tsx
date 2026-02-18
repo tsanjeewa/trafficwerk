@@ -65,6 +65,10 @@ const AboutSection = () => {
                   src={aboutWaveBg}
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={400}
                   className="h-full w-full object-cover object-center"
                   style={{ opacity: 0.22 }}
                 />
