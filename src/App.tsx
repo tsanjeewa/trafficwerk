@@ -26,7 +26,7 @@ import CoreWebVitals from "./pages/blog/CoreWebVitals";
 import KIundSEO from "./pages/blog/KIundSEO";
 import LokaleSEOTipps from "./pages/blog/LokaleSEOTipps";
 import LandingPage from "./pages/LandingPage";
-import GratisAnalyse from "./pages/gratisAnalyse";
+import GratisAnalyse from "./pages/gratis-analyse";
 import DomainPortfolio from "./pages/DomainPortfolio";
 import Wissen from "./pages/Wissen";
 import FAQ from "./pages/FAQ";
@@ -64,7 +64,7 @@ const App = () => (
           <Route path="/domain-portfolio" element={<DomainPortfolio />} />
           <Route path="/wissen" element={<Wissen />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/gratis-analyse" element={<GratisAnalyse />} />
+          <Route path="/gratis-analyse" element={<gratisAnalyse />} />
           <Route path="/lp/:slug" element={<LandingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
