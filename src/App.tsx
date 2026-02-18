@@ -26,7 +26,7 @@ import CoreWebVitals from "./pages/blog/CoreWebVitals";
 import KIundSEO from "./pages/blog/KIundSEO";
 import LokaleSEOTipps from "./pages/blog/LokaleSEOTipps";
 import LandingPage from "./pages/LandingPage";
-import GratisAnalyse from "./pages/GratisAnalyse";
+import GratisAnalyse from "./pages/gratisAnalyse";
 import DomainPortfolio from "./pages/DomainPortfolio";
 import Wissen from "./pages/Wissen";
 import FAQ from "./pages/FAQ";
