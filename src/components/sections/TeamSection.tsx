@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
-import imgThushara from "@/assets/team-thushara.webp";
+import imgThushara from "@/assets/team-thomas-ceo.webp";
 import imgThomas from "@/assets/team-thomas.webp";
-import imgEyana from "@/assets/team-eyana-new.webp";
+import imgEyana from "@/assets/team-eyana-portrait.webp";
 import imgAnna from "@/assets/team-john-new.webp";
 
 const team = [
   {
-    name: "Thushara",
+    name: "Thomas",
     role: "Senior SEO Strategist",
-    bio: "Spezialist für datengetriebene SEO-Kampagnen und nachhaltige Ranking-Optimierung.",
+    bio: "Spezialist für strategische SEO-Kampagnen und nachhaltige Ranking-Optimierung.",
     image: imgThushara,
-    alt: "Thushara – Senior SEO Strategist bei TrafficWerk",
+    alt: "Thomas – Senior SEO Strategist bei TrafficWerk",
   },
   {
-    name: "Eden",
+    name: "Thushara",
     role: "Strategic Management",
     bio: "Fokussiert auf visionäre Wachstumsstrategien und exzellente Kundenbetreuung.",
     image: imgThomas,
-    alt: "Eden – Strategic Management bei TrafficWerk",
+    alt: "Thushara – Strategic Management bei TrafficWerk",
   },
   {
     name: "Eyana",
@@ -37,7 +37,7 @@ const team = [
 
 const TeamSection = () => {
   return (
-    <section id="team" className="bg-white py-10 md:py-14">
+    <section id="team" className="section-alt py-10 md:py-14">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -61,7 +61,7 @@ const TeamSection = () => {
           {team.map((member, i) => (
             <motion.div
               key={member.name}
-              className="group rounded-2xl border border-slate-100 bg-white p-3 text-center transition-all duration-300 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5 md:p-5"
+              className="nc-card group rounded-xl border p-3 text-center transition-all duration-300 hover:border-primary/20 md:p-5"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}

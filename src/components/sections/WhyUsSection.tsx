@@ -19,7 +19,7 @@ const services = [
 
 const WhyUsSection = () => {
   return (
-    <section className="py-10 md:py-14">
+    <section className="section-alt py-10 md:py-14">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -48,7 +48,7 @@ const WhyUsSection = () => {
             >
               <Link
                 to={s.path}
-                className="group flex h-full gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition-all duration-300 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5 md:gap-5 md:p-6"
+                className="nc-card group flex h-full gap-4 rounded-xl border p-4 transition-all duration-300 hover:border-primary/20 md:gap-5 md:p-6"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white md:h-12 md:w-12">
                   <s.icon className="h-4 w-4 md:h-5 md:w-5" />
