@@ -24,32 +24,43 @@ const Impressum = () => (
           <div className="mt-10 space-y-8">
             <Section title="Angaben gemäß § 5 TMG">
               <p>
-                TrafficWerk<br />
-                Inhaber: Thomas Kinne<br />
-                Taradeauer Str. 11<br />
-                85244 Röhrmoos<br />
+                TrafficWerk
+                <br />
+                Inhaber: Thomas Kinne
+                <br />
+                Taradeauer Str. 11
+                <br />
+                85244 Röhrmoos
+                <br />
                 Deutschland
               </p>
             </Section>
 
             <Section title="Kontakt">
               <p>
-                Telefon: +49 1578 2208713<br />
-                E-Mail: <a href="mailto:info@trafficwerk.de" className="text-blue-600 hover:underline">info@trafficwerk.de</a>
+                Telefon: +49 1578 2208713
+                <br />
+                E-Mail:{" "}
+                <a href="mailto:info@trafficwerk.de" className="text-blue-600 hover:underline">
+                  info@trafficwerk.de
+                </a>
               </p>
             </Section>
 
-           <Section title="Umsatzsteuer-ID">
-  <p>
-    Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
-    DE208168690
-  </p>
-</Section>>
+            <Section title="Umsatzsteuer-ID">
+              <p>
+                Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:
+                <br />
+                DE208168690
+              </p>
+            </Section>
 
             <Section title="Redaktionell verantwortlich">
               <p>
-                Thomas Kinne<br />
-                Taradeauer Str. 11<br />
+                Thomas Kinne
+                <br />
+                Taradeauer Str. 11
+                <br />
                 85244 Röhrmoos
               </p>
             </Section>
@@ -57,7 +68,12 @@ const Impressum = () => (
             <Section title="EU-Streitschlichtung">
               <p>
                 Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-                <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                <a
+                  href="https://ec.europa.eu/consumers/odr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
                   https://ec.europa.eu/consumers/odr/
                 </a>
               </p>
@@ -66,19 +82,25 @@ const Impressum = () => (
 
             <Section title="Verbraucherstreitbeilegung / Universalschlichtungsstelle">
               <p>
-                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+                Verbraucherschlichtungsstelle teilzunehmen.
               </p>
             </Section>
 
             <Section title="Haftung für Inhalte">
               <p>
-                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den
+                allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+                verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
+                forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
               </p>
             </Section>
 
             <Section title="Haftung für Links">
               <p>
-                Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
+                Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+                verlinkතැන් පේළි වලට stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
               </p>
             </Section>
           </div>
