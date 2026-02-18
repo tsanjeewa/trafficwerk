@@ -2,47 +2,97 @@ import { motion } from "framer-motion";
 import { Search, BarChart3, Settings, Rocket, TrendingUp } from "lucide-react";
 
 const steps = [
-  { icon: Search, title: "Analyse", desc: "Umfassende SEO-Analyse Ihrer Website und Ihres Wettbewerbs" },
-  { icon: BarChart3, title: "Strategie", desc: "Maßgeschneiderte SEO-Strategie basierend auf Ihren Zielen" },
-  { icon: Settings, title: "Umsetzung", desc: "Technische und inhaltliche Optimierungen implementieren" },
-  { icon: Rocket, title: "Launch", desc: "Kampagnen starten und Content veröffentlichen" },
-  { icon: TrendingUp, title: "Monitoring", desc: "Kontinuierliche Überwachung und Optimierung der Ergebnisse" },
+  {
+    icon: Search,
+    title: "Analyse",
+    desc: "Wir analysieren Ihre Website, Ihre Mitbewerber und Ihre Zielgruppe – datenbasiert und präzise.",
+    number: "01",
+  },
+  {
+    icon: BarChart3,
+    title: "Strategie",
+    desc: "Auf Basis der Analyse entwickeln wir eine maßgeschneiderte SEO-Strategie mit klaren Prioritäten.",
+    number: "02",
+  },
+  {
+    icon: Settings,
+    title: "Umsetzung",
+    desc: "Wir implementieren technische und inhaltliche Optimierungen – schnell, sauber und nachhaltig.",
+    number: "03",
+  },
+  {
+    icon: Rocket,
+    title: "Launch",
+    desc: "Kampagnen gehen live, Content wird veröffentlicht und erste Rankings werden sichtbar.",
+    number: "04",
+  },
+  {
+    icon: TrendingUp,
+    title: "Monitoring",
+    desc: "Kontinuierliche Überwachung, Reporting und laufende Optimierung sichern Ihren Vorsprung.",
+    number: "05",
+  },
 ];
 
 const ProcessSection = () => {
   return (
-    <section className="section-accent py-10 md:py-14">
+    <section className="py-16 md:py-24" style={{ backgroundColor: "hsl(214 25% 97%)" }}>
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-medium uppercase tracking-widest text-primary">Prozess</span>
-          <h2 className="mt-3 font-display text-2xl font-bold text-slate-900 md:mt-4 md:text-4xl">
+        {/* Header */}
+        <div className="mx-auto max-w-2xl text-center mb-12 md:mb-16">
+          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+            Prozess
+          </span>
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
             Unser SEO-Prozess
           </h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+            Von der ersten Analyse bis zum dauerhaften Ranking-Erfolg – strukturiert, transparent und effektiv.
+          </p>
         </div>
 
-        <div className="relative mt-10 md:mt-16">
-          {/* Connection line */}
-          <div className="absolute left-1/2 top-8 hidden h-0.5 w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" />
-          
-          <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 md:gap-8">
-            {steps.map((s, i) => (
-              <motion.div
-                key={i}
-                className="relative text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-primary/40 bg-primary/15 md:h-16 md:w-16">
-                  <s.icon className="h-5 w-5 text-primary md:h-7 md:w-7" />
-                </div>
-                <span className="mt-1.5 block text-xs font-bold text-primary md:mt-2">0{i + 1}</span>
-                <h3 className="mt-1 font-display text-sm font-bold text-slate-900 md:mt-2 md:text-base">{s.title}</h3>
-                <p className="mt-1 text-[11px] leading-relaxed text-slate-700 md:mt-2 md:text-xs">{s.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5 md:gap-5">
+          {steps.map((s, i) => (
+            <motion.div
+              key={i}
+              className="relative flex flex-col rounded-2xl border border-border bg-background p-6 md:p-7"
+              style={{
+                boxShadow: "0 2px 12px 0 hsl(215 25% 15% / 0.07), 0 1px 3px 0 hsl(215 25% 15% / 0.05)",
+              }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+              whileHover={{
+                boxShadow: "0 8px 32px 0 hsl(217 91% 50% / 0.13), 0 2px 8px 0 hsl(215 25% 15% / 0.08)",
+                y: -3,
+                transition: { duration: 0.2 },
+              }}
+            >
+              {/* Step number – top right */}
+              <span className="absolute top-5 right-5 font-display text-3xl font-bold text-primary/10 select-none">
+                {s.number}
+              </span>
+
+              {/* Icon */}
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20">
+                <s.icon className="h-6 w-6 text-primary" />
+              </div>
+
+              {/* Step label */}
+              <span className="mb-1 text-xs font-bold uppercase tracking-widest text-primary">{s.number}</span>
+
+              {/* Title */}
+              <h3 className="font-display text-lg font-bold text-foreground md:text-xl">{s.title}</h3>
+
+              {/* Description */}
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</p>
+
+              {/* Bottom accent line */}
+              <div className="mt-5 h-0.5 w-8 rounded-full bg-primary/40" />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
