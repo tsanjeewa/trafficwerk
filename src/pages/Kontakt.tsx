@@ -33,23 +33,28 @@ const Kontakt = () => {
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           name: formData.name,
-          email: formData.email,
+          email: formData.email.trim(),
           phone: formData.phone,
           service: formData.service,
           message: formData.message,
           subject: "Neue Kontaktanfrage über TrafficWerk",
+          from_name: formData.name || "TrafficWerk Kontaktformular",
+          replyto: formData.email.trim(),
+          botcheck: "",
         }),
       });
 
-      if (res.ok) {
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success !== false) {
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", service: "", message: "" });
       } else {
-        setErrorMsg("Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+        setErrorMsg(data.message || "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
         setStatus("error");
       }
     } catch {
-      setErrorMsg("Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.");
+      setErrorMsg("Die Verbindung konnte nicht hergestellt werden. Bitte prüfen Sie Ihre Internetverbindung und versuchen es erneut.");
       setStatus("error");
     }
   };
