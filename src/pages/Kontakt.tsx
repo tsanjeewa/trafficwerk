@@ -41,6 +41,10 @@ const Kontakt = () => {
           from_name: formData.name || "TrafficWerk Kontaktformular",
           replyto: formData.email.trim(),
           botcheck: "",
+          autoresponse: true,
+          autoresponse_to: formData.email.trim(),
+          autoresponse_subject: "🚀 Wir haben Ihre Anfrage erhalten – TrafficWerk",
+          autoresponse_message: `Hallo ${formData.name || ""},\n\nvielen Dank, dass Sie sich an TrafficWerk gewandt haben!\n\nWir haben Ihre Nachricht erfolgreich erhalten und werden uns innerhalb eines Werktages bei Ihnen melden.\n\n────────────────────────────\n🔍 Was als nächstes passiert:\n\n  1. Wir prüfen Ihr Anliegen sorgfältig.\n  2. Ein SEO-Experte aus unserem Team meldet sich persönlich bei Ihnen.\n  3. Gemeinsam finden wir die beste Lösung für Ihre Ziele.\n────────────────────────────\n\nIn der Zwischenzeit finden Sie auf unserer Website aktuelle SEO-Insights:\nhttps://trafficwerk.de/wissen\n\nMit freundlichen Grüßen,\nIhr TrafficWerk Team\n\n📧 info@trafficwerk.de\n📞 +49 1578 2208713\n🌐 https://trafficwerk.de`,
         }),
       });
 
