@@ -73,10 +73,11 @@ const SEOQuickCheckSection = () => {
           website_url: url.trim(),
           "Kontakt-E-Mail": email.trim(),
           message: `Neue SEO-Quick-Check Anfrage:\n\nWebsite: ${url.trim()}\nKontakt-E-Mail: ${email.trim()}`,
+          botcheck: "",
           autoresponse: true,
           autoresponse_to: email.trim(),
-          autoresponse_subject: "Ihre SEO-Quick-Check Anfrage bei TrafficWerk",
-          autoresponse_message: "Vielen Dank für Ihre SEO-Quick-Check Anfrage! Wir führen gerade die Analyse Ihrer Website durch. Sie erhalten in Kürze eine vorläufige Auswertung per E-Mail und den vollständigen PDF-Bericht innerhalb von 24 Stunden von unserem Team.\n\nMit freundlichen Grüßen,\nIhr TrafficWerk Team",
+          autoresponse_subject: "🚀 Wir haben Ihre SEO-Quick-Check Anfrage erhalten – TrafficWerk",
+          autoresponse_message: `Hallo,\n\nvielen Dank, dass Sie einen kostenlosen SEO-Quick-Check bei TrafficWerk angefordert haben!\n\nWir haben Ihre Anfrage für die folgende Website erfolgreich erhalten:\n🌐 ${url.trim()}\n\n────────────────────────────\n🔍 Was als nächstes passiert:\n\n  1. Wir analysieren die technische Gesundheit Ihrer Website.\n  2. Wir prüfen Ihre Keyword-Rankings und Wettbewerbsposition.\n  3. Wir erstellen einen persönlichen PDF-Report mit konkreten Wachstumstipps.\n  4. Sie erhalten den vollständigen Report innerhalb von 24 Stunden per E-Mail.\n────────────────────────────\n\nIn der Zwischenzeit finden Sie auf unserer Website aktuelle SEO-Insights:\nhttps://trafficwerk.de/wissen\n\nAuf Ihr Wachstum,\nIhr TrafficWerk Team\n\n📧 info@trafficwerk.de\n📞 +49 1578 2208713\n🌐 https://trafficwerk.de`,
         }),
       });
       setPhase("done");

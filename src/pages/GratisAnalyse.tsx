@@ -81,7 +81,7 @@ const GratisAnalyse = () => {
       const res = await fetch(WEB3FORMS_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
+          body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           name: formData.name,
           email: formData.email,
@@ -93,6 +93,10 @@ const GratisAnalyse = () => {
           from_name: "TrafficWerk Gratis-Analyse",
           replyto: formData.email.trim(),
           botcheck: "",
+          autoresponse: true,
+          autoresponse_to: formData.email.trim(),
+          autoresponse_subject: "🚀 Wir haben Ihre SEO-Analyse Anfrage erhalten – TrafficWerk",
+          autoresponse_message: `Hallo ${formData.name || ""},\n\nvielen Dank, dass Sie eine kostenlose SEO-Analyse bei TrafficWerk angefordert haben!\n\nWir haben Ihre Anfrage für die folgende Website erfolgreich erhalten:\n🌐 ${formData.url}\n\n────────────────────────────\n🔍 Was als nächstes passiert:\n\n  1. Wir analysieren die technische Gesundheit Ihrer Website.\n  2. Wir prüfen Ihre Keyword-Rankings und Wettbewerbsposition.\n  3. Wir erstellen einen persönlichen PDF-Report mit konkreten Wachstumstipps.\n  4. Sie erhalten den vollständigen Report innerhalb von 24 Stunden per E-Mail.\n────────────────────────────\n\nIn der Zwischenzeit finden Sie auf unserer Website aktuelle SEO-Insights:\nhttps://trafficwerk.de/wissen\n\nAuf Ihr Wachstum,\nIhr TrafficWerk Team\n\n📧 info@trafficwerk.de\n📞 +49 1578 2208713\n🌐 https://trafficwerk.de`,
         }),
       });
 
