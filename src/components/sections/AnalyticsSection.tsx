@@ -4,24 +4,24 @@ import { TrendingUp, Eye, Target, Zap } from "lucide-react";
 
 const trafficData = [
   { month: "Jan", traffic: 820 },
-  { month: "Feb", traffic: 1140 },
-  { month: "Mär", traffic: 1680 },
-  { month: "Apr", traffic: 2350 },
-  { month: "Mai", traffic: 3420 },
-  { month: "Jun", traffic: 4180 },
-  { month: "Jul", traffic: 5640 },
-  { month: "Aug", traffic: 6920 },
-  { month: "Sep", traffic: 8100 },
-  { month: "Okt", traffic: 9450 },
-  { month: "Nov", traffic: 11200 },
-  { month: "Dez", traffic: 13800 },
+  { month: "Feb", traffic: 920 },
+  { month: "Mär", traffic: 1050 },
+  { month: "Apr", traffic: 1200 },
+  { month: "Mai", traffic: 1400 },
+  { month: "Jun", traffic: 1580 },
+  { month: "Jul", traffic: 1750 },
+  { month: "Aug", traffic: 1920 },
+  { month: "Sep", traffic: 2080 },
+  { month: "Okt", traffic: 2200 },
+  { month: "Nov", traffic: 2350 },
+  { month: "Dez", traffic: 2500 },
 ];
 
 const kpis = [
-  { icon: Eye, label: "Sichtbarkeit", value: "+420%", desc: "Organische Impressionen" },
+  { icon: Eye, label: "Sichtbarkeit", value: "+120%", desc: "Organische Impressionen" },
   { icon: Target, label: "Keywords Top 10", value: "85%", desc: "Aller Ziel-Keywords" },
   { icon: Zap, label: "ROI Fokus", value: "100%", desc: "Datengetriebene Strategie" },
-  { icon: TrendingUp, label: "Traffic-Wachstum", value: "16x", desc: "In 12 Monaten" },
+  { icon: TrendingUp, label: "Traffic-Wachstum", value: "3x", desc: "In 12 Monaten" },
 ];
 
 const fadeUp = {
@@ -35,7 +35,7 @@ const fadeUp = {
 
 const AnalyticsSection = () => {
   return (
-    <section className="bg-white py-10 md:py-14">
+    <section className="bg-slate-50 py-10 md:py-14">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -75,7 +75,7 @@ const AnalyticsSection = () => {
               </div>
               <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-semibold text-blue-600">
                 <TrendingUp className="h-3 w-3" />
-                +1.583%
+                Wachstumstrend
               </span>
             </div>
             <div className="mt-4 h-72">

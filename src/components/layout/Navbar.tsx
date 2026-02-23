@@ -98,17 +98,6 @@ const megaMenuCategories = [
       { name: "AI Search Optimization", path: "/services/ai-search-optimization" },
     ],
   },
-  {
-    title: "Domain Management",
-    icon: Globe,
-    color: "text-teal-600",
-    bg: "bg-teal-50",
-    items: [
-      { name: "Domain Portfolio ansehen", path: "/domain-portfolio" },
-      { name: "Hub-and-Spoke Strategie", path: "/domain-portfolio" },
-      { name: "Domain-Checker", path: "/domain-portfolio" },
-    ],
-  },
 ];
 
 /* featured service cards shown in the left panel of the mega menu */

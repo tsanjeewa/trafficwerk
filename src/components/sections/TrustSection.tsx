@@ -39,7 +39,7 @@ const TrustSection = () => {
           {allTools.map((tool, i) => (
             <span
               key={`${tool}-${i}`}
-              className="inline-block cursor-default text-sm font-semibold text-muted-foreground/50 transition-colors duration-300 hover:text-primary md:text-lg"
+              className="inline-block cursor-default text-sm font-semibold text-muted-foreground/70 transition-colors duration-300 hover:text-primary md:text-lg"
             >
               {tool}
             </span>
