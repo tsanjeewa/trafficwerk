@@ -30,7 +30,7 @@ const IndustrySection = () => {
           {branches.map((b, i) => (
             <motion.div
               key={b.name}
-              className="flex flex-col items-center rounded-xl border border-border/50 bg-card p-6 text-center transition-colors hover:border-primary/30"
+              className="flex flex-col items-center rounded-xl border border-border bg-card p-6 text-center transition-colors hover:border-primary/30"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}

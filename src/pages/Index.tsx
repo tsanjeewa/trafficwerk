@@ -11,7 +11,7 @@ import CaseStudyHighlight from "@/components/sections/CaseStudyHighlight";
 import AnalyticsSection from "@/components/sections/AnalyticsSection";
 import ResultsSection from "@/components/sections/ResultsSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
-import DomainPortfolioSection from "@/components/sections/DomainPortfolioSection";
+
 import TeamSection from "@/components/sections/TeamSection";
 import TechStackSection from "@/components/sections/TechStackSection";
 import BlogSection from "@/components/sections/BlogSection";
@@ -37,7 +37,7 @@ const Index = () => {
         <AnalyticsSection />
         <ResultsSection />
         <PortfolioSection />
-        <DomainPortfolioSection />
+        
         <TeamSection />
         <TechStackSection />
         <BlogSection />

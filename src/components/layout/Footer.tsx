@@ -62,16 +62,13 @@ const Footer = () => {
                 <Link to="/" className="text-sm text-slate-500 transition-colors hover:text-primary">Startseite</Link>
               </li>
               <li>
-                <a href="/#team" className="text-sm text-slate-500 transition-colors hover:text-primary">Über uns & Team</a>
+                <Link to="/" onClick={(e) => { e.preventDefault(); const el = document.getElementById("team"); if (el) el.scrollIntoView({ behavior: "smooth" }); else window.location.href = "/#team"; }} className="text-sm text-slate-500 transition-colors hover:text-primary">Über uns & Team</Link>
               </li>
               <li>
                 <Link to="/wissen" className="text-sm text-slate-500 transition-colors hover:text-primary">SEO-Wissen & Glossar</Link>
               </li>
               <li>
                 <Link to="/faq" className="text-sm text-slate-500 transition-colors hover:text-primary">Häufige Fragen (FAQ)</Link>
-              </li>
-              <li>
-                <Link to="/domain-portfolio" className="text-sm text-slate-500 transition-colors hover:text-primary">Domain-Portfolio</Link>
               </li>
               <li>
                 <Link to="/gratis-analyse" className="text-sm text-slate-500 transition-colors hover:text-primary">Gratis SEO-Analyse</Link>
