@@ -106,7 +106,7 @@ const ServicePageLayout = ({
         </section>
 
         {/* Solutions Grid */}
-        <section className="border-t border-slate-100 py-24">
+        <section className="border-t border-slate-200 bg-slate-50 py-24">
           <div className="container mx-auto px-6">
             <motion.div
               className="text-center"
@@ -127,7 +127,7 @@ const ServicePageLayout = ({
               {features.map((f, i) => (
                 <motion.div
                   key={i}
-                  className="group rounded-2xl border border-slate-100 bg-white p-7 transition-all duration-300 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5"
+                  className="group rounded-2xl border border-slate-200 bg-white p-7 transition-all duration-300 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/5"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -150,7 +150,7 @@ const ServicePageLayout = ({
         </section>
 
         {/* Strategy Section */}
-        <section className="border-t border-slate-100 py-24">
+        <section className="border-t border-slate-200 py-24">
           <div className="container mx-auto px-6">
             <div className="mx-auto grid max-w-6xl gap-16 lg:grid-cols-2">
               <motion.div
@@ -225,7 +225,7 @@ const ServicePageLayout = ({
         </section>
 
         {/* Process Flow – 4 Steps Horizontal */}
-        <section className="border-t border-slate-100 py-24">
+        <section className="border-t border-slate-200 bg-slate-50 py-24">
           <div className="container mx-auto px-6">
             <motion.div
               className="text-center"
@@ -246,7 +246,7 @@ const ServicePageLayout = ({
               {process.map((p, i) => (
                 <motion.div
                   key={i}
-                  className="relative rounded-2xl border border-slate-100 bg-white p-7"
+                  className="relative rounded-2xl border border-slate-200 bg-white p-7"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}

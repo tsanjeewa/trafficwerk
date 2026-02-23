@@ -97,7 +97,7 @@ const SEOQuickCheckSection = () => {
   };
 
   return (
-    <section className="bg-white py-10 md:py-14">
+    <section className="bg-slate-50 py-10 md:py-14">
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-2xl text-center">
           <motion.div

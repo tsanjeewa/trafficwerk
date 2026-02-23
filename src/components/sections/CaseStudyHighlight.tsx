@@ -21,7 +21,7 @@ const projects = [
 
 const CaseStudyHighlight = () => {
   return (
-    <section className="py-10 md:py-14 overflow-hidden">
+    <section className="bg-slate-50 py-10 md:py-14 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center mb-10 md:mb-16"
@@ -48,7 +48,7 @@ const CaseStudyHighlight = () => {
             {projects.map((p, i) => (
               <motion.div
                 key={p.label}
-                className="rounded-2xl border border-slate-100 bg-white p-5 shadow-lg shadow-blue-500/5"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-lg shadow-blue-500/5"
                 initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -147,7 +147,7 @@ const CaseStudyHighlight = () => {
           {projects.map((p, i) => (
             <motion.div
               key={p.label}
-              className="w-full rounded-2xl border border-slate-100 bg-white p-5 shadow-lg shadow-blue-500/5"
+              className="w-full rounded-2xl border border-slate-200 bg-white p-5 shadow-lg shadow-blue-500/5"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

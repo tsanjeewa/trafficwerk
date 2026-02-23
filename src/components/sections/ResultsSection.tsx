@@ -26,7 +26,7 @@ const approaches = [
 
 const ResultsSection = () => {
   return (
-    <section className="border-t border-slate-100 bg-slate-50 py-10 md:py-14">
+    <section className="border-t border-slate-200 bg-white py-10 md:py-14">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -48,7 +48,7 @@ const ResultsSection = () => {
           {approaches.map((a, i) => (
             <motion.div
               key={a.title}
-              className="rounded-2xl border border-slate-100 bg-white p-4 transition-all hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5 md:p-6"
+              className="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/5 md:p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
