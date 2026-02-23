@@ -30,7 +30,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="bg-white py-10 md:py-14">
+    <section className="py-10 md:py-14">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -59,7 +59,7 @@ const FAQSection = () => {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="border-b border-slate-100 px-0"
+                className="border-b border-slate-200 px-0"
               >
                 <AccordionTrigger className="py-5 text-left text-[15px] font-semibold text-slate-900 hover:text-blue-600 hover:no-underline [&[data-state=open]]:text-blue-600">
                   {faq.q}

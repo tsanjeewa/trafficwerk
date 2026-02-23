@@ -21,7 +21,7 @@ const TechStackSection = () => {
           {tools.map((tool, i) => (
             <motion.span
               key={tool}
-              className="rounded-full border border-border/50 bg-card px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary/30 hover:text-primary"
+              className="rounded-full border border-slate-300 bg-slate-50 px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.03 }}

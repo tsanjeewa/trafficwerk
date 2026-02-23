@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -135,12 +136,12 @@ const Kontakt = () => {
                   <p className="mt-1 text-xs text-muted-foreground">
                     Nutzen Sie unser spezielles Analyse-Formular – mit Report-Vorschau und allen Details.
                   </p>
-                  <a
-                    href="/gratis-analyse"
+                  <Link
+                    to="/gratis-analyse"
                     className="mt-3 inline-block rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90"
                   >
                     Zur Gratis-Analyse →
-                  </a>
+                  </Link>
                 </div>
               </div>
 

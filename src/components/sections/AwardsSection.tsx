@@ -34,7 +34,7 @@ const AwardsSection = () => {
           {qualities.map((q, i) => (
             <motion.div
               key={q.title}
-              className="rounded-2xl border border-slate-100 bg-white p-6 text-center transition-all duration-300 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5"
+              className="rounded-2xl border border-slate-200 bg-white p-6 text-center transition-all duration-300 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}

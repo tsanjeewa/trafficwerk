@@ -61,7 +61,7 @@ const AnalyticsSection = () => {
         <div className="mx-auto mt-16 grid max-w-6xl gap-6 lg:grid-cols-5">
           {/* Left: Area Chart (3 cols) */}
           <motion.div
-            className="rounded-2xl border border-slate-100 bg-white p-6 transition-all duration-300 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5 lg:col-span-3"
+            className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/5 lg:col-span-3"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -129,7 +129,7 @@ const AnalyticsSection = () => {
             {kpis.map((kpi, i) => (
               <motion.div
                 key={kpi.label}
-                className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 transition-all duration-300 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-600/5"
+                className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-300 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-600/5"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}

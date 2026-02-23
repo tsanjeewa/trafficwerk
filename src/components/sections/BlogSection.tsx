@@ -33,7 +33,7 @@ const BlogSection = () => {
             >
               <Link
                 to={post.slug}
-                className="group block cursor-pointer overflow-hidden rounded-xl border border-border/50 bg-card transition-all hover:border-primary/30"
+                className="group block cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white transition-all hover:border-primary/30"
               >
                 <div className="h-48 overflow-hidden">
                   <img
