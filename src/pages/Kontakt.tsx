@@ -21,12 +21,6 @@ const Kontakt = () => {
     setStatus("sending");
     setErrorMsg("");
 
-    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      setErrorMsg("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
-      setStatus("error");
-      return;
-    }
-
     try {
       const res = await fetch(WEB3FORMS_URL, {
         method: "POST",
@@ -41,59 +35,49 @@ const Kontakt = () => {
           subject: "Neue Kontaktanfrage über TrafficWerk",
           from_name: formData.name || "TrafficWerk Kontaktformular",
           replyto: formData.email.trim(),
-          botcheck: "",
-          autoresponse: true,
-          autoresponse_to: formData.email.trim(),
-          autoresponse_subject: "🚀 Wir haben Ihre Anfrage erhalten – TrafficWerk",
-          autoresponse_message: `Hallo ${formData.name || ""},\n\nvielen Dank, dass Sie sich an TrafficWerk gewandt haben!\n\nWir haben Ihre Nachricht erfolgreich erhalten und werden uns innerhalb eines Werktages bei Ihnen melden.\n\n────────────────────────────\n🔍 Was als nächstes passiert:\n\n  1. Wir prüfen Ihr Anliegen sorgfältig.\n  2. Ein SEO-Experte aus unserem Team meldet sich persönlich bei Ihnen.\n  3. Gemeinsam finden wir die beste Lösung für Ihre Ziele.\n────────────────────────────\n\nIn der Zwischenzeit finden Sie auf unserer Website aktuelle SEO-Insights:\nhttps://trafficwerk.de/wissen\n\nMit freundlichen Grüßen,\nIhr TrafficWerk Team\n\n📧 info@trafficwerk.de\n📞 +49 1578 2208713\n🌐 https://trafficwerk.de`,
         }),
       });
 
-      const data = await res.json().catch(() => ({}));
+      const data = await res.json();
 
       if (res.ok && data.success !== false) {
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", service: "", message: "" });
       } else {
-        setErrorMsg(data.message || "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+        // Zeigt die spezifische Fehlermeldung der API an (z.B. Domain nicht verifiziert)
+        setErrorMsg(data.message || "Ein Fehler ist aufgetreten. Bitte prüfen Sie Ihre Angaben.");
         setStatus("error");
       }
-    } catch {
-      setErrorMsg("Die Verbindung konnte nicht hergestellt werden. Bitte prüfen Sie Ihre Internetverbindung und versuchen es erneut.");
+    } catch (err) {
+      // Nur bei echtem Verbindungsabbruch anzeigen
+      setErrorMsg("Netzwerkfehler: Die Verbindung zum Server konnte nicht hergestellt werden.");
       setStatus("error");
     }
   };
 
+  // Gemeinsame Styles für hohen Kontrast (White-on-White Fix)
+  const inputStyles = "bg-[#F1F5F9] border-2 border-[#94A3B8] text-slate-900 placeholder:text-slate-500 focus:border-[#3B82F6] focus:ring-3 focus:ring-[#3B82F6]/20 transition-all";
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-slate-900">
       <Navbar />
       <main className="pt-16">
-
-        {/* Hero */}
-        <section className="border-b border-border bg-gradient-to-br from-primary/5 via-background to-background py-16 md:py-24">
+        <section className="border-b border-slate-200 bg-slate-50/50 py-16 md:py-24">
           <div className="container mx-auto px-6 text-center">
-            <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
-              Wir freuen uns auf Sie
-            </span>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-              Sprechen Sie mit uns
-            </h1>
-            <p className="mx-auto mt-4 max-w-xl text-muted-foreground md:text-lg">
-              Haben Sie eine Frage, ein Anliegen oder möchten Sie einfach mehr über TrafficWerk erfahren? Schreiben Sie uns – wir antworten innerhalb eines Werktages.
+            <h1 className="text-3xl font-bold md:text-5xl">Sprechen Sie mit uns</h1>
+            <p className="mx-auto mt-4 max-w-xl text-slate-600 md:text-lg">
+              Wir antworten innerhalb eines Werktages.
             </p>
           </div>
         </section>
 
-        {/* Formular + Kontakt-Info */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-6">
             <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2">
-
-              {/* Kontakt-Info */}
               <div>
-                <h2 className="text-xl font-bold text-foreground">Direkt erreichbar</h2>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Kein Callcenter, kein Warteschleife – Sie erreichen uns direkt.
+                <h2 className="text-xl font-bold">Direkt erreichbar</h2>
+                <p className="mt-2 text-sm text-slate-600">
+                  Kein Callcenter, keine Warteschleife – Sie erreichen uns direkt.
                 </p>
                 <ul className="mt-6 space-y-5">
                   <li className="flex items-start gap-4">
@@ -101,10 +85,8 @@ const Kontakt = () => {
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-foreground">E-Mail</p>
-                      <a href="mailto:info@trafficwerk.de" className="text-sm text-muted-foreground transition-colors hover:text-primary">
-                        info@trafficwerk.de
-                      </a>
+                      <p className="text-sm font-semibold">E-Mail</p>
+                      <a href="mailto:info@trafficwerk.de" className="text-sm text-slate-600 hover:text-primary">info@trafficwerk.de</a>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -112,127 +94,67 @@ const Kontakt = () => {
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-foreground">Telefon</p>
-                      <a href="tel:+4915782208713" className="text-sm text-muted-foreground transition-colors hover:text-primary">
-                        +49 1578 2208713
-                      </a>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">Adresse</p>
-                      <p className="text-sm text-muted-foreground">
-                        Taradeauer Str. 11<br />85244 Röhrmoos
-                      </p>
+                      <p className="text-sm font-semibold">Telefon</p>
+                      <a href="tel:+4915782208713" className="text-sm text-slate-600 hover:text-primary">+49 1578 2208713</a>
                     </div>
                   </li>
                 </ul>
-
-                <div className="mt-8 rounded-2xl border border-primary/20 bg-primary/5 p-5">
-                  <p className="text-sm font-semibold text-primary">Möchten Sie eine kostenlose SEO-Analyse?</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    Nutzen Sie unser spezielles Analyse-Formular – mit Report-Vorschau und allen Details.
-                  </p>
-                  <Link
-                    to="/gratis-analyse"
-                    className="mt-3 inline-block rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90"
-                  >
-                    Zur Gratis-Analyse →
-                  </Link>
-                </div>
               </div>
 
-              {/* Formular */}
               <div>
                 {status === "success" ? (
-                  <div className="flex flex-col items-center justify-center rounded-2xl border border-primary/20 bg-primary/5 p-12 text-center">
+                  <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-primary/20 bg-primary/5 p-12 text-center">
                     <CheckCircle2 className="h-12 w-12 text-primary" />
-                    <p className="mt-4 text-lg font-semibold text-foreground">
-                      Vielen Dank! Ihre Nachricht ist angekommen.
-                    </p>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      Wir melden uns innerhalb eines Werktages bei Ihnen.
-                    </p>
-                    <Button className="mt-6 rounded-full" variant="outline" onClick={() => setStatus("idle")}>
-                      Weitere Nachricht senden
-                    </Button>
+                    <p className="mt-4 text-lg font-semibold">Nachricht erfolgreich gesendet!</p>
+                    <Button className="mt-6 rounded-full" variant="outline" onClick={() => setStatus("idle")}>Weitere Nachricht</Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="nc-card space-y-5 rounded-2xl border bg-background p-8 shadow-sm">
+                  <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-slate-200 bg-white p-8 shadow-md">
                     <div>
-                      <label className="mb-1.5 block text-sm font-medium text-foreground">Ihr Name *</label>
+                      <label className="mb-1.5 block text-sm font-bold">Name *</label>
                       <Input
-                        placeholder="z. B. Maria Müller"
                         required
+                        className={inputStyles}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       />
                     </div>
                     <div>
-                      <label className="mb-1.5 block text-sm font-medium text-foreground">E-Mail-Adresse *</label>
+                      <label className="mb-1.5 block text-sm font-bold">E-Mail *</label>
                       <Input
                         type="email"
-                        placeholder="ihre@email.de"
                         required
+                        className={inputStyles}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
                     </div>
                     <div>
-                      <label className="mb-1.5 block text-sm font-medium text-foreground">Telefonnummer (optional)</label>
-                      <Input
-                        type="tel"
-                        placeholder="+49 ..."
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-sm font-medium text-foreground">Ihr Anliegen (optional)</label>
-                      <Select value={formData.service} onValueChange={(v) => setFormData({ ...formData, service: v })}>
-                        <SelectTrigger><SelectValue placeholder="Worum geht es?" /></SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="allgemein">Allgemeine Anfrage</SelectItem>
-                          <SelectItem value="beratung">SEO-Beratungsgespräch</SelectItem>
-                          <SelectItem value="angebot">Angebot anfordern</SelectItem>
-                          <SelectItem value="zusammenarbeit">Zusammenarbeit / Partnerschaft</SelectItem>
-                          <SelectItem value="presse">Presse & Medien</SelectItem>
-                          <SelectItem value="sonstiges">Sonstiges</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-sm font-medium text-foreground">Ihre Nachricht *</label>
+                      <label className="mb-1.5 block text-sm font-bold">Nachricht *</label>
                       <Textarea
-                        placeholder="Schreiben Sie uns, wie wir Ihnen helfen können…"
                         required
                         rows={4}
+                        className={inputStyles}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       />
                     </div>
 
-                    {status === "error" && errorMsg && (
-                      <p className="text-sm font-medium text-destructive">{errorMsg}</p>
+                    {status === "error" && (
+                      <div className="rounded-lg bg-red-50 p-3 border border-red-200">
+                        <p className="text-xs font-bold text-red-600">{errorMsg}</p>
+                      </div>
                     )}
 
-                    <Button type="submit" size="lg" className="w-full rounded-full" disabled={status === "sending"}>
-                      {status === "sending" ? "Wird gesendet…" : "Nachricht senden →"}
+                    <Button type="submit" size="lg" className="w-full rounded-full bg-primary font-bold shadow-lg" disabled={status === "sending"}>
+                      {status === "sending" ? "Wird gesendet..." : "Nachricht senden →"}
                     </Button>
-                    <p className="text-center text-xs text-muted-foreground">
-                      Ihre Daten sind bei uns sicher. Wir antworten innerhalb eines Werktages.
-                    </p>
                   </form>
                 )}
               </div>
-
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </div>
