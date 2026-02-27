@@ -140,6 +140,7 @@ const Wissen = () => {
   const [searchParams] = useSearchParams();
   const [search, setSearch] = useState("");
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   useEffect(() => {
     const q = searchParams.get("search");
@@ -152,8 +153,17 @@ const Wissen = () => {
     if (meta) meta.setAttribute("content", "Über 90 SEO- und Online-Marketing-Begriffe verständlich erklärt. Von Backlink bis XML Sitemap – das umfassende Glossar von TrafficWerk.");
   }, []);
 
+  const uniqueCategories = useMemo(() => {
+    const cats = new Set<string>();
+    glossaryTerms.forEach((t) => { if (t.category) cats.add(t.category); });
+    return Array.from(cats).sort((a, b) => a.localeCompare(b, "de"));
+  }, []);
+
   const filteredTerms = useMemo(() => {
     let terms = glossaryTerms;
+    if (activeCategory) {
+      terms = terms.filter((t) => t.category === activeCategory);
+    }
     if (activeLetter) {
       terms = terms.filter((t) => {
         const first = t.term[0]?.toUpperCase();
@@ -168,7 +178,7 @@ const Wissen = () => {
       );
     }
     return terms.sort((a, b) => a.term.localeCompare(b.term, "de"));
-  }, [search, activeLetter]);
+  }, [search, activeLetter, activeCategory]);
 
   const availableLetters = useMemo(() => {
     const set = new Set<string>();
@@ -209,6 +219,33 @@ const Wissen = () => {
               onChange={(e) => setSearch(e.target.value)}
               className="pl-10 h-12 text-base"
             />
+          </div>
+
+          {/* Category Chips */}
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            <button
+              onClick={() => setActiveCategory(null)}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                activeCategory === null
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
+              }`}
+            >
+              Alle Kategorien
+            </button>
+            {uniqueCategories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat === activeCategory ? null : cat)}
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  activeCategory === cat
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
 
           <div className="flex flex-wrap gap-1.5">
@@ -257,9 +294,12 @@ const Wissen = () => {
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <h3 className="text-lg font-bold text-foreground">{item.term}</h3>
                   {item.category && (
-                    <span className="shrink-0 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                    <button
+                      onClick={() => setActiveCategory(item.category ?? null)}
+                      className="shrink-0 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary cursor-pointer hover:bg-primary/20 transition-colors"
+                    >
                       {item.category}
-                    </span>
+                    </button>
                   )}
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.definition}</p>
