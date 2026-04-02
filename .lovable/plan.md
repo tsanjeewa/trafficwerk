@@ -1,43 +1,30 @@
 
 
-## Connect Supabase & Dynamic Landing Pages
+## GDPR Fix: Remove All Google Fonts References
 
-### Prerequisites (User Action Required)
+### Problem
+Google Fonts are loaded externally, which sends user IP addresses to Google servers — a GDPR violation without explicit consent.
 
-The project has **no Supabase connection**. You need to connect your Supabase project first:
-1. Click the **Supabase** button in the Lovable toolbar (top-right)
-2. Connect your existing Supabase project (or create one)
-3. This will auto-generate `src/integrations/supabase/client.ts` and type files
+### Changes (4 files, removal only)
 
-### After Connection — Implementation Steps
+#### 1. `index.html` (lines 8-13)
+Remove 6 lines: preconnect links, preload, stylesheet link, and noscript fallback for Google Fonts.
 
-#### 1. Create `landing_posts` table in Supabase
-Table schema matching the existing `LandingPageData` interface:
+#### 2. `src/index.css` (line 1)
+Remove the `@import url('https://fonts.googleapis.com/...')` line.
 
-```text
-landing_posts
-├── id          uuid (PK, default gen_random_uuid())
-├── slug        text (unique, not null)
-├── meta_title  text (not null)
-├── meta_description text (not null)
-├── h1          text (not null)
-├── intro       text (not null)
-├── benefits    text[] (not null)
-├── created_at  timestamptz (default now())
-```
+#### 3. `tailwind.config.ts` (lines 17-18)
+Replace font stacks:
+- `sans`: from `["Inter", "system-ui", "sans-serif"]` → `["-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "Arial", "sans-serif"]`
+- `display`: from `["Space Grotesk", "system-ui", "sans-serif"]` → same system stack (removes Space Grotesk dependency)
 
-Enable RLS with a public SELECT policy (this is public marketing content).
+#### 4. `public/.htaccess` (line 37)
+Remove `https://fonts.googleapis.com` from `style-src` and `https://fonts.gstatic.com` from `font-src` in the CSP header.
 
-#### 2. Update `src/pages/LandingPage.tsx`
-- Replace the static `getLandingPageBySlug(slug)` import with a Supabase query
-- Use `useQuery` from `@tanstack/react-query` to fetch from `landing_posts` where `slug` matches
-- Add loading skeleton and error states
-- Keep the existing UI template (Hero, Benefits, CTA sections) but feed it data from Supabase
+#### 5. `src/index.css` heading rule (around line 70)
+Update the `h1-h6` font-family from `'Space Grotesk'` to the system font stack.
 
-#### 3. Remove static data dependency
-- The component will no longer import from `src/data/landingPages.ts`
-- The static file can remain as a fallback/seed reference
-
-#### 4. Files changed
-- `src/pages/LandingPage.tsx` — rewrite data fetching to use Supabase client + react-query
+#### NOT touched
+- Inline `style={{ fontFamily: "'Space Grotesk'" }}` references in `.tsx` files (FAQ, GEO page, SEOStrategie) — these will naturally fall back to the system stack since Space Grotesk won't be loaded. No functional change needed, but for cleanliness they should be removed too.
+- `node_modules/` — not project code.
 
